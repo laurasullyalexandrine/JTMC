@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -33,6 +35,22 @@ class User implements UserInterface
      * @ORM\Column(type="string")
      */
     private $password;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Store::class, mappedBy="User")
+     */
+    private $stores;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Role::class, inversedBy="users")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $Role;
+
+    public function __construct()
+    {
+        $this->stores = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -113,5 +131,47 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection|Store[]
+     */
+    public function getStores(): Collection
+    {
+        return $this->stores;
+    }
+
+    public function addStore(Store $store): self
+    {
+        if (!$this->stores->contains($store)) {
+            $this->stores[] = $store;
+            $store->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeStore(Store $store): self
+    {
+        if ($this->stores->removeElement($store)) {
+            // set the owning side to null (unless already changed)
+            if ($store->getUser() === $this) {
+                $store->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getRole(): ?Role
+    {
+        return $this->Role;
+    }
+
+    public function setRole(?Role $Role): self
+    {
+        $this->Role = $Role;
+
+        return $this;
     }
 }

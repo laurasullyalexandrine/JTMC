@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\InformationPaymentRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -61,6 +63,16 @@ class InformationPayment
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $restaurant_voucher_sodexo;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Store::class, mappedBy="InformationPayment")
+     */
+    private $stores;
+
+    public function __construct()
+    {
+        $this->stores = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -171,6 +183,33 @@ class InformationPayment
     public function setRestaurantVoucherSodexo(?bool $restaurant_voucher_sodexo): self
     {
         $this->restaurant_voucher_sodexo = $restaurant_voucher_sodexo;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Store[]
+     */
+    public function getStores(): Collection
+    {
+        return $this->stores;
+    }
+
+    public function addStore(Store $store): self
+    {
+        if (!$this->stores->contains($store)) {
+            $this->stores[] = $store;
+            $store->addInformationPayment($this);
+        }
+
+        return $this;
+    }
+
+    public function removeStore(Store $store): self
+    {
+        if ($this->stores->removeElement($store)) {
+            $store->removeInformationPayment($this);
+        }
 
         return $this;
     }

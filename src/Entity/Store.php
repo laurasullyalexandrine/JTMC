@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\StoreRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -81,6 +83,28 @@ class Store
      * @ORM\Column(type="string", length=255)
      */
     private $description;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=InformationPayment::class, inversedBy="stores")
+     */
+    private $InformationPayment;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=CommercialService::class, inversedBy="stores")
+     */
+    private $CommercialService;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="stores")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $User;
+
+    public function __construct()
+    {
+        $this->InformationPayment = new ArrayCollection();
+        $this->CommercialService = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -239,6 +263,66 @@ class Store
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|InformationPayment[]
+     */
+    public function getInformationPayment(): Collection
+    {
+        return $this->InformationPayment;
+    }
+
+    public function addInformationPayment(InformationPayment $informationPayment): self
+    {
+        if (!$this->InformationPayment->contains($informationPayment)) {
+            $this->InformationPayment[] = $informationPayment;
+        }
+
+        return $this;
+    }
+
+    public function removeInformationPayment(InformationPayment $informationPayment): self
+    {
+        $this->InformationPayment->removeElement($informationPayment);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CommercialService[]
+     */
+    public function getCommercialService(): Collection
+    {
+        return $this->CommercialService;
+    }
+
+    public function addCommercialService(CommercialService $commercialService): self
+    {
+        if (!$this->CommercialService->contains($commercialService)) {
+            $this->CommercialService[] = $commercialService;
+        }
+
+        return $this;
+    }
+
+    public function removeCommercialService(CommercialService $commercialService): self
+    {
+        $this->CommercialService->removeElement($commercialService);
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->User;
+    }
+
+    public function setUser(?User $User): self
+    {
+        $this->User = $User;
 
         return $this;
     }
