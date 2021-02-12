@@ -37,7 +37,7 @@ class CommercialService
     /**
      * @ORM\Column(type="boolean", nullable=true)
      */
-    private $too_goog_to_go;
+    private $too_good_to_go;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
