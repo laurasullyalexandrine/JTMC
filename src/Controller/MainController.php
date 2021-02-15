@@ -3,21 +3,23 @@
 namespace App\Controller;
 
 /**
- * @Route("/", name="homepage")
+ * @Route("/home", name="homepage")
  */
-use App\Repository\JtmcRepository;
+use App\Repository\StoreRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
 
 class MainController extends AbstractController
     {
         /**
          * @Route("/", name="homepage", methods="GET")
          */
-        public function homepage (JtmcRepository $jtmcRepository): Response
+        public function homepage (StoreRepository $StoreRepository): Response
         {
             return $this->render('main/homepage.html.twig', [
-                'homepage' => $jtmcRepository->findAll(),
+                'homepage' => $StoreRepository->findAll(),
             ]);
         }
     }
