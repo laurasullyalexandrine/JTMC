@@ -1,24 +1,23 @@
 <?php
 
-    namespace App\MainController;
+namespace App\Controller;
 
-    /**
-     * @Route("/", name="homepage")
-     */
+/**
+ * @Route("/", name="homepage")
+ */
+use App\Repository\JtmcRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 
-    use App\Repository\JtmcRepository;
-    use Symfony\Component\HttpFoundation\Response;
-
-    class MainController extends AbstractController
+class MainController extends AbstractController
+    {
+        /**
+         * @Route("/", name="homepage", methods="GET")
+         */
+        public function homepage (JtmcRepository $jtmcRepository): Response
         {
-            /**
-             * @Route("/", name="homepage", methods="GET")
-             */
-
-            public function homepage (JtmcRepository $jtmcRepository): Response
-            {
-                return $this->render('main/homepage.html.twig', [
-                    // Redirection de la map
-                ]);
-            }
+            return $this->render('main/homepage.html.twig', [
+                'homepage' => $jtmcRepository->findAll(),
+            ]);
         }
+    }
