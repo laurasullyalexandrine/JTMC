@@ -24,14 +24,53 @@
     
     <title>{% block title %}J'trouve Mon Commerçant{% endblock %}</title>
     
-    {% block javascripts %}      
+    {% block javascripts %}  
+    <!-- App JS -->  
+    <script src="js/app_responsive.js"></script>  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     {% endblock %}
 
 </head>
     <body>
+ <header class="header-nav">
+    <!--Block logo-->
+    <div class="logo">
+       <!--Logo for the sreen desktop-->
+      <a href="index_test_home.html" class="logo-link">
+      <img class="logo-web" src="images/logo_jtmc_v2.png" alt="logo_jtmc">
+      <!--Small logo for the sreen mobile-->
+      <img class="logo-mobile" src="images/logo_jtmc_small_v2.png" alt="logo_jtmc">
+      </a>
+      <a class ="title-link" href="index_test_home.html"><h1 class="title">j'trouve mon commerçant</h1></a>
+    </div>
 
+    <div class="slogan-nav">
+     <!--Block slogan-->
+     <p class="slogan">Service de géolocalisation pour retrouver en quelques cliques votre commerce local !</p>
+     
+     <!--Block navigation-->
+    <nav class="header-nav-top">
+      <ul class="header-nav-top-list">
+        <li class="header-nav-top-item">
+          <a class="active header-nav-top-link" href="index_test_home.html" >accueil</a>
+        </li>
+        <li class="header-nav-top-item">
+          <a class="header-nav-top-link" href="#" >ville</a>
+        </li>
+        <li class="header-nav-top-item">
+          <a class="header-nav-top-link" href="#">connection</a>
+      </li>
+      <li class="header-nav-top-item">
+        <a class="header-nav-top-link" href="#">inscription</a>
+      </li>
+      </ul>
+    </nav> 
+    </div>
+  </header>
+
+      <footer class="footer-nav-bottom">
+        <a class="footer-nav-bottom-link" href="#">Mentions légales</a>
+        <a class="footer-nav-bottom-link" href="#">Contactez-nous</a>
+    </footer>
     </body>
-
-
 </html>
