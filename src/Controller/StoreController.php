@@ -19,7 +19,7 @@ class StoreController extends AbstractController
     /**
      * @Route("/{id}", name="store_read", methods={"GET"})
      */
-    public function read(Store $store): Response 
+    public function read(Store $store): Response
     {
         return $this->render('store/read.html.twig', 
         [
