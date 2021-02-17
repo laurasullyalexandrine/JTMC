@@ -210,11 +210,37 @@ input
 
 #map
 {
-    width: 78%;
     color: teal;
-    font-size: 250px;
+
     text-align: center;
     align-self: center;
+}
+
+/* ----- Mentions legals -----*/
+.legals
+{
+    margin: auto;
+    width: 900px;
+    height: 370px;
+    display: flex;
+    padding: 5%;
+    color: black;
+    text-align: justify;
+    flex-direction: column;
+}
+
+.subtitle
+{
+    padding: 1% 0 0 1%;
+    font-size: 0.9em;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.lorem
+{
+    padding: 1%;
+    font-size: 0.8em;
 }
 
 /* ----- footer link -----*/
@@ -243,7 +269,6 @@ input
 
 .footer-nav-made
 {
-
     font-size: 0.7em;
 }
 

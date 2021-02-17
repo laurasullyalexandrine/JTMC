@@ -16,12 +16,12 @@
             <!--Block logo-->
             <div class="logo">
             <!--Logo for the sreen desktop-->
-            <a href="index_test_home.html" class="logo-link">
+            <a href="{{ path('home') }}"class="logo-link">
             <img class="logo-web" src="../images/logo_jtmc_v2.png" alt="logo_jtmc">
             <!--Small logo for the sreen mobile-->
             <img class="logo-mobile" src="../images/logo_jtmc_small_v2.png" alt="logo_jtmc">
             </a>
-            <a class ="title-link" href="index_test_home.html"><h1 class="title">j'trouve mon commerçant</h1></a>
+            <a class ="title-link" href="{{ path('home') }}"><h1 class="title">j'trouve mon commerçant</h1></a>
             </div>
 
             <div class="slogan-nav">
@@ -32,7 +32,7 @@
             <nav class="header-nav-top">
             <ul class="header-nav-top-list">
                 <li class="header-nav-top-item">
-                <a class="active header-nav-top-link" href="index_test_home.html" >accueil</a>
+                <a class="active header-nav-top-link" href="{{ path('home') }}">accueil</a>
                 </li>
                 <li class="header-nav-top-item">
                 <a class="header-nav-top-link" href="#" >ville</a>
@@ -48,8 +48,6 @@
             </div>
         </header>
 
-
-
         <main id="wrapper">
             <!--Block search menu left responsive-->
             <button id="hamburger-button">&#9776;</button>
@@ -63,8 +61,8 @@
         </main>
 
         <footer class="footer-nav-bottom">
-            <a class="footer-nav-bottom-link" href="#">Mentions légales</a>
-            <a class="footer-nav-bottom-link" href="#">Contactez-nous</a>
+            <a class="footer-nav-bottom-link" href="{{ path('legal-mention') }}">Mentions légales</a>
+            <a class="footer-nav-bottom-link" href="mailto:team@jtmc.fr">Contactez-nous</a>
             <p class="footer-nav-made">JTMC made with &#169; by <i>#teamsymfony</i></p>
         </footer>
 
