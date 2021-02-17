@@ -19,7 +19,7 @@ class StoreController extends AbstractController
     /**
      * @Route("/{id}", name="store_read", methods={"GET"})
      */
-    public function read(Store $store): Response
+    public function read(Store $store): Response 
     {
         return $this->render('store/read.html.twig', 
         [
@@ -41,12 +41,13 @@ class StoreController extends AbstractController
             $em->persist($store);
             $em->flush();
         
-            return $this->redirectToRoute('store_read');
+            return $this->redirectToRoute('store_create');
         }
 
         return $this->render('store/new.html.twig', 
         [
         'store' => $store,
+        'form' => $form->createView()
         ]);
     }
 }
