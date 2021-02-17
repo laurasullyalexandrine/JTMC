@@ -28,7 +28,7 @@ class StoreController extends AbstractController
     }
     
     /**
-     * @Route("/new", name="store_create", methods={"GET", "POST"})
+     * @Route("/new", name="store_create", methods= {"GET","POST"})
      */
     public function create(Request $request): Response
     {
@@ -41,7 +41,7 @@ class StoreController extends AbstractController
             $em->persist($store);
             $em->flush();
         
-            return $this->redirectToRoute('store_create');
+            return $this->redirectToRoute('store_read');
         }
 
         return $this->render('store/new.html.twig', 
