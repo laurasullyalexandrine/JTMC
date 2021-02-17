@@ -262,13 +262,19 @@ input
     text-decoration: none;
 }
 
-.footer-nav-bottom-link :hover
+a.footer-nav-bottom-link:hover
 {
-    text-decoration: underline;
+    color: #20bf6b;
+}
+
+a.menu-search-link:hover
+{
+    color: #20bf6b;
 }
 
 .footer-nav-made
-{
+{   
+    padding-top: 0.5%;
     font-size: 0.7em;
 }
 
