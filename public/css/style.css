@@ -202,7 +202,7 @@ input
     border: 1px solid black;
 }
 
-.wrapper
+#wrapper
 {
     display: flex;
     flex-direction: row;
@@ -239,6 +239,12 @@ input
 .footer-nav-bottom-link :hover
 {
     text-decoration: underline;
+}
+
+.footer-nav-made
+{
+
+    font-size: 0.7em;
 }
 
 

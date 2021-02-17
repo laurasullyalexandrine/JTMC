@@ -1,8 +1,10 @@
+
 let left = document.querySelector('#menu-search');
 let sidebarBody = document.querySelector('#hamburger-sidebar-body');
 let button = document.querySelector('#hamburger-button');
 let overlay = document.querySelector('#hamburger-overlay');
 let activatedClass = 'hambuger-activated';
+console.log('Hello Webpack Encore !');
 
 sidebarBody.innerHTML = left.innerHTML;
 
