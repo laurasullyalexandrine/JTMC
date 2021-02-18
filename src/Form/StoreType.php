@@ -27,9 +27,9 @@ class StoreType extends AbstractType {
             ->add('picture', FileType::class, [
                 'label' => 'Photo du commerce',
                 'mapped' => False,
-                'requied' => False,
-                'constraint' => [
-                    new File (['maxsize' => '2M'
+                'required' => False,
+                'constraints' => [
+                    new File (['maxSize' => '2M'
                     ])
                 ],
             ])

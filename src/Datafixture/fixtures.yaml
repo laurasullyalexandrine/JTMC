@@ -1,6 +1,6 @@
 App\Entity\CommercialService:
     service_{1..5}:
-        servicetype: '<word()>' 
+        servicetype: <'['RELAI RAPIDE', 'RELAI']'> 
 App\Entity\InformationPayment:
     payment_{1..5}: 
         paymentTypes: '<creditCardType()>'
