@@ -1,15 +1,15 @@
 App\Entity\CommercialService:
     service_{1..5}:
-        servicetype (unique): '<word()>' 
+        servicetype: '<word()>' 
 App\Entity\InformationPayment:
     payment_{1..5}: 
-        paymentTypes (unique): '<creditCardType()>'
+        paymentTypes: '<creditCardType()>'
 App\Entity\Store:
     store_{1..5}:
         store_activity (unique): '<word()>'
         picture: '<image()>'
         name: '<company()>'
-        siret (unique): '<isbn14()>'
+        siret (unique): '<isbn13()>'
         address: '<address()>'
         road_number: '<buildingNumber()>'
         postal_code: '<postcode()>'
