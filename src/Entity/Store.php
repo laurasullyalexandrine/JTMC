@@ -57,6 +57,11 @@ class Store
     /**
      * @ORM\Column(type="string", length=255)
      */
+    private $city;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $email;
 
     /**
@@ -70,9 +75,9 @@ class Store
     private $website;
 
     /**
-     * @ORM\Column(type="json")
+     * @ORM\Column(type="string", length=255)
      */
-    private $open_days = [];
+    private $open_days;
 
     /**
      * @ORM\Column(type="integer")
@@ -159,6 +164,17 @@ class Store
         return $this;
     }
 
+    public function getRoadNumber(): ?int
+    {
+        return $this->road_number;
+    }
+
+    public function setRoadNumber(int $road_number): self
+    {
+        $this->road_number = $road_number;
+
+        return $this;
+    }
     public function getAddress(): ?string
     {
         return $this->address;
@@ -171,18 +187,6 @@ class Store
         return $this;
     }
 
-    public function getRoadNumber(): ?int
-    {
-        return $this->road_number;
-    }
-
-    public function setRoadNumber(int $road_number): self
-    {
-        $this->road_number = $road_number;
-
-        return $this;
-    }
-
     public function getPostalCode(): ?int
     {
         return $this->postal_code;
@@ -191,6 +195,18 @@ class Store
     public function setPostalCode(int $postal_code): self
     {
         $this->postal_code = $postal_code;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(string $city): self
+    {
+        $this->city = $city;
 
         return $this;
     }
@@ -231,12 +247,12 @@ class Store
         return $this;
     }
 
-    public function getOpenDays(): ?array
+    public function getOpenDays(): ?string
     {
         return $this->open_days;
     }
 
-    public function setOpenDays(array $open_days): self
+    public function setOpenDays(?string $open_days): self
     {
         $this->open_days = $open_days;
 

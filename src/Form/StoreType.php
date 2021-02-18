@@ -40,25 +40,37 @@ class StoreType extends AbstractType {
                 ],
             ])
             ->add('siret', IntegerType::class, [
-                'label' => 'Numéro de siret du commerce',
+                'label' => 'Numéro de siret',
+                'constraints' => [
+                    new NotBlank,
+                ],
+            ])
+            ->add('road_number', IntegerType::class, [
+                'label' => 'Numéro de rue',
                 'constraints' => [
                     new NotBlank,
                 ],
             ])
             ->add('address', null, [
-                'label' => 'Adresse du commerce',
+                'label' => 'Adresse',
                 'constraints' => [
                     new NotBlank,
                 ],
             ])
             ->add('postal_code', IntegerType::class, [
-                'label' => 'Code postal du commerce',
+                'label' => 'Code postal',
                 'constraints' => [
                     new NotBlank,
                 ],
             ])
+            ->add('city', null, [
+                'label' => 'ville',
+                'constraints' => [
+                    new NotBlank,
+               ],
+            ])
             ->add('email', EmailType::class, [
-                'label' => 'Email du commerce',
+                'label' => 'Email',
                 'constraints' => [
                     new NotBlank,
                 ],
@@ -72,7 +84,7 @@ class StoreType extends AbstractType {
             ->add('website', null, [
                 'label' => 'Site web du commerce',
             ])
-                // A vérifier
+                //A vérifier
             ->add('open_days', null, [
                 'label' => 'Jours ouverture du commerce',
                 'constraints' => [
