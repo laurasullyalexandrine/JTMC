@@ -40,14 +40,14 @@ class Store
     private $siret;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $address;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $road_number;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $address;
 
     /**
      * @ORM\Column(type="integer")
