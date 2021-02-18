@@ -12,57 +12,114 @@
         {% endblock %}
     </head>
     <body>
-        <header class="header-nav">
-            <!--Block logo-->
-            <div class="logo">
-            <!--Logo for the sreen desktop-->
-            <a href="{{ path('home') }}"class="logo-link">
-            <img class="logo-web" src="../images/logo_jtmc_v2.png" alt="logo_jtmc">
-            <!--Small logo for the sreen mobile-->
-            <img class="logo-mobile" src="../images/logo_jtmc_small_v2.png" alt="logo_jtmc">
-            </a>
-            <a class ="title-link" href="{{ path('home') }}"><h1 class="title">j'trouve mon commerçant</h1></a>
-            </div>
+        <body>
+  <header class="header-nav">
+    <!--Block logo-->
+    <div class="logo">
+       <!--Logo for the sreen desktop-->
+      <a class="logo-link" href="{{'home'}}" >
+        <img class="logo-web" src="images/logo_jtmc_v2.png" width="120" alt="logo_jtmc">
+      <!--Small logo for the sreen mobile-->
+      <img class="logo-mobile" src="images/logo_jtmc_small_v2.png" alt="logo_jtmc">
+      </a>
+      <a class ="title-link" href="{{'home'}}"><h1 class="title">j'trouve mon commerçant</h1></a>
+    </div>
 
-            <div class="slogan-nav">
-            <!--Block slogan-->
-            <p class="slogan">Service de géolocalisation, qui vous permet de retrouver en quelques cliques votre commerce local !</p>
-            
-            <!--Block navigation-->
-            <nav class="header-nav-top">
-            <ul class="header-nav-top-list">
-                <li class="header-nav-top-item">
-                <a class="active header-nav-top-link" href="{{ path('home') }}">accueil</a>
-                </li>
-                <li class="header-nav-top-item">
-                <a class="header-nav-top-link" href="#" >ville</a>
-                </li>
-                <li class="header-nav-top-item">
-                <a class="header-nav-top-link" href="#">connection</a>
+    <div class="slogan-nav">
+     <!--Block slogan-->
+     <p class="slogan">Retrouvez en quelques cliques vos commerces locaux !</p>
+     
+     <!--Block navigation-->
+      <nav class="header-nav-top">
+          <ul class="header-nav-top-list">
+            <li class="header-nav-top-item">
+              <a class="active header-nav-top-link" href="index_test_home.html" >accueil</a>
             </li>
             <li class="header-nav-top-item">
-                <a class="header-nav-top-link" href="#">inscription</a>
+              <a class="header-nav-top-link" href="#" >ville</a>
             </li>
-            </ul>
-            </nav> 
-            </div>
-        </header>
+            <li class="header-nav-top-item">
+              <a class="header-nav-top-link" href="#">connection</a>
+          </li>
+          <li class="header-nav-top-item">
+            <a class="header-nav-top-link" href="#">inscription</a>
+          </li>
+          </ul>
+      </nav> 
+    </div>
+  </header>
 
+        <!--Block lateral navigation-->
         <main id="wrapper">
-            <!--Block search menu left responsive-->
-            <button id="hamburger-button">&#9776;</button>
-            <div id="hamburger-sidebar">
-            <div id="hamburger-sidebar-header"></div>
-             <div id="hamburger-sidebar-body"></div>
-            </div>
-            <div id="hamburger-overlay"></div>    
+        <!--Menu Burger-->
+          <button class="toggle_btn">&#9776;</button>
+
+        <!--Block drawer menu-->
+        <aside class="menu nav">
+
+          <form action="POST">
+              <label for="town" class="search-town">Quelle ville ?</label>
+              <input type="text" name="town" id="town" placeholder="Code postal / Ville"/>
+          </form>
+
+        <ul class="menu-search-list">Quel commerce ?
+            <li class="menu-search-item">
+              <a href="#" class="menu-search-link"><img src="https://img.icons8.com/windows/32/000000/bread.png" alt="shop-icon"/>&ensp; boulangerie</a>
+            </li>
+            <li class="menu-search-item">
+              <a href="#" class="menu-search-link"><img src="https://img.icons8.com/windows/32/000000/year-of-pig.png" alt="shop-icon"/>&ensp; boucherie / charcuterie</a>
+            </li>
+            <li class="menu-search-item">
+              <a href="#" class="menu-search-link"><img src="https://img.icons8.com/ios-filled/50/000000/smoking.png" width="30px" alt="shop-icon"/>&ensp; bureau / tabac</a>
+            </li>
+            <li class="menu-search-item">
+              <a href="#" class="menu-search-link"><img src="https://img.icons8.com/windows/32/000000/barbershop.png" alt="shop-icon"/>&ensp; coiffeur</a>
+            </li>
+            <li class="menu-search-item">
+              <a href="#" class="menu-search-link"><img src="https://img.icons8.com/windows/32/000000/shopping-basket.png" alt="shop-icon"/>&ensp; épicerie</a>
+            </li>
+            <li class="menu-search-item">
+              <a href="#" class="menu-search-link"><img src="https://img.icons8.com/windows/32/000000/food-and-wine.png" alt="shop-icon"/>&ensp; fromagerie</a>
+            </li>
+            <li class="menu-search-item">
+              <a href="#" class="menu-search-link"><img src="https://img.icons8.com/windows/32/000000/books--v1.png" alt="shop-icon"/>&ensp; librairie</a>
+            </li>
+            <li class="menu-search-item">
+              <a href="#" class="menu-search-link"><img src="https://img.icons8.com/ios-filled/50/000000/pharmacy-shop.png" width="30px" alt="shop-icon"/>&ensp; pharmacie</a>
+            </li>
+            <li class="menu-search-item">
+              <a href="#" class="menu-search-link"><img src="images/newspaper.png" alt="shop-icon"/>&ensp; presse</a>
+            </li>
+        </ul>
+
+        <ul class="menu-search-list">Service commercial
+          <li class="menu-search-item">
+            <a href="#" class="menu-search-link"><img src="https://img.icons8.com/windows/32/000000/deliver-food.png"/>&ensp; livraison à domicile</a>
+          </li>
+          <li class="menu-search-item">
+            <a href="#" class="menu-search-link"><img src="images/click-and-collect.png" alt="commercial-icon"/>&ensp; click and collect</a>
+          </li>
+          <li class="menu-search-item">
+            <a href="#" class="menu-search-link"><img src="images/phenix.png" alt="commercial-icon"/>&ensp; phenix</a>
+          </li>
+          <li class="menu-search-item">
+            <a href="#" class="menu-search-link"><img src="images/mondial-relais.png" alt="commercial-icon"/>&ensp; mondial relais </a>
+          </li>
+          <li class="menu-search-item">
+            <a href="#" class="menu-search-link"><img src="images/relais-colis.png" alt="commercial-icon"/>&ensp; relais colis</a>
+          </li>
+          <li class="menu-search-item">
+            <a href="#" class="menu-search-link"><img src="images/tgtg.png" alt="commercial-icon"/>&ensp; too good to go</a>
+          </li>
+      </ul>
+      </aside>
 
         {% block body %}{% endblock %}
         </main>
 
-        <footer class="footer-nav-bottom">
-            <a class="footer-nav-bottom-link" href="{{ path('legal-mention') }}">Mentions légales</a>
-            <a class="footer-nav-bottom-link" href="mailto:team@jtmc.fr">Contactez-nous</a>
+        <footer class="footer-nav">
+            <a class="footer-nav-link" href="{{'legal-mention'}}">Mentions légales</a>
+            <a class="footer-nav-link" href="mailto:jtrouvemoncommercant@gmail.com">Contactez-nous</a>
             <p class="footer-nav-made">JTMC made with &#169; by <i>#teamsymfony</i></p>
         </footer>
 

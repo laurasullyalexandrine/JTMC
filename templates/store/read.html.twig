@@ -1,5 +1,36 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<h2>Nom du commerce</h2>
+    <div class="container-store"><img src="images/bakery.jpg" width="800px" height="650px" alt=""></div>
+    
+    <div class="store-information">
+      <h1 class="title-store"><strong>La Margotine</strong></h1>
+
+      <h2 class="subtitle-store"><strong>Boulangerie Pâtisserie</strong></h2>
+
+      <p class="adress-store">27 place du marché</p>
+      <p class="adress-store">91310 Montlhéry</p>
+      <p class="adress-store">Tel : 01 69 01 02 15</p>
+      <p class="adress-store">Tel : 06 15 91 14 38</p>
+      <a class="adress-store-email" href="mailto:demand_sandrine@yahoo.fr">email : demand_sandrine@yahoo.fr</a>
+
+      <div class="opening">
+        <h2 class="subtitle-store"><strong>Jours et horaires d'ouvertures :</strong> </h2>
+        <p class="days-hours">
+        du mercredi au dimanche de 6h30 à 20h
+      </p>
+      </div>
+
+      <div class="information-payment">
+        <h2 class="subtitle-store"><strong>Mode de paiement accepté :</strong> </h2>
+        <p class="mode-payment">Carte bancaire</p>
+        <p class="mode-payment">ticket Restaurant</p>
+        <p class="mode-payment">Chèque déjeuner</p>
+      </div>
+
+      <div class="commercial-service">
+        <h2 class="subtitle-store"><strong>Service commercial proposé :</strong> </h2>
+        <p class="service">Too Good to go</p>
+      </div>
+    </div>
 {% endblock %}
