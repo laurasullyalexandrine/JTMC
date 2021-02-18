@@ -103,6 +103,7 @@ class StoreType extends AbstractType {
                 'constraints' => [
                     new NotBlank,
                 ],
+            
             ])
         ;
     }

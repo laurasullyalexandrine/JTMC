@@ -1,10 +1,9 @@
 {% extends 'base.html.twig' %}
-
 {% block title %} Fiche du commerce {% endblock %}
 
 {% block body %}
 
-<h1>Le commerce</h1>
+<h2>Le commerce {{store.name}}</h2>
 
 <table class="table">
     <tbody>
@@ -41,6 +40,10 @@
             <td>{{ store.postalCode }}</td>
         </tr>
         <tr>
+            <th>City</th>
+            <td>{{ store.city }}</td>
+        </tr>
+        <tr>
             <th>Email</th>
             <td>{{ store.email }}</td>
         </tr>
@@ -54,7 +57,7 @@
         </tr>
         <tr>
             <th>Open_days</th>
-            <td>{{ store.openDays ? store.openDays|json_encode : '' }}</td>
+            <td>{{ store.openDays }}</td>
         </tr>
         <tr>
             <th>Open_hours</th>
@@ -67,9 +70,9 @@
     </tbody>
 </table>
 
-{#<a href="{{ path('store_index') }}">Retour à la liste</a>#}
+<a href="{{ path('store_index') }}">Retour à la liste</a>
 
-{#<a href="{{ path('store_edit', {'id': store.id}) }}">edit</a>#}
+<a href="{{ path('store_edit', {'id': store.id}) }}">Modifier un commerce</a>
 
-{{ include('store/_delete_form.html.twig') }}
+{{ include('store/delete.html.twig') }}
 {% endblock %}

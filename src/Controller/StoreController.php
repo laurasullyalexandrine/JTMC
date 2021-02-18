@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+
 use App\Entity\Store;
 use App\Form\StoreType;
 use App\Repository\StoreRepository;
@@ -63,7 +64,7 @@ class StoreController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="store_edit", methods={"GET, POST"})
+     * @Route("/{id}/edit", name="store_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Store $store): Response
     {
@@ -71,18 +72,18 @@ class StoreController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($store);
-            $em->flush();
+            $this->getDoctrine()->getManager()->flush();
+            
+            $this->addFlash('success', "vous avez modifié votre commerce");
 
             return $this->redirectToRoute('store_index');
         }
 
         return $this->render(
-            'store/new.html.twig',
+            'store/edit.html.twig',
             [
                 'store' => $store,
-                'form' => $form->createView()
+                'form' => $form->createView(),
             ]);
     }
 
@@ -98,6 +99,6 @@ class StoreController extends AbstractController
             $em->flush();
         }
 
-        return $this->redirectToRoute('store index');
+        return $this->redirectToRoute('store_index');
     }
 }

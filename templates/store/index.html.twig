@@ -44,8 +44,8 @@
                 <td>{{ store.openHours }}</td>
                 <td>{{ store.description }}</td>
                 <td>
-                    <a href="{{ path('store_show', {'id': store.id}) }}">show</a>
-                    <a href="{{ path('store_edit', {'id': store.id}) }}">edit</a>
+                <a href="{{ path('store_read', {'id': store.id}) }}">Afficher le commerce</a>
+                <a href="{{ path('store_edit', {'id': store.id}) }}">Modifier le commerce</a>
                 </td>
             </tr>
         {% else %}
@@ -56,5 +56,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('store_create') }}">Créer un commerce</a>
+    <a href= "{{ path('store_create') }}">Créer un commerce</a> 
 {% endblock %}
