@@ -20,7 +20,7 @@ use Symfony\Component\Routing\Annotation\Route;
         }
 
         /**
-         * @Route("/mention", name="legal-mention", methods="GET")
+         * @Route("/mention", name="legal_mention", methods="GET")
          */
         public function mention(): Response
         {
