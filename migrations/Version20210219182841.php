@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210219180024 extends AbstractMigration
+final class Version20210219182841 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -23,7 +23,7 @@ final class Version20210219180024 extends AbstractMigration
         $this->addSql('CREATE TABLE commercial_service (id INT AUTO_INCREMENT NOT NULL, servicetypes LONGTEXT NOT NULL COMMENT \'(DC2Type:array)\', PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE information_payment (id INT AUTO_INCREMENT NOT NULL, payment_types LONGTEXT NOT NULL COMMENT \'(DC2Type:array)\', PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE role (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, role VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE store (id INT AUTO_INCREMENT NOT NULL, user_id INT NOT NULL, store_activity VARCHAR(255) NOT NULL, picture VARCHAR(255) DEFAULT NULL, name VARCHAR(255) NOT NULL, siret INT NOT NULL, road_number INT NOT NULL, address VARCHAR(255) NOT NULL, postal_code INT NOT NULL, city VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, phone INT NOT NULL, website VARCHAR(255) DEFAULT NULL, open_days VARCHAR(255) NOT NULL, open_hours INT NOT NULL, description VARCHAR(255) NOT NULL, INDEX IDX_FF575877A76ED395 (user_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE store (id INT AUTO_INCREMENT NOT NULL, user_id INT NOT NULL, store_activity VARCHAR(255) NOT NULL, picture VARCHAR(255) DEFAULT NULL, name VARCHAR(255) NOT NULL, siret INT NOT NULL, road_number INT NOT NULL, address VARCHAR(255) NOT NULL, postal_code INT NOT NULL, city VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, phone INT NOT NULL, website VARCHAR(255) DEFAULT NULL, open_days VARCHAR(255) NOT NULL, open_hours VARCHAR(255) NOT NULL, description VARCHAR(1000) NOT NULL, INDEX IDX_FF575877A76ED395 (user_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE store_information_payment (store_id INT NOT NULL, information_payment_id INT NOT NULL, INDEX IDX_18B22A32B092A811 (store_id), INDEX IDX_18B22A327CBCDB2 (information_payment_id), PRIMARY KEY(store_id, information_payment_id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE store_commercial_service (store_id INT NOT NULL, commercial_service_id INT NOT NULL, INDEX IDX_F5B197B1B092A811 (store_id), INDEX IDX_F5B197B1F7871AEE (commercial_service_id), PRIMARY KEY(store_id, commercial_service_id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE `user` (id INT AUTO_INCREMENT NOT NULL, role_id INT NOT NULL, email VARCHAR(180) NOT NULL, password VARCHAR(255) NOT NULL, UNIQUE INDEX UNIQ_8D93D649E7927C74 (email), INDEX IDX_8D93D649D60322AC (role_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');

@@ -80,12 +80,12 @@ class Store
     private $open_days;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      */
     private $open_hours;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=1000)
      */
     private $description;
 
@@ -259,12 +259,12 @@ class Store
         return $this;
     }
 
-    public function getOpenHours(): ?int
+    public function getOpenHours(): ?string
     {
         return $this->open_hours;
     }
 
-    public function setOpenHours(int $open_hours): self
+    public function setOpenHours(string $open_hours): self
     {
         $this->open_hours = $open_hours;
 
