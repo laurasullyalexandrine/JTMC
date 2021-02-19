@@ -11,6 +11,33 @@
       }
     </style>
     <script>
+    const mapStyle = [
+  {
+    "featureType": "poi.business",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  }
+]
       // Initialize and add the map
       function initMap() {
         // The location of France
@@ -19,6 +46,7 @@
         const map = new google.maps.Map(document.getElementById("map"), {
           zoom: 7,
           center: France,
+          styles : mapStyle
         });
         // The marker, positioned at France
         const marker = new google.maps.Marker({

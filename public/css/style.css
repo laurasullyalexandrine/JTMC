@@ -148,7 +148,6 @@ text-decoration: none;
 {
     width: 230px;
     display: flex;
-    padding: 4% 2%;
     background: #2c3e50;
     flex-direction: column;
 }
