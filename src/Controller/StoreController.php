@@ -98,7 +98,7 @@ class StoreController extends AbstractController
             $em->remove($store);
             $em->flush();
         }
-
+        
         return $this->redirectToRoute('store_index');
     }
 }
