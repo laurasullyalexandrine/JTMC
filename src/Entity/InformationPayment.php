@@ -2,10 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\InformationPaymentRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=InformationPaymentRepository::class)
@@ -20,18 +20,25 @@ class InformationPayment
     private $id;
 
     /**
+    * @ORM\Column(type="string", length=255)
+    * @Assert\NotBlank()
+    */
+    private $payment_types;
+
+    /**
      * @ORM\ManyToMany(targetEntity=Store::class, mappedBy="InformationPayment")
      */
     private $stores;
 
-   /**
-    * @ORM\Column(type="array")
-    */
-    private $payment_types = [];
 
     public function __construct()
     {
         $this->stores = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->payment_types;
     }
     
     public function getId(): ?int
@@ -39,6 +46,17 @@ class InformationPayment
         return $this->id;
     }
 
+    public function getPaymentTypes(): ?string
+    {
+        return $this->payment_types;
+    }
+
+    public function setPaymenTypes(string $payment_types): self
+    {
+        $this->payment_types = $payment_types;
+
+        return $this;
+    }
 
     /**
      * @return Collection|Store[]
@@ -63,18 +81,6 @@ class InformationPayment
         if ($this->stores->removeElement($store)) {
             $store->removeInformationPayment($this);
         }
-
-        return $this;
-    }
-
-    public function getPayment_types(): ?array
-    {
-        return $this->payment_types;
-    }
-
-    public function setPayment_types(array $payment_types): self
-    {
-        $this->payment_types = $payment_types;
 
         return $this;
     }

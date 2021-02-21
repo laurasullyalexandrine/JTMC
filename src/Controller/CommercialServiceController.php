@@ -8,6 +8,7 @@ use App\Repository\CommercialServiceRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/service")
@@ -28,7 +29,7 @@ class CommercialServiceController extends AbstractController
     /**
      * Create services
      *
-     * @Route("/new", name="service_new", methods={"GET","POST"})
+     * @Route("/new", name="service_new", methods={"GET", "POST"})
      * 
      * @param Request $request
      * @return Response

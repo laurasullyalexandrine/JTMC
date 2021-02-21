@@ -12,6 +12,7 @@ use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FileUpload;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
@@ -179,5 +180,28 @@ class UserController extends AbstractController
         return $this->render('user/moderate.html.twig', [
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * Clear users
+     * 
+     * @Route("/{id}", name="admin_user_delete", methods={"DELETE"})
+     *
+     * @param Request $request
+     * @param User $store
+     * @return Response
+     */
+    public function delete(Request $request, User $user)
+    {
+        if ($this->isCsrfTokenValid('delete'. $user->getId(), $request->request->get('_token')))
+        {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($user);
+            $em->flush();
+
+            $this->addFlash('success', 'L\'utilisateur a été supprimé.');
+        }
+        
+        return $this->redirectToRoute('admin_user_moderate');
     }
 }

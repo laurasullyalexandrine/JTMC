@@ -22,13 +22,13 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
+     * @ORM\Column(type="string", length=254, unique=true)
      */
     private $email;
 
     /**
      * @var string The hashed password
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", length=80)
      */
     private $password;
 
@@ -73,6 +73,8 @@ class User implements UserInterface
 
     public function getSalt()
     {
+        // you *may* need a real salt depending on your encoder
+        // see section on salt below
         return null;
     }
 
