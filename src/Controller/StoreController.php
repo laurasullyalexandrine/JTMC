@@ -14,13 +14,15 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/store")
  */
-
 class StoreController extends AbstractController
 {
 
+    
     /**
-     * @Route("/", name="store_index", methods={"GET"})
-     */
+    *display the list of store
+    *
+    *@Route("/", name="store_index", methods={"GET"})
+    */
     public function index(StoreRepository $storeRepository): Response
     {
         return $this->render('store/index.html.twig', [
@@ -29,8 +31,13 @@ class StoreController extends AbstractController
     }
     
     /**
-     * @Route("/new", name="store_create", methods= {"GET","POST"})
-     */
+    *Created stores
+    *
+    * @Route("/new", name="store_create", methods= {"GET","POST"})
+    *
+    * @param Request $request
+    * @return Response
+    */
     public function create(Request $request): Response
     {
         $store = new Store();
@@ -52,9 +59,14 @@ class StoreController extends AbstractController
         ]);
     }
 
-     /**
-     * @Route("/{id}", name="store_read", methods={"GET"})
-     */
+    /**
+    * Displays stores    
+    *
+    * @Route("/{id}", name="store_read", methods={"GET"})
+    *
+    * @param Store $store
+    * @return Response
+    */
     public function read(Store $store): Response 
     {
         return $this->render('store/read.html.twig', 
@@ -64,7 +76,13 @@ class StoreController extends AbstractController
     }
 
     /**
+     * Modifies Stores
+     * 
      * @Route("/{id}/edit", name="store_edit", methods={"GET", "POST"})
+     *
+     * @param Request $request
+     * @param Store $store
+     * @return Response
      */
     public function edit(Request $request, Store $store): Response
     {
@@ -88,7 +106,14 @@ class StoreController extends AbstractController
     }
 
     /**
+     * Clear stores
+     * 
      * @Route("/{id}", name="store_delete", methods={"DELETE"})
+     *
+     *
+     * @param Request $request
+     * @param Store $store
+     * @return Response
      */
     public function delete(Request $request, Store $store): Response
     {
