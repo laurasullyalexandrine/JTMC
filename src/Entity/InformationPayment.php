@@ -27,7 +27,7 @@ class InformationPayment
    /**
     * @ORM\Column(type="array")
     */
-    private $paymentTypes = [];
+    private $payment_types = [];
 
     public function __construct()
     {
@@ -67,14 +67,14 @@ class InformationPayment
         return $this;
     }
 
-    public function getPaymentTypes(): ?array
+    public function getPayment_types(): ?array
     {
-        return $this->paymentTypes;
+        return $this->payment_types;
     }
 
-    public function setPaymentTypes(array $paymentTypes): self
+    public function setPayment_types(array $payment_types): self
     {
-        $this->paymentTypes = $paymentTypes;
+        $this->payment_types = $payment_types;
 
         return $this;
     }

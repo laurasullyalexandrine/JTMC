@@ -27,7 +27,7 @@ class CommercialService
     /**
      * @ORM\Column(type="array")
      */
-    private $servicetypes = [];
+    private $service_types = [];
 
     public function __construct()
     {
@@ -67,14 +67,14 @@ class CommercialService
         return $this;
     }
 
-    public function getServicetypes(): ?array
+    public function getService_types(): ?array
     {
-        return $this->servicetypes;
+        return $this->service_types;
     }
 
-    public function setServicetypes(array $servicetypes): self
+    public function setService_types(array $service_types): self
     {
-        $this->servicetypes = $servicetypes;
+        $this->service_types = $service_types;
 
         return $this;
     }

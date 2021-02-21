@@ -79,10 +79,9 @@ class UserController extends AbstractController
       *@Route("/edit", name="storekeeper_edit")
       *
       * @param Request $request
-      * @param FileUpload $fileUpload
       * @return void
       */
-    public function edit(Request $request, FileUpload $fileUpload)
+    public function edit(Request $request)
     {
         $user = $this->getUser();
         
@@ -93,7 +92,7 @@ class UserController extends AbstractController
             $em->persist($user);
             $em->flush();
 
-            $this->addFlash('success', 'Votre profil est modifié.');
+            $this->addFlash('success', 'Votre profil a été modifié.');
 
             return $this->redirectToRoute('storekeeper_profile');
         }
@@ -112,20 +111,21 @@ class UserController extends AbstractController
      * @param Request $request
      * @return void
      */
-    public function editPassword(Request $request UserPasswordEncoderInterface $encoder)
+    public function editPassword(Request $request, UserPasswordEncoderInterface $encoder)
     {
         $user = $this->getUser();
 
-        $form = $this->createForm(UserPasswordType::class $user);
+        $form = $this->createForm(UserPasswordType::class, $user);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && form->isValid()){
-            $user-SetPassword($encoder->encodePassword($user, $user->getPassword()));
+        if ($form->isSubmitted() && $form->isValid()) {
 
-            $em = $this-getDoctrine()->getManager();
+            $user->setPassword($encoder->encodePassword($user, $user->getPassword()));
+
+            $em = $this->getDoctrine()->getManager();
             $em->flush();
 
-            $this->addFlash ('success', 'Votre mot de passe est modifié');
+            $this->addFlash ('success', 'Votre mot de passe a été modifié');
 
             return $this->redirectToRoute('storekeeper_profile');
         }
@@ -171,7 +171,7 @@ class UserController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();
 
-            $this->addFlash('success', 'L\'utilisateur est modifié.');
+            $this->addFlash('success', 'L\'utilisateur a été modifié.');
 
             return $this->redirectToRoute('admin_user_moderate', ['id' => $user->getId()]);
         }
