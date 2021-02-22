@@ -2,19 +2,18 @@
 
 namespace App\Form;
 
-use App\Entity\CommercialService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
-class ServiceType extends AbstractType {
+class PayInfoType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('servicetypes', null, [
-                'label' => 'Types de commerces',
+            ->add('payment_type', null, [
+                'label' => 'Types de payements',
                 'constraints' => [
                     new NotBlank()
                 ]
@@ -23,8 +22,8 @@ class ServiceType extends AbstractType {
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults([
-            'data_class' => CommercialService::class,
+       $resolver->setDefaults([
+            'data_class' => PayInfoType::class,
         ]);
     }
 }

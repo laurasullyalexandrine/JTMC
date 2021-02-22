@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Entity;
-
 use App\Repository\StoreRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -103,7 +102,8 @@ class Store
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="stores")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $User;
+    private $user;
+
 
     public function __construct()
     {
@@ -333,12 +333,12 @@ class Store
 
     public function getUser(): ?User
     {
-        return $this->User;
+        return $this->user;
     }
 
-    public function setUser(?User $User): self
+    public function setUser(?User $user): self
     {
-        $this->User = $User;
+        $this->user = $user;
 
         return $this;
     }

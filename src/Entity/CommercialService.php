@@ -2,10 +2,10 @@
 
 namespace App\Entity;
 
+use App\Repository\CommercialServiceRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=CommercialServiceRepository::class)
@@ -20,24 +20,18 @@ class CommercialService
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank()
-     */
-    private $service_types;
-
-    /**
      * @ORM\ManyToMany(targetEntity=Store::class, mappedBy="CommercialService")
      */
     private $stores;
 
+    /**
+     * @ORM\Column(type="array")
+     */
+    private $servicetypes = [];
+
     public function __construct()
     {
-        $this->stores = new ArrayCollection();
-    }
-
-    public function __toString()
-    {
-        return $this->service_types;
+    $this->stores = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -45,17 +39,6 @@ class CommercialService
         return $this->id;
     }
 
-    public function getServiceTypes(): ?string
-    {
-        return $this->service_types;
-    }
-
-    public function setServiceTypes(string $service_types): self
-    {
-        $this->service_types = $service_types;
-
-        return $this;
-    }
     
     /**
      * @return Collection|Store[]
@@ -77,10 +60,21 @@ class CommercialService
 
     public function removeStore(Store $store): self
     {
-        if ($this->stores->contains($store)) {
-            $this->stores->removeElement($store);
+        if ($this->stores->removeElement($store)) {
             $store->removeCommercialService($this);
         }
+
+        return $this;
+    }
+
+    public function getServicetypes(): ?array
+    {
+        return $this->servicetypes;
+    }
+
+    public function setServicetypes(array $servicetypes): self
+    {
+        $this->servicetypes = $servicetypes;
 
         return $this;
     }
