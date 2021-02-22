@@ -10,6 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Service\FileUploader;
+
 
 /**
  * @Route("/store")
@@ -33,21 +35,32 @@ class StoreController extends AbstractController
     /**
     *Created stores
     *
-    * @Route("/new", name="store_create", methods= {"GET","POST"})
+    * @Route("/new", name="store_create", methods= {"GET", "POST"})
     *
     * @param Request $request
     * @return Response
     */
-    public function create(Request $request): Response
+    public function create(Request $request, FileUploader $fileUploader): Response
     {
         $store = new Store();
         $form = $this->createForm(StoreType::class, $store);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $store = $form->getData();
+            $store->setUser($this->getUser());
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($store);
             $em->flush();
+
+            $picture = $form->get('picture')->getData();
+            $fileUploader->moveStorePicture($picture, $store);
+
+            $em->flush();
+
+            $this->addFlash('success', 'Votre commerce a été ajouté');
         
             return $this->redirectToRoute('store_index');
         }
@@ -84,12 +97,16 @@ class StoreController extends AbstractController
      * @param Store $store
      * @return Response
      */
-    public function edit(Request $request, Store $store): Response
+    public function edit(Request $request, Store $store, FileUploader $fileUploader): Response
     {
         $form = $this->createForm(StoreType::class, $store);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $picture = $form->get('picture')->getData();
+            $fileUploader->moveStorePicture($picture, $store);
+
             $this->getDoctrine()->getManager()->flush();
             
             $this->addFlash('success', "vous avez modifié votre commerce");
@@ -108,7 +125,7 @@ class StoreController extends AbstractController
     /**
      * Clear stores
      * 
-     * @Route("/{id}", name="store_delete", methods={"DELETE"})
+     * @Route("/{id}", name="store_delete", methods="DELETE")
      *
      *
      * @param Request $request

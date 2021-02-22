@@ -31,7 +31,7 @@ class StoreType extends AbstractType {
                 'constraints' => [
                     new File (['maxSize' => '2M'
                     ])
-                ],
+                ]
             ])
             ->add('name', null, [
                 'label' => 'Nom du commerce',
