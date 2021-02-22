@@ -42,6 +42,7 @@ class FileUploader
     {
         $pictureName = $this->movePicture($picture, $this->storeFolder, 'store-');
         if ($pictureName !== null) {
+            $store->setPicture($pictureName);
          }
     }
 }

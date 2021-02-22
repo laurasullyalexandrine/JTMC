@@ -30,7 +30,9 @@
             <tr>
                 <td>{{ store.id }}</td>
                 <td>{{ store.storeActivity }}</td>
-                <td>{{ store.picture }}</td>
+                <td>{% if store.picture %}
+                    <img src="{{ asset('uploads/' ~ store.picture ) }}" width="200px" />
+                    {% endif %}</td>
                 <td>{{ store.name }}</td>
                 <td>{{ store.siret }}</td>
                 <td>{{ store.roadNumber }}</td>
