@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Information de payements{% endblock %}
+
+{% block body %}
+    <h1>Information de payements</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ payment.id }}</td>
+            </tr>
+            <tr>
+                <th>Libellé</th>
+                <td>{{ payment.payment_types }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('payment_edit', {'id': payment.id}) }}" class="btn btn-success mr-2">Modifier</a><!-- 
+    --><a href="{{ path('payment_index') }}" class="btn btn-primary">Retour à la liste</a>
+
+    {{ include('payment/delete.html.twig') }}
+{% endblock %}

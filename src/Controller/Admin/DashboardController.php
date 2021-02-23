@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\InformationPayment;
 use App\Entity\Store;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -31,5 +32,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoDashboard('Tableau de bord', 'fa fa-home');
         yield MenuItem::linkToCrud('Commerçant', 'fas fa-user', User::class);
         yield MenuItem::linkToCrud('Commerce', 'fas fa-store', Store::class);
+        yield MenuItem::linkToCrud('Information de payement', 'fas fa-store', InformationPayment::class);
     }
 }

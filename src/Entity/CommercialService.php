@@ -23,7 +23,7 @@ class CommercialService
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      */
-    private $service_types;
+    private $serviceName;
 
     /**
      * @ORM\ManyToMany(targetEntity=Store::class, mappedBy="CommercialService")
@@ -37,7 +37,7 @@ class CommercialService
 
     public function __toString()
     {
-        return $this->service_types;
+        return $this->serviceName;
     }
 
     public function getId(): ?int
@@ -45,14 +45,14 @@ class CommercialService
         return $this->id;
     }
 
-    public function getServiceTypes(): ?string
+    public function getServiceName(): ?string
     {
-        return $this->service_types;
+        return $this->serviceName;
     }
 
-    public function setServiceTypes(string $service_types): self
+    public function setServiceName(string $serviceName): self
     {
-        $this->service_types = $service_types;
+        $this->serviceName = $serviceName;
 
         return $this;
     }

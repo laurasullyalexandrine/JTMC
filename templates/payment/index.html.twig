@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste payements{% endblock %}
+
+{% block body %}
+    <h1>Liste des payements</h1>
+
+    <a href="{{ path('payment_new') }}" class="btn btn-success mb-3">Nouvelle information de payement</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Libellé</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for payment in payments %}
+            <tr>
+                <td>{{ payment.payment_types}}</td>
+                <td>
+                    <a href="{{ path('payment_read', {'id': payment.id}) }}" class="btn btn-sm btn-success">Afficher</a>
+                    <a href="{{ path('payment_edit', {'id': payment.id}) }}" class="btn btn-sm btn-primary">Modifier</a>
+                    <a href="{{ path('payment_delete', {'id': payment.id}) }}" class="btn btn-sm btn-danger">Supprimer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucune informations de payement trouvées.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

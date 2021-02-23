@@ -18,11 +18,11 @@ class InformationPaymentController extends AbstractController
     /**
     *List of payments 
     * 
-    * @Route("/", name="payment_index", methods="GET")
+    * @Route("/", name="payment_index", methods={"GET"})
     */
     public function index(InformationPaymentRepository $payment): Response
     {
-        return $this->render('payment/index.html.twig', ['payment' => $payment->findAll()]);
+        return $this->render('payment/index.html.twig', ['payments' => $payment->findAll()]);
     }
 
     /**
@@ -38,9 +38,10 @@ class InformationPaymentController extends AbstractController
         $payment = new InformationPayment();
 
         $form = $this->createForm(PaymentType::class, $payment);
-        $form->$form->handleRequest($request);
+        $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) { 
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($payment);
             $em->flush();
@@ -60,14 +61,14 @@ class InformationPaymentController extends AbstractController
     /**
      * display of payments
      * 
-     * @Route("/{id}", name="payment_read", methods="GET")
+     * @Route("/{id}", name="payment_read", methods={"GET"})
      *
      * @param Request $request
      * @return Response
      */
     public function read(InformationPayment $payment): Response
     {
-        return $this->render('payment/road.html.twig', ['payment' => $payment]);
+        return $this->render('payment/read.html.twig', ['payments' => $payment]);
     }
 
     /**
@@ -98,7 +99,7 @@ class InformationPaymentController extends AbstractController
     /**
      * Remove payments
      *
-     * @Route("/{id}", name="payment_delete", methods="DELETE")
+     * @Route("/{id}", name="payment_delete", methods={"DELETE"})
      * 
      * @param Request $request
      * @param InformationPayment $payment
