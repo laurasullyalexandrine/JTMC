@@ -4,7 +4,7 @@
 {% block body %}
 
 <h2>Le commerce {{store.name}}</h2>
-
+{{ dump(store) }}
 <table class="table">
     <tbody>
         <tr>
@@ -17,7 +17,7 @@
         </tr>
         <tr>
             <th>Picture</th>
-            <td>{{ store.picture }}</td>
+            <td><img src="{{ asset('uploads/' ~ store.picture ) }}" width="200px" /></td>
         </tr>
         <tr>
             <th>Name</th>
