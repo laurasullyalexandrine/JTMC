@@ -21,7 +21,7 @@ class Store
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $store_activity;
+    private $storeActivity;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -41,7 +41,7 @@ class Store
     /**
      * @ORM\Column(type="integer")
      */
-    private $road_number;
+    private $roadNumber;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -51,7 +51,7 @@ class Store
     /**
      * @ORM\Column(type="integer")
      */
-    private $postal_code;
+    private $postalCode;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -76,12 +76,12 @@ class Store
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $open_days;
+    private $openDays;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $open_hours;
+    private $openHours;
 
     /**
      * @ORM\Column(type="string", length=1000)
@@ -118,12 +118,12 @@ class Store
 
     public function getStoreActivity(): ?string
     {
-        return $this->store_activity;
+        return $this->storeActivity;
     }
 
-    public function setStoreActivity(string $store_activity): self
+    public function setStoreActivity(string $storeActivity): self
     {
-        $this->store_activity = $store_activity;
+        $this->storeActivity = $storeActivity;
 
         return $this;
     }
@@ -166,12 +166,12 @@ class Store
 
     public function getRoadNumber(): ?int
     {
-        return $this->road_number;
+        return $this->roadNumber;
     }
 
-    public function setRoadNumber(int $road_number): self
+    public function setRoadNumber(int $roadNumber): self
     {
-        $this->road_number = $road_number;
+        $this->roadNumber = $roadNumber;
 
         return $this;
     }
@@ -189,12 +189,12 @@ class Store
 
     public function getPostalCode(): ?int
     {
-        return $this->postal_code;
+        return $this->postalCode;
     }
 
-    public function setPostalCode(int $postal_code): self
+    public function setPostalCode(int $postalCode): self
     {
-        $this->postal_code = $postal_code;
+        $this->postalCode = $postalCode;
 
         return $this;
     }
@@ -249,24 +249,24 @@ class Store
 
     public function getOpenDays(): ?string
     {
-        return $this->open_days;
+        return $this->openDays;
     }
 
-    public function setOpenDays(?string $open_days): self
+    public function setOpenDays(?string $openDays): self
     {
-        $this->open_days = $open_days;
+        $this->openDays = $openDays;
 
         return $this;
     }
 
     public function getOpenHours(): ?string
     {
-        return $this->open_hours;
+        return $this->openHours;
     }
 
-    public function setOpenHours(string $open_hours): self
+    public function setOpenHours(string $openHours): self
     {
-        $this->open_hours = $open_hours;
+        $this->openHours = $openHours;
 
         return $this;
     }

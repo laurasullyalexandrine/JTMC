@@ -39,7 +39,8 @@ class RegisterController extends AbstractController
             $user->setPassword($password);
             $this->entityManager->persist($user);
             $this->entityManager->flush();
-
+            return $this->redirectToRoute('app_login');
+            $this->addFlash('succes', 'Bienvenue chez vous');
         }
 
 

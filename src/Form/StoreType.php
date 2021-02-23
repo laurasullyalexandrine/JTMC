@@ -2,12 +2,14 @@
 
 namespace App\Form;
 
-
+use App\Entity\PaymentInformation;
 use App\Entity\Store;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
@@ -104,6 +106,9 @@ class StoreType extends AbstractType {
                     new NotBlank,
                 ],
             
+            ])
+            ->add('submit', SubmitType::class,[
+                'label'=>"Valider",
             ])
         ;
     }

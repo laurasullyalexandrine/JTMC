@@ -8,7 +8,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Activité du magasin</th>
                 <th>Photo du magasin</th>
                 <th>Nom</th>
@@ -28,7 +27,6 @@
         <tbody>
         {% for store in stores %}
             <tr>
-                <td>{{ store.id }}</td>
                 <td>{{ store.storeActivity }}</td>
                 <td><img src="{{ asset('uploads/' ~ store.picture ) }}" width="200px" /></td></td>
                 <td>{{ store.name }}</td>
@@ -45,7 +43,6 @@
                 <td>{{ store.description }}</td>
                 <td>
                 <a href="{{ path('store_read', {'id': store.id}) }}">Afficher le commerce</a>
-                <a href="{{ path('store_edit', {'id': store.id}) }}">Modifier le commerce</a>
                 </td>
             </tr>
         {% else %}
@@ -55,6 +52,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href= "{{ path('store_create') }}">Créer un commerce</a> 
 {% endblock %}

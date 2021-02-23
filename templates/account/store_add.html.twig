@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un commerce - J'Trouve mon commerçant{% endblock %}
+
+{% block body %}
+    <h1>Gérer mes commerces</h1>
+    Bienvenue {{ app.user.firstname }} dans votre compte.</br>
+    <a href="{{ path('account_store')}}">Retour</a>
+    <hr>
+    {{ form(form) }}
+{% endblock %}

@@ -23,7 +23,7 @@ class InformationPayment
     * @ORM\Column(type="string", length=255)
     * @Assert\NotBlank()
     */
-    private $payment_types;
+    private $paymentTypes;
 
     /**
      * @ORM\ManyToMany(targetEntity=Store::class, mappedBy="InformationPayment")
@@ -38,7 +38,7 @@ class InformationPayment
 
     public function __toString()
     {
-        return $this->payment_types;
+        return $this->paymenTypes;
     }
     
     public function getId(): ?int
@@ -48,12 +48,12 @@ class InformationPayment
 
     public function getPaymentTypes(): ?string
     {
-        return $this->payment_types;
+        return $this->paymentTypes;
     }
 
-    public function setPaymenTypes(string $payment_types): self
+    public function setPaymenTypes(string $paymentTypes): self
     {
-        $this->payment_types = $payment_types;
+        $this->paymentTypes = $paymentTypes;
 
         return $this;
     }

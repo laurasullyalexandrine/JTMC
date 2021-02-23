@@ -4,12 +4,9 @@
 {% block body %}
 
 <h2>Le commerce {{store.name}}</h2>
-{{ dump(store) }}
+
 <table class="table">
     <tbody>
-        <tr>
-            <th>Id</th>
-            <td>{{ store.id }}</td>
         </tr>
         <tr>
             <th>Store_activity</th>
@@ -70,9 +67,6 @@
     </tbody>
 </table>
 
-<a href="{{ path('store_index') }}">Retour à la liste</a>
+<a href="{{ path('home') }}">Retour</a>
 
-<a href="{{ path('store_edit', {'id': store.id}) }}">Modifier un commerce</a>
-
-{{ include('store/delete.html.twig') }}
 {% endblock %}
