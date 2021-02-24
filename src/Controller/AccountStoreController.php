@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\CommercialService;
 use App\Entity\Store;
 use App\Form\StoreType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -10,6 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Service\FileUploader;
+
+
 
 class AccountStoreController extends AbstractController
 {
@@ -32,7 +35,7 @@ class AccountStoreController extends AbstractController
     /**
      * @Route("/account/add-store", name="account_store_add")
      */
-    public function add(Request $request, FileUploader $fileUploader): Response
+    public function add(Request $request, FileUploader $fileUploader ): Response
     {
         $store = new Store();
 
@@ -42,7 +45,6 @@ class AccountStoreController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $store->setUser($this->getUser());
-
             $this->entityManager->persist($store);
 
             $picture = $form->get('picture')->getData();

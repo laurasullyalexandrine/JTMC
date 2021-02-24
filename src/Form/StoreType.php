@@ -6,6 +6,7 @@ use App\Entity\PaymentInformation;
 use App\Entity\Store;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -14,17 +15,27 @@ use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\NotBlank;
-
+use Symfony\Component\Form\Extension\Core\Type\ChoiseType;
 class StoreType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('store_activity', null, [
-                'label' => 'Activité du commerce',
-                'attr' => [
-                    'placeholder' => 'Veuillez renseigner l\'activité de votre commerce'
+            ->add('store_activity', ChoiceType::class, [
+                'choices'=>[
+                    'Boulangerie'=>'Boulangerie',
+                    'Boucherie/Charcuterie'=>'Boucherie/Charcuterie',
+                    'Café-bar/Tabac'=>'Café-bar/Tabac',
+                    'Coiffeur'=>'Coiffeur',
+                    'Epicerie'=>'Epicerie',
+                    'Fromagerie'=>'Fromagerie',
+                    'Librairie/Press'=>'Librairie/Presse',
+                    'Pharmacie'=>'Pharmacie',
+                    'Fleuriste'=>'Fleuriste',
+                    'Restaurant'=>'Restaurant',
+                    'Autre'=>'Autre',
                 ],
+                'label' => 'Activité du commerce',
                 'constraints' => [
                     new NotBlank,
                 ],
@@ -33,9 +44,6 @@ class StoreType extends AbstractType {
                 'label' => 'Photo du commerce',
                 'mapped' => False,
                 'required' => False,
-                'attr' => [
-                    'placeholder' => 'Veuillez insérer une image pour représenter votre commerce'
-                ],
                 'constraints' => [
                     new File (['maxSize' => '2M'
                     ])
@@ -44,7 +52,7 @@ class StoreType extends AbstractType {
             ->add('name', null, [
                 'label' => 'Nom du commerce',
                 'attr' => [
-                    'placeholder' => 'Veuillez renseigner le nom de votre commerce'
+                    'placeholder' => 'Ex: O\'fleurs',
                 ],
                 'constraints' => [
                     new NotBlank,
@@ -53,7 +61,7 @@ class StoreType extends AbstractType {
             ->add('siret', IntegerType::class, [
                 'label' => 'Numéro de siret',
                 'attr' => [
-                    'placeholder' => 'Veuillez renseigner le numero SIRET de votre commerce'
+                    'placeholder' => 'Ex: 159357651 48562',
                 ],
                 'constraints' => [
                     new NotBlank,
@@ -62,7 +70,7 @@ class StoreType extends AbstractType {
             ->add('road_number', IntegerType::class, [
                 'label' => 'Numéro de rue',
                 'attr' => [
-                    'placeholder' => 'Veuillez renseigner le numéro de la rue de votre commerce'
+                    'placeholder' => 'Ex: 352',
                 ],
                 'constraints' => [
                     new NotBlank,
@@ -71,7 +79,7 @@ class StoreType extends AbstractType {
             ->add('address', null, [
                 'label' => 'Adresse',
                 'attr' => [
-                    'placeholder' => 'Veuillez renseigner l\'adresse de votre commerce'
+                    'placeholder' => 'Ex: Rue des lilas',
                 ],
                 'constraints' => [
                     new NotBlank,
@@ -80,7 +88,7 @@ class StoreType extends AbstractType {
             ->add('postal_code', IntegerType::class, [
                 'label' => 'Code postal',
                 'attr' => [
-                    'placeholder' => 'Veuillez renseigner le code postal de votre commerce'
+                    'placeholder' => 'Ex: 60700'
                 ],
                 'constraints' => [
                     new NotBlank,
@@ -89,7 +97,7 @@ class StoreType extends AbstractType {
             ->add('city', null, [
                 'label' => 'ville',
                 'attr' => [
-                    'placeholder' => 'Veuillez renseigner la ville de votre commerce'
+                    'placeholder' => 'Ex: Pont Sainte-Maxence'
                 ],
                 'constraints' => [
                     new NotBlank,
@@ -98,7 +106,7 @@ class StoreType extends AbstractType {
             ->add('email', EmailType::class, [
                 'label' => 'Email',
                 'attr' => [
-                    'placeholder' => 'Veuillez renseigner l\'email de votre commerce'
+                    'placeholder' => 'Ex: ofleur@gmail.com',
                 ],
                 'constraints' => [
                     new NotBlank,
@@ -107,7 +115,7 @@ class StoreType extends AbstractType {
             ->add('phone', TelType::class, [
                 'label' => 'Numéro de téléphone du commerce',
                 'attr' => [
-                    'placeholder' => 'Veuillez renseigner le numéro de téléphone de votre commerce'
+                    'placeholder' => 'Ex: 0344531894',
                 ],
                 'constraints' => [
                     new NotBlank,
@@ -116,14 +124,14 @@ class StoreType extends AbstractType {
             ->add('website', null, [
                 'label' => 'Site web du commerce',
                 'attr' => [
-                    'placeholder' => 'Veuillez renseigner l\'URL du site web de votre commerce'
+                    'placeholder' => 'Ex: www.ofleur.com'
                 ]
             ])
                 
             ->add('open_days', null, [
                 'label' => 'Jours ouverture du commerce',
                 'attr' => [
-                    'placeholder' => 'Veuillez renseigner les jours d\'ouvertures de votre commerce'
+                    'placeholder' => 'Ex: '
                 ],
                 'constraints' => [
                     new NotBlank,
@@ -133,7 +141,7 @@ class StoreType extends AbstractType {
             ->add('open_hours', null, [
                 'label' => 'Heures ouverture du commerce',
                 'attr' => [
-                    'placeholder' => 'Veuillez renseigner les heures d\'ouvertures de votre commerce'
+                    'placeholder' => 'Ex: 9h00 - 18h30',
                 ],
                 'constraints' => [
                     new NotBlank,
@@ -142,16 +150,26 @@ class StoreType extends AbstractType {
             ->add('description', null, [
                 'label' => 'Description du commerce',
                 'attr' => [
-                    'placeholder' => 'Veuillez renseigner une description pour votre commerce'
+                    'placeholder' => 'Décrivez les spécialités de votre commerce',
                 ],
                 'constraints' => [
                     new NotBlank,
-                ],
-            
+                ],            
             ])
+
             ->add('submit', SubmitType::class,[
                 'label'=>"Valider",
             ])
+
+            /*->add('Information des moyens de payements', null, [
+                'expanded' => true,
+                'multiple' => true,
+            ])
+
+            ->add('Information des services', null, [
+                'expanded' => true,
+                'multiple' => true,
+            ])*/
         ;
     }
 }
