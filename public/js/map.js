@@ -6,7 +6,8 @@
                 // Il est toujours bien de laisser le lien vers la source des données
                 attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
                 minZoom: 1,
-                maxZoom: 6
+                maxZoom: 20
+       
             }).addTo(carte);
 
             let icone = L.icon(

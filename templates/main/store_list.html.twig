@@ -3,46 +3,46 @@
 {% block title %}La liste des commerces{% endblock %}
 {% block menu %}{% endblock %}
 {% block body %}
-    <h1>La liste des commerces</h1>
+    <h1 class ="list-title">La liste des commerces</h1>
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Activité du magasin</th>
-                <th>Photo du magasin</th>
-                <th>Nom</th>
-                <th>Numéro de siret</th>
-                <th>Numéro de la voie</th>
-                <th>Adresse</th>
-                <th>Code postal</th>
-                <th>Ville</th>
-                <th>E-mail</th>
-                <th>Téléphone</th>
-                <th>Site internet</th>
-                <th>Jour d'ouverture</th>
-                <th>Horraire d'ouverture</th>
-                <th>Descrire votre activité</th>
+            <tr class="head">
+                <th class="list-head">Activité du magasin</th>
+                <th class="list-head">Photo du magasin</th>
+                <th class="list-head">Nom de votre commerce</th>
+                <th class="list-head">Numéro de siret</th>
+                <th class="list-head">Numéro de la voie</th>
+                <th class="list-head">Adresse</th>
+                <th class="list-head">Code postal</th>
+                <th class="list-head">Ville</th>
+                <th class="list-head">e-mail</th>
+                <th class="list-head">Téléphone</th>
+                <th class="list-head">Site internet</th>
+                <th class="list-head">Jour d'ouverture</th>
+                <th class="list-head">Horraire d'ouverture</th>
+                <th class="list-head">Décrire votre activité</th>
             </tr>
         </thead>
         <tbody>
         {% for store in stores %}
             <tr>
-                <td>{{ store.storeActivity }}</td>
-                <td><img src="{{ asset('uploads/' ~ store.picture ) }}" width="200px" /></td></td>
-                <td>{{ store.name }}</td>
-                <td>{{ store.siret }}</td>
-                <td>{{ store.roadNumber }}</td>
-                <td>{{ store.address }}</td>
-                <td>{{ store.postalCode }}</td>
-                <td>{{ store.city }}</td>
-                <td>{{ store.email }}</td>
-                <td>{{ store.phone }}</td>
-                <td>{{ store.website }}</td>
-                <td>{{ store.openDays ? store.openDays|json_encode : '' }}</td>
-                <td>{{ store.openHours }}</td>
-                <td>{{ store.description }}</td>
-                <td>
-                <a href="{{ path('store_read', {'id': store.id}) }}">Afficher le commerce</a>
+                <td class="head-content">{{ store.storeActivity }}</td>
+                <td class="head-content"><img class="list-picture"src="{{ asset('uploads/' ~ store.picture ) }}" width="150px" /></td>
+                <td class="head-content">{{ store.name }}</td>
+                <td class="head-content">{{ store.siret }}</td>
+                <td class="head-content">{{ store.roadNumber }}</td>
+                <td class="head-content">{{ store.address }}</td>
+                <td class="head-content">{{ store.postalCode }}</td>
+                <td class="head-content">{{ store.city }}</td>
+                <td class="head-content">{{ store.email }}</td>
+                <td class="head-content">{{ store.phone }}</td>
+                <td class="head-content">{{ store.website }}</td>
+                <td class="head-content">{{ store.openDays ? store.openDays|json_encode : '' }}</td>
+                <td class="head-content">{{ store.openHours }}</td>
+                <td class="head-content">{{ store.description }}</td>
+                <td class="head-content">
+                <a class="button-display" href="{{ path('store_read', {'id': store.id}) }}">Afficher le commerce</a>
                 </td>
             </tr>
         {% else %}
