@@ -85,6 +85,4 @@ class InformationPayment
 
         return $this;
     }
-
-    
 }
