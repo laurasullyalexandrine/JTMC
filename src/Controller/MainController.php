@@ -26,11 +26,10 @@ class MainController extends AbstractController
         public function map(StoreRepository $storeRepository, SerializerInterface $serializerInterface): Response
         {
             $store = $storeRepository->findAll();
-            var_dump($store);
+            // var_dump($store);
             return $this->json($store, 200, [], [
                 AbstractNormalizer::IGNORED_ATTRIBUTES => [
-                    'user',
-                    'store'
+                        'user'
                 ]
             ]);dump($store);
         }

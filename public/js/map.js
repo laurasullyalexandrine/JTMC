@@ -13,7 +13,8 @@
             {
                 iconUrl: "images/JTMC-picto.png",
                 iconSize: [50,50],
-                iconAnchor: [25, 50]
+                iconAnchor: [20, 50],
+                popupAnchor:[0, -50]
             })
 
             let xmlhttp = new XMLHttpRequest();
@@ -27,17 +28,18 @@
                     if(xmlhttp.status == 200){
                         // On traite les données reçues
                         let donnees = JSON.parse(xmlhttp.responseText)
-                        console.log(donnees[0])
-                        for(i = 0; i < donnees.length; i++)
+                        console.log(donnees)
+                        for(let i = 0 ; i < donnees.length; i++)
                         {
-                            let market = L.marker([donnees[i].latitude, donnees[i].longitude], {icon: icone}).addTo(carte)
-                            market.bindPopup('<h1>'+ donnees[i].name + '</h1>')
+                            let name = donnees[i].name
+                            let marker = L.marker([donnees[i].latitude, donnees[i].longitude], {icon: icone}).addTo(carte)
+                            marker.bindPopup('<h1 class="title">'+ name + '</h1>')
                         }
                     }else{
                         console.log(xmlhttp.statusText);
                     }
                 }
             }
-            xmlhttp.open("GET", "http://localhost:8080/get");
+            xmlhttp.open("GET", "http://0.0.0.0:8080/get");
 
             xmlhttp.send(null);
