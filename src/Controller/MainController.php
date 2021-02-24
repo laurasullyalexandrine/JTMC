@@ -7,18 +7,32 @@ use App\Repository\StoreRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Component\Serializer\SerializerInterface;
 
-
- class MainController extends AbstractController
+class MainController extends AbstractController
     {
-
-
         /**
         * @Route("/", name="home")
         */
         public function homepage (): Response
         {
             return $this->render('main/home.html.twig');
+        }
+
+        /**
+         * @Route("/get", name="api")
+         */
+        public function map(StoreRepository $storeRepository, SerializerInterface $serializerInterface): Response
+        {
+            $store = $storeRepository->findAll();
+            var_dump($store);
+            return $this->json($store, 200, [], [
+                AbstractNormalizer::IGNORED_ATTRIBUTES => [
+                    'user',
+                    'store'
+                ]
+            ]);dump($store);
         }
 
         /**
@@ -42,5 +56,14 @@ use Symfony\Component\Routing\Annotation\Route;
              [
                  'store' => $store,
              ]);
+        }
+
+
+        /**
+        * @Route("/mentions-legales", name="legal_mention")
+        */
+        public function legal (): Response
+        {
+            return $this->render('main/legal_mention.html.twig');
         }
     }
