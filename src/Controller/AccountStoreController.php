@@ -35,8 +35,8 @@ class AccountStoreController extends AbstractController
     public function add(Request $request, FileUploader $fileUploader): Response
     {
         $store = new Store();
-        $form = $this->createForm(StoreType::class, $store);
 
+        $form = $this->createForm(StoreType::class, $store);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -64,6 +64,7 @@ class AccountStoreController extends AbstractController
     public function edit(Request $request, $id, FileUploader $fileUploader): Response
     {
         $store = $this->entityManager->getRepository(Store::class)->findOneById($id);
+     
 
         if (!$store || $store->getUser() != $this->getUser()) {
             return $this->redirectToRoute('account_store');
@@ -118,5 +119,4 @@ class AccountStoreController extends AbstractController
             'store' => $store
         ]);
     }
-
 }

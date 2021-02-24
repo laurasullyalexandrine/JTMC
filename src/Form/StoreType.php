@@ -86,14 +86,14 @@ class StoreType extends AbstractType {
             ->add('website', null, [
                 'label' => 'Site web du commerce',
             ])
-                //A vérifier
+                
             ->add('open_days', null, [
                 'label' => 'Jours ouverture du commerce',
                 'constraints' => [
                     new NotBlank,
                 ],
             ])
-                // A vérifier
+               
             ->add('open_hours', null, [
                 'label' => 'Heures ouverture du commerce',
                 'constraints' => [
