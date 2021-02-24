@@ -38,7 +38,7 @@ class InformationPayment
 
     public function __toString()
     {
-        return $this->paymenTypes;
+        return $this->paymentTypes;
     }
     
     public function getId(): ?int
@@ -51,7 +51,7 @@ class InformationPayment
         return $this->paymentTypes;
     }
 
-    public function setPaymenTypes(string $paymentTypes): self
+    public function setPaymentTypes(string $paymentTypes): self
     {
         $this->paymentTypes = $paymentTypes;
 
@@ -84,4 +84,6 @@ class InformationPayment
 
         return $this;
     }
+
+    
 }
