@@ -40,11 +40,16 @@ class AccountStoreController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $store->setUser($this->getUser());
+
             $this->entityManager->persist($store);
+
             $picture = $form->get('picture')->getData();
             $fileUploader->moveStorePicture($picture, $store);
+
             $this->entityManager->flush();
+
             return $this->redirectToRoute('account_store');
         }
 
@@ -69,9 +74,12 @@ class AccountStoreController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $picture = $form->get('picture')->getData();
             $fileUploader->moveStorePicture($picture, $store);
+
             $this->entityManager->flush();
+            
             return $this->redirectToRoute('account_store');
         }
 
