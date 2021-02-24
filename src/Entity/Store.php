@@ -15,7 +15,8 @@ class Store
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
+     *
      */
     private $id;
 
@@ -340,7 +341,7 @@ class Store
     public function setUser(?User $user): self
     {
         $this->user = $user;
-
+        
         return $this;
     }
 }
