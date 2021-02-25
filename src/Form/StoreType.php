@@ -3,8 +3,9 @@
 namespace App\Form;
 
 use App\Entity\CommercialService;
-use App\Entity\PaymentInformation;
+use App\Entity\InformationPayment;
 use App\Entity\Store;
+use phpDocumentor\Reflection\PseudoTypes\True_;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -25,17 +26,17 @@ class StoreType extends AbstractType {
         $builder
             ->add('store_activity', ChoiceType::class, [
                 'choices'=>[
-                    'Boulangerie'=>'Boulangerie',
-                    'Boucherie/Charcuterie'=>'Boucherie/Charcuterie',
-                    'Café-bar/Tabac'=>'Café-bar/Tabac',
-                    'Coiffeur'=>'Coiffeur',
-                    'Epicerie'=>'Epicerie',
-                    'Fromagerie'=>'Fromagerie',
-                    'Librairie/Press'=>'Librairie/Presse',
-                    'Pharmacie'=>'Pharmacie',
-                    'Fleuriste'=>'Fleuriste',
-                    'Restaurant'=>'Restaurant',
-                    'Autre'=>'Autre',
+                    'Boulangerie'=>'boulangerie',
+                    'Boucherie/Charcuterie'=>'boucherie-charcuterie',
+                    'Café-bar/Tabac'=>'cafe-bar-tabac',
+                    'Coiffeur'=>'coiffeur',
+                    'Epicerie'=>'epicerie',
+                    'Fromagerie'=>'fromagerie',
+                    'Librairie/Press'=>'librairie-presse',
+                    'Pharmacie'=>'pharmacie',
+                    'Fleuriste'=>'fleuriste',
+                    'Restaurant'=>'restaurant',
+                    'Autre'=>'autre',
                 ],
                 'label' => 'Activité du commerce',
                 'constraints' => [
@@ -159,19 +160,20 @@ class StoreType extends AbstractType {
                 ],            
             ])
 
+            ->add('InformationPayment', EntityType::class, [
+                'expanded' => true,
+                'multiple' => true,
+                'class' => InformationPayment::class
+            ])
+
+            ->add('CommercialService', EntityType::class, [
+                'expanded' => true,
+                'multiple' => true,
+                'class' => CommercialService::class
+            ])
+
             ->add('submit', SubmitType::class,[
                 'label'=>"Valider",
-            ])
-
-            ->add('InformationPayment', null, [
-                'expanded' => true,
-                'multiple' => true,
-            ])
-
-            ->add('CommercialService', null, [
-                'expanded' => true,
-                'multiple' => true,
-            ])
-        ;
+            ]);
     }
 }
