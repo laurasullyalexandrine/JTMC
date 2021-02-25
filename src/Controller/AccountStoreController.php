@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
+Use App\Entity\InformationPayment;
 use App\Entity\CommercialService;
 use App\Entity\Store;
 use App\Form\StoreType;

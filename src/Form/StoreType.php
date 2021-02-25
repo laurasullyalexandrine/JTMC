@@ -1,10 +1,11 @@
 <?php
-
+​
 namespace App\Form;
-
-use App\Entity\PaymentInformation;
+​
+use App\Entity\CommercialService;
+use App\Entity\InformationPayment;
 use App\Entity\Store;
-use App\Service\Geoloc;
+use phpDocumentor\Reflection\PseudoTypes\True_;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -17,32 +18,25 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\ChoiseType;
-use Symfony\Component\Form\FormEvents;
-use Symfony\Component\Form\FormEvent;
-
+​
 class StoreType extends AbstractType {
-
-    private $geoloc;
-    public function __construct(Geoloc $geoloc){
-        $this->geoloc = $geoloc;
-    }
+​
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->addEventListener(FormEvents::PRE_SUBMIT,[$this,"onPreSubmit"])
             ->add('store_activity', ChoiceType::class, [
                 'choices'=>[
-                    'Boulangerie'=>'Boulangerie',
-                    'Boucherie/Charcuterie'=>'Boucherie/Charcuterie',
-                    'Café-bar/Tabac'=>'Café-bar/Tabac',
-                    'Coiffeur'=>'Coiffeur',
-                    'Epicerie'=>'Epicerie',
-                    'Fromagerie'=>'Fromagerie',
-                    'Librairie/Press'=>'Librairie/Presse',
-                    'Pharmacie'=>'Pharmacie',
-                    'Fleuriste'=>'Fleuriste',
-                    'Restaurant'=>'Restaurant',
-                    'Autre'=>'Autre',
+                    'Boulangerie'=>'boulangerie',
+                    'Boucherie/Charcuterie'=>'boucherie-charcuterie',
+                    'Café-bar/Tabac'=>'cafe-bar-tabac',
+                    'Coiffeur'=>'coiffeur',
+                    'Epicerie'=>'epicerie',
+                    'Fromagerie'=>'fromagerie',
+                    'Librairie/Press'=>'librairie-presse',
+                    'Pharmacie'=>'pharmacie',
+                    'Fleuriste'=>'fleuriste',
+                    'Restaurant'=>'restaurant',
+                    'Autre'=>'autre',
                 ],
                 'label' => 'Activité du commerce',
                 'constraints' => [
@@ -165,34 +159,20 @@ class StoreType extends AbstractType {
                     new NotBlank,
                 ],            
             ])
-
+​
+            ->add('InformationPayment', EntityType::class, [
+                'expanded' => true,
+                'multiple' => true,
+                'class' => InformationPayment::class
+            ])
+​
+            ->add('CommercialService', EntityType::class, [
+                'expanded' => true,
+                'multiple' => true,
+                'class' => CommercialService::class
+            ])
+​
             ->add('submit', SubmitType::class,[
                 'label'=>"Valider",
-            ])
-
-            /*->add('Information des moyens de payements', null, [
-                'expanded' => true,
-                'multiple' => true,
-            ])
-
-            ->add('Information des services', null, [
-                'expanded' => true,
-                'multiple' => true,
-            ])*/
-        ;
+            ]);
     }
-    public function onPreSubmit(FormEvent $event){
-        $form =  $event->getForm();
-        $data = $event->getData();
-        $coordinates = $this->geoloc->getCoordinates($data);
-
-        $form->add('latitude',null);
-        $data['latitude'] = $coordinates['lat'];
-        $form->add('longitude',null);
-        $data['longitude'] = $coordinates['long'];
-        $data['city'] = $coordinates['city'];
-        $data['address'] = $coordinates['street'];
-        
-        $event->setData($data);
-    }
-}
