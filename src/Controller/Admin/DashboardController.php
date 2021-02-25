@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\CommercialService;
 use App\Entity\InformationPayment;
+use App\Entity\OpenDays;
 use App\Entity\Store;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -36,5 +37,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Commerce', 'fas fa-store', Store::class);
         yield MenuItem::linkToCrud('Information payements', 'fas fa-euro-sign', InformationPayment::class);
         yield MenuItem::linkToCrud('Information services', 'fas fa-concierge-bell', CommercialService::class);
+        yield MenuItem::linkToCrud('Jour d\'ouverture', 'fas fa-concierge-bell', OpenDays::class);
     }
 }

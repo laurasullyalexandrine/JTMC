@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
-use App\Entity\PaymentInformation;
+use App\Entity\CommercialService;
+use App\Entity\InformationPayment;
+use App\Entity\OpenDays;
 use App\Entity\Store;
 use App\Service\Geoloc;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -137,14 +139,10 @@ class StoreType extends AbstractType {
                 ]
             ])
                 
-            ->add('open_days', null, [
-                'label' => 'Jours ouverture du commerce',
-                'attr' => [
-                    'placeholder' => 'Ex: '
-                ],
-                'constraints' => [
-                    new NotBlank,
-                ],
+            ->add('getOpenDays', EntityType::class, [
+                'expanded' => true,
+                'multiple' => true,
+                'class' => OpenDays::class
             ])
                
             ->add('open_hours', null, [
@@ -171,13 +169,12 @@ class StoreType extends AbstractType {
                 'multiple' => true,
                 'class' => InformationPayment::class
             ])
-​
+
             ->add('CommercialService', EntityType::class, [
                 'expanded' => true,
                 'multiple' => true,
                 'class' => CommercialService::class
             ])
-
 
             ->add('submit', SubmitType::class,[
                 'label'=>"Valider",

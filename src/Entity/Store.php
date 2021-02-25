@@ -76,7 +76,7 @@ class Store
     private $website;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToMany(targetEntity=OpenDays::class, mappedBy="Store")
      */
     private $openDays;
 
@@ -121,6 +121,7 @@ class Store
     {
         $this->InformationPayment = new ArrayCollection();
         $this->CommercialService = new ArrayCollection();
+        $this->openDays = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -259,17 +260,6 @@ class Store
         return $this;
     }
 
-    public function getOpenDays(): ?string
-    {
-        return $this->openDays;
-    }
-
-    public function setOpenDays(?string $openDays): self
-    {
-        $this->openDays = $openDays;
-
-        return $this;
-    }
 
     public function getOpenHours(): ?string
     {
@@ -291,6 +281,42 @@ class Store
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+        
+        return $this;
+    }
+
+    public function getLatitude(): ?string
+    {
+        return $this->latitude;
+    }
+
+    public function setLatitude(?string $latitude): self
+    {
+        $this->latitude = $latitude;
+
+        return $this;
+    }
+
+    public function getLongitude(): ?string
+    {
+        return $this->longitude;
+    }
+
+    public function setLongitude(?string $longitude): self
+    {
+        $this->longitude = $longitude;
 
         return $this;
     }
@@ -343,39 +369,31 @@ class Store
         return $this;
     }
 
-    public function getUser(): ?User
+    /**
+     * @return Collection|OpenDays[]
+     */
+    public function getOpenDays(): Collection
     {
-        return $this->user;
+        return $this->openDays;
     }
 
-    public function setUser(?User $user): self
+    public function addOpenDay(OpenDays $openDay): self
     {
-        $this->user = $user;
-        
-        return $this;
-    }
-
-    public function getLatitude(): ?string
-    {
-        return $this->latitude;
-    }
-
-    public function setLatitude(?string $latitude): self
-    {
-        $this->latitude = $latitude;
+        if (!$this->openDays->contains($openDay)) {
+            $this->openDays[] = $openDay;
+            $openDay->addStore($this);
+        }
 
         return $this;
     }
 
-    public function getLongitude(): ?string
+    public function removeOpenDay(OpenDays $openDay): self
     {
-        return $this->longitude;
-    }
-
-    public function setLongitude(?string $longitude): self
-    {
-        $this->longitude = $longitude;
+        if ($this->openDays->removeElement($openDay)) {
+            $openDay->removeStore($this);
+        }
 
         return $this;
     }
+
 }
