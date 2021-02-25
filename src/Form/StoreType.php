@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\CommercialService;
 use App\Entity\PaymentInformation;
 use App\Entity\Store;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -16,6 +17,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\ChoiseType;
+
 class StoreType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -161,15 +163,15 @@ class StoreType extends AbstractType {
                 'label'=>"Valider",
             ])
 
-            /*->add('Information des moyens de payements', null, [
+            ->add('InformationPayment', null, [
                 'expanded' => true,
                 'multiple' => true,
             ])
 
-            ->add('Information des services', null, [
+            ->add('CommercialService', null, [
                 'expanded' => true,
                 'multiple' => true,
-            ])*/
+            ])
         ;
     }
 }
