@@ -34,17 +34,17 @@ class StoreType extends AbstractType {
             ->addEventListener(FormEvents::PRE_SUBMIT,[$this,"onPreSubmit"])
             ->add('store_activity', ChoiceType::class, [
                 'choices'=>[
-                    'Boulangerie'=>'Boulangerie',
-                    'Boucherie/Charcuterie'=>'Boucherie/Charcuterie',
-                    'Café-bar/Tabac'=>'Café-bar/Tabac',
-                    'Coiffeur'=>'Coiffeur',
-                    'Epicerie'=>'Epicerie',
-                    'Fromagerie'=>'Fromagerie',
-                    'Librairie/Press'=>'Librairie/Presse',
-                    'Pharmacie'=>'Pharmacie',
-                    'Fleuriste'=>'Fleuriste',
-                    'Restaurant'=>'Restaurant',
-                    'Autre'=>'Autre',
+                    'Boulangerie'=>'boulangerie',
+                    'Boucherie/Charcuterie'=>'boucherie-charcuterie',
+                    'Café-bar/Tabac'=>'cafe-bar-tabac',
+                    'Coiffeur'=>'coiffeur',
+                    'Epicerie'=>'epicerie',
+                    'Fromagerie'=>'fromagerie',
+                    'Librairie/Press'=>'librairie-presse',
+                    'Pharmacie'=>'pharmacie',
+                    'Fleuriste'=>'fleuriste',
+                    'Restaurant'=>'restaurant',
+                    'Autre'=>'autre',
                 ],
                 'label' => 'Activité du commerce',
                 'constraints' => [
@@ -154,15 +154,6 @@ class StoreType extends AbstractType {
                     new NotBlank,
                 ],
             ])
-            ->add('description', null, [
-                'label' => 'Description du commerce',
-                'attr' => [
-                    'placeholder' => 'Décrivez les spécialités de votre commerce',
-                ],
-                'constraints' => [
-                    new NotBlank,
-                ],            
-            ])
             
             ->add('InformationPayment', EntityType::class, [
                 'expanded' => true,
@@ -176,10 +167,19 @@ class StoreType extends AbstractType {
                 'class' => CommercialService::class
             ])
 
+            ->add('description', null, [
+                'label' => 'Description du commerce',
+                'attr' => [
+                    'placeholder' => 'Décrivez les spécialités de votre commerce',
+                ],
+                'constraints' => [
+                    new NotBlank,
+                ],            
+            ])
+
             ->add('submit', SubmitType::class,[
                 'label'=>"Valider",
             ])
-
         ;
     }
     public function onPreSubmit(FormEvent $event){

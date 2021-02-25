@@ -114,13 +114,17 @@ class AccountStoreController extends AbstractController
     public function read($id): Response
     {
         $store = $this->entityManager->getRepository(Store::class)->findOneById($id);
-
+        dd($store);
+        //$informationPayment = $store->getInformationPayment();
+        //$commercialService = $store->getCommercialService();
         if (!$store || $store->getUser() != $this->getUser()) {
             return $this->redirectToRoute('account_store');
         }
 
         return $this->render('account/store_show.html.twig', [
-            'store' => $store
+            'store' => $store,
+            'payment' => $informationPayment,
+            'service' => $commercialService
         ]);
     }
 }

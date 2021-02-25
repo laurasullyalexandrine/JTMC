@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\CommercialService;
+use App\Entity\InformationPayment;
 use App\Entity\Store;
 use App\Repository\StoreRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -46,7 +48,10 @@ class MainController extends AbstractController
             $store = $storeRepository->findByFilter($session);
             return $this->json($store, 200, [], [
                 AbstractNormalizer::IGNORED_ATTRIBUTES => [
-                        'user'
+                        'user',
+                        'openDays',
+                        'InformationPayment',
+                        'CommercialService',
                 ]
             ]);
         }

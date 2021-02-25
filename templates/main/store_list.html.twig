@@ -38,8 +38,17 @@
                 <td class="head-content">{{ store.email }}</td>
                 <td class="head-content">{{ store.phone }}</td>
                 <td class="head-content">{{ store.website }}</td>
-                <td class="head-content">{{ store.openDays ? store.openDays|json_encode : '' }}</td>
+                {#{% for day in days %}
+                <td class="head-content">{{ store.days }}</td>
+                {% endfor %}#}
                 <td class="head-content">{{ store.openHours }}</td>
+                {#{% for payment in payment %}
+                <td class="payment">{{payment.paymentTypes}}</td>
+                {% endfor %}#}
+                {#{% for service in service %}
+                <tr class="service">{{service.serviceTypes}}</tr>
+                {% endfor %}#}
+
                 <td class="head-content">{{ store.description }}</td>
                 <td class="head-content">
                 <a class="button-display" href="{{ path('store_read', {'id': store.id}) }}">Afficher le commerce</a>
