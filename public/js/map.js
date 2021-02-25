@@ -33,8 +33,9 @@
                         for(let i = 0 ; i < donnees.length; i++)
                         {
                             let name = donnees[i].name
+                            let id = donnees[i].id
                             let marker = L.marker([donnees[i].latitude, donnees[i].longitude], {icon: icone}).addTo(carte)
-                            marker.bindPopup('<h1 class="title">'+ name + '</h1>')
+                            marker.bindPopup('<h1 class="title">'+ name + '</h1><a href="http://0.0.0.0:8080/store/read/"'+id+'>Voir le commerce</a>')
                         }
                     }else{
                         console.log(xmlhttp.statusText);
@@ -42,5 +43,4 @@
                 }
             }
             xmlhttp.open("GET", "http://0.0.0.0:8080/get");
-
             xmlhttp.send(null);

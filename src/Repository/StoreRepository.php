@@ -19,22 +19,26 @@ class StoreRepository extends ServiceEntityRepository
         parent::__construct($registry, Store::class);
     }
 
-    // /**
-    //  * @return Store[] Returns an array of Store objects
-    //  */
-    /*
-    public function findByExampleField($value)
+   
+    public function findByFilter($session)
     {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('s.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
+        $cityZip = $session->get('zip-city');
+        $filter = $session->get('filter');
+        $qb = $this->createQueryBuilder('s');
+        if($filter !== null){
+            $qb->andWhere("s.storeActivity = :filter")
+            ->setParameter('filter', $filter);
+        }
+        if($cityZip !== null){
+            $qb->andWhere("s.city = :cityZip")
+            ->orWhere("s.postalCode = :cityZip ")
+            ->setParameter('cityZip', $cityZip);
+        } 
+          return  $qb->getQuery()
             ->getResult()
         ;
     }
-    */
+  
 
     /*
     public function findOneBySomeField($value): ?Store

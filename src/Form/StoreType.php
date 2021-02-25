@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\PaymentInformation;
 use App\Entity\Store;
+use App\Service\Geoloc;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -16,11 +17,19 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\ChoiseType;
+use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Form\FormEvent;
+
 class StoreType extends AbstractType {
 
+    private $geoloc;
+    public function __construct(Geoloc $geoloc){
+        $this->geoloc = $geoloc;
+    }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->addEventListener(FormEvents::PRE_SUBMIT,[$this,"onPreSubmit"])
             ->add('store_activity', ChoiceType::class, [
                 'choices'=>[
                     'Boulangerie'=>'Boulangerie',
@@ -171,5 +180,19 @@ class StoreType extends AbstractType {
                 'multiple' => true,
             ])*/
         ;
+    }
+    public function onPreSubmit(FormEvent $event){
+        $form =  $event->getForm();
+        $data = $event->getData();
+        $coordinates = $this->geoloc->getCoordinates($data);
+
+        $form->add('latitude',null);
+        $data['latitude'] = $coordinates['lat'];
+        $form->add('longitude',null);
+        $data['longitude'] = $coordinates['long'];
+        $data['city'] = $coordinates['city'];
+        $data['address'] = $coordinates['street'];
+        
+        $event->setData($data);
     }
 }

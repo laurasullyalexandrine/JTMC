@@ -6,6 +6,8 @@ use App\Entity\Store;
 use App\Repository\StoreRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
@@ -15,23 +17,38 @@ class MainController extends AbstractController
         /**
         * @Route("/", name="home")
         */
-        public function homepage (): Response
+        public function homepage (Request $request,SessionInterface $session): Response
         {
+
+           $filter = $request->query->get('filter');
+           $reset = $request->query->get('reset');
+           if($request->getMethod() === Request::METHOD_POST){
+                $session->set('zip-city',$request->request->get('city'));
+           }
+           if($filter){
+               $session->set('filter',$filter);
+           }
+           if($reset){
+            $session->remove('filter');
+            $session->remove('zip-city');
+            
+            return $this->redirectToRoute('home');
+           }
             return $this->render('main/home.html.twig');
         }
 
         /**
          * @Route("/get", name="api")
          */
-        public function map(StoreRepository $storeRepository, SerializerInterface $serializerInterface): Response
+        public function map(StoreRepository $storeRepository,SessionInterface $session): Response
         {
-            $store = $storeRepository->findAll();
-            // var_dump($store);
+           
+            $store = $storeRepository->findByFilter($session);
             return $this->json($store, 200, [], [
                 AbstractNormalizer::IGNORED_ATTRIBUTES => [
                         'user'
                 ]
-            ]);dump($store);
+            ]);
         }
 
         /**
@@ -45,7 +62,6 @@ class MainController extends AbstractController
             ]);
         }
 
-
         /** 
         * @Route("/{id}", name="store_read", requirements={"id": "\d+"})
         */
@@ -56,7 +72,6 @@ class MainController extends AbstractController
                  'store' => $store,
              ]);
         }
-
 
         /**
         * @Route("/mentions-legales", name="legal_mention")
