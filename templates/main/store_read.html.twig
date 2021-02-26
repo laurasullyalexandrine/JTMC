@@ -36,7 +36,7 @@
       <div class="information-payment">
         <h2 class="subtitle-store"><strong>Mode de paiement accepté :</strong> </h2>
         
-        {% for payments in store.InfomationPayment %}
+        {% for payments in store.InformationPayment %}
         <p class="payment">
         {{payments}}
         </p>
@@ -47,13 +47,14 @@
       <div class="commercial-service">
         <h2 class="subtitle-store"><strong>Service commercial proposé :</strong> </h2>
         
-        {% for services in store.InformationService %}
+        {% for services in store.CommercialService %}
         <p class="service">
         {{services}}
         </p>
         {% endfor %}
 
       </div>
+      <h2 class="subtitle-store"><strong>Description du commerce :</strong> </h2>
       <div class="description">{{store.description}}</div>
     </div>
      <a class="button-back" href="{{ path('home') }}">Retour</a>
