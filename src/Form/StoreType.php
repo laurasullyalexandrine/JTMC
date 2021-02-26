@@ -34,15 +34,14 @@ class StoreType extends AbstractType {
             ->addEventListener(FormEvents::PRE_SUBMIT,[$this,"onPreSubmit"])
             ->add('store_activity', ChoiceType::class, [
                 'choices'=>[
-                    'Boulangerie'=>'boulangerie',
                     'Boucherie/Charcuterie'=>'boucherie-charcuterie',
+                    'Boulangerie'=>'boulangerie',
                     'Café-bar/Tabac'=>'cafe-bar-tabac',
                     'Coiffeur'=>'coiffeur',
                     'Epicerie'=>'epicerie',
-                    'Fromagerie'=>'fromagerie',
+                    'Fleuriste'=>'fleuriste',
                     'Librairie/Press'=>'librairie-presse',
                     'Pharmacie'=>'pharmacie',
-                    'Fleuriste'=>'fleuriste',
                     'Restaurant'=>'restaurant',
                     'Autre'=>'autre',
                 ],
