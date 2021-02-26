@@ -21,6 +21,8 @@
                 <th class="list-head">Site internet</th>
                 <th class="list-head">Jour d'ouverture</th>
                 <th class="list-head">Horraire d'ouverture</th>
+                <th class="list-head">Information de paiement</th>
+                <th class="list-head">Service commerciale</th>
                 <th class="list-head">Décrire votre activité</th>
             </tr>
         </thead>
@@ -38,16 +40,16 @@
                 <td class="head-content">{{ store.email }}</td>
                 <td class="head-content">{{ store.phone }}</td>
                 <td class="head-content">{{ store.website }}</td>
-                {#{% for day in days %}
-                <td class="head-content">{{ store.days }}</td>
-                {% endfor %}#}
+                {% for days in store.OpenDays %}
+                <td class="head-content">{{ days }}</td>
+                {% endfor %}
                 <td class="head-content">{{ store.openHours }}</td>
-                {#{% for payment in payment %}
-                <td class="payment">{{payment.paymentTypes}}</td>
-                {% endfor %}#}
-                {#{% for service in service %}
-                <tr class="service">{{service.serviceTypes}}</tr>
-                {% endfor %}#}
+                {% for payments in store.informationPayment %}
+                <td class="head_content">{{ payments }}</td>
+                {% endfor %}
+                {% for services in store.commercialService %}
+                <tr class="head-content">{{ services }}</tr>
+                {% endfor %}
 
                 <td class="head-content">{{ store.description }}</td>
                 <td class="head-content">

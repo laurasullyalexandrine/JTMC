@@ -30,7 +30,7 @@ class Geoloc {
         $data['lat'] = $result->geometry->coordinates[1];
         $data['long']= $result->geometry->coordinates[0];
         $data['city']= $result->properties->city;
-        //$data['street']= $result->properties->street;
+        $data['street']= $result->properties->street;
         return ($data);
     }
 }

@@ -27,7 +27,7 @@ class OpenDays
     private $days;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Store::class, inversedBy="openDays")
+     * @ORM\ManyToMany(targetEntity=Store::class, mappedBy="openDays")
      */
     private $Store;
 

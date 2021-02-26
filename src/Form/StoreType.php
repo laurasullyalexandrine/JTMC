@@ -183,7 +183,7 @@ class StoreType extends AbstractType {
         ;
     }
     public function onPreSubmit(FormEvent $event){
-        $form =  $event->getForm();
+        $form = $event->getForm();
         $data = $event->getData();
         $coordinates = $this->geoloc->getCoordinates($data);
 

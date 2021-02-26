@@ -3,9 +3,12 @@
 {% block title %}Ajouter un commerce - J'Trouve mon commerçant{% endblock %}
 {% block menu %}{% endblock %}
 {% block body %}
-    <h1>Gérer mes commerces</h1>
-    Bienvenue {{ app.user.firstname }} dans votre compte.</br>
-    <a href="{{ path('account_store')}}">Retour</a>
-    <hr>
+
+
+<div class="container-account">
+    <h1 class="title-account">Gérer mes commerces<a class="nav-account-link" href="{{ path('account_store')}}">Retour</a></h1>
+       <p class="paraph-account"> Bienvenue <span class="user-account">{{ app.user.firstname }} </span>sur votre compte.</p></br>
+
     {{ form(form) }}
+</div>
 {% endblock %}

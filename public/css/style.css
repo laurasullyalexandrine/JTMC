@@ -1,6 +1,6 @@
 body 
 {
-    color: white;
+    color: #fff;
     background-color: #2c3e50;
 }
 /* ----- Top navigation ----- */
@@ -45,8 +45,6 @@ body
 {
     display: flex;
     height: 150px;
-    color: #fff;
-    
     background: #2c3e50;
 }
 
@@ -81,9 +79,10 @@ body
     margin: 15px; 
 }
 
-.header-nav-top-link
+.header-nav-top-link,
+.link-account
 {
-    color: white;
+    color: #fff;
     padding: 5px 15px;
     border-radius: 3px;
 }
@@ -91,6 +90,12 @@ body
 a.active, .header-nav-top-link:hover
 {
     transition: .3s;
+    background: #20bf6b;
+}
+
+a.link-account:hover
+{
+
     background: #20bf6b;
 }
 
@@ -107,7 +112,7 @@ text-decoration: none;
 .toggle_btn
 {
     top: 50px;
-    padding: 1%;
+    padding: 0.4%;
     z-index: 10;
     border: none;
     cursor: pointer;
@@ -119,11 +124,11 @@ text-decoration: none;
 
 .toggle_btn span:after
 {   
+    left: 0;
+    top: 10px;
     content:'';
     height: 3px;
     width: 100%;
-    top: 10px;
-    left: 0;
     position: absolute;
     background-color: #20bf6b;
 }
@@ -136,7 +141,7 @@ text-decoration: none;
 
 .nav_open
 {
-    margin-left: -230px;
+    margin-left: -250px;
     transition-duration: 0.5s;
 }
 
@@ -144,18 +149,18 @@ text-decoration: none;
 
 .submit
 {
-    margin: 0;
+    left: 50px;
     border: 0;
-    padding: 0;
+    padding-right: 1%;
     cursor: pointer;
     color: #20bf6b;
     background: none;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .menu
 {
-    width: 230px;
+    width: 250px;
     display: flex;
     flex-direction: column;
 }
@@ -163,7 +168,7 @@ text-decoration: none;
 .search-city,.menu-search-list
 {
     color: #20bf6b;
-    font-size: 0.8em;
+    font-size: 0.9em;
 }
 
 .menu-search-list
@@ -177,6 +182,7 @@ text-decoration: none;
 {   
     width: 100vh;
     padding: 0.5%;
+    
 }
 
 .menu-search-link
@@ -186,10 +192,6 @@ text-decoration: none;
     text-decoration: none;
 }
 
-form
-{
-    padding-bottom: 2%;
-}
 
 input
 {
@@ -206,12 +208,6 @@ input
     flex-direction: row;
 }
 
-#map
-{
-    width: 100%;
-    height: 100%;
-    box-shadow: 0px 4px 4px #1c1a19;
-}
 
 /* ----- Mentions legals -----*/
 
@@ -263,41 +259,7 @@ input
     width: 100%;
 }
 
-/* ----- footer link -----*/
 
-.footer-nav
-{
-    width: 100%;
-    height: 60px;
-    position: static;
-    padding-top: 1%;
-    text-align: center;
-    background-color: #2c3e50;
-}
-
-.footer-nav-link
-{
-    font-size: 0.9em;
-    color: white;
-    padding-right: 15px;
-    text-decoration: none;
-}
-
-a.footer-nav-link:hover
-{
-    color: #20bf6b;
-}
-
-a.menu-search-link:hover
-{
-    color: #20bf6b;
-}
-
-.footer-nav-made
-{   
-    font-size: 0.7em;
-    padding-top: 0.5%;
-}
 
 /* ----- Stores informations -----*/
 
@@ -384,7 +346,146 @@ tr
 {
     font-size: 0.8em;
 }
-/* ----- Naviguation communes -----*/
+
+/* ----- Acccount -----*/
+
+.container-account
+{
+    margin-top: 3%;
+    text-align: center;
+}
+
+.title-account
+{
+    color: #20bf6b;
+    font-size: 1.9em;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.user-account
+{
+    color: white;
+    font-weight: bolder;
+}
+
+.link-account
+{
+    color: white;
+
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+a.link-account:hover
+{
+    background: #20bf6b;
+}
+
+.paraph-account
+{
+    padding: 1%;
+    font-size: 1.1em;
+}
+
+.container-card
+{
+    display: flex;
+    margin: 35px;
+    justify-content: center;
+}
+
+.card
+{
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #1c1a19;
+    box-shadow: 0px 0px 4px #1c1a19;
+}
+
+.card-content
+{
+    margin: 5px;
+    padding: 5px;
+}
+
+.card-text
+{
+    font-size: 1em;
+}
+
+.card-title
+{
+    font-size: 1.1em;
+    color: #4cd137;
+    font-weight: bolder;
+}
+
+
+.card-link-account
+{
+
+    color: white;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+a.card-link-account:hover
+{
+    color: #20bf6b;
+}
+
+.nav-account-link
+{
+    font-size: 0.8em;
+    color: white;
+    margin-left: 30px;
+    text-decoration: none;
+}
+
+a.nav-account-link:hover
+{
+    color: #20bf6b;
+}
+
+/* ----- footer link -----*/
+
+.footer-nav
+{
+    width: 100%;
+    height: 100px;
+    padding-top: 1%;
+    text-align: center;
+    background-color: #2c3e50;
+}
+
+.footer-nav-link
+{
+    font-size: 0.9em;
+    color: white;
+    padding-right: 15px;
+    text-decoration: none;
+}
+
+a.footer-nav-link:hover
+{
+    color: #20bf6b;
+}
+
+a.menu-search-link:hover
+{
+    color: #20bf6b;
+}
+
+.footer-nav-made
+{   
+    font-size: 0.7em;
+    padding-top: 0.5%;
+}
+
+/* ----- Common navigation -----*/
 
 .button-back
 {
@@ -446,6 +547,30 @@ td
     box-shadow: 0px 0px 4px #1c1a19;
 }
 
+/* ----- Map -----*/
+
+#map
+{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 4px 4px #1c1a19;
+}
+
+.popup-title
+{
+    color:#2c3e50;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.popup-link
+{
+    color: black;
+    text-decoration: none;
+
+}
+
 
 /* ----- @media queries -----*/
 
@@ -476,7 +601,7 @@ td
     }
 }
 
-@media (max-width:800px)
+@media (max-width:900px)
 {
     .slogan
     {

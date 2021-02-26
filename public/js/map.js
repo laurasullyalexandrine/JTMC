@@ -28,9 +28,9 @@
               for (let i = 0; i < donnees.length; i++) {
                   let name = donnees[i].name
                   let id = donnees[i].id
+                  let picture = donnees[i].picture
                   let marker = L.marker([donnees[i].latitude, donnees[i].longitude], { icon: icone }).addTo(carte)
-                  marker.bindPopup('<h1 class="title">' + name + '</h1><a href="http://0.0.0.0:8080/' + id + '/">Voir le commerce</a>')
-                  console.log(marker)
+                  marker.bindPopup('<h1 class="popup-title">' + name + '</h1> <img src="uploads/' + picture + '" width="100px"/><br><a class="popup-link" href="http://0.0.0.0:8080/' + id + '/">Voir le commerce</a>')
               }
           } else {
               console.log(xmlhttp.statusText);

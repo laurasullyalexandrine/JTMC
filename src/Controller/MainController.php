@@ -5,6 +5,9 @@ namespace App\Controller;
 use App\Entity\CommercialService;
 use App\Entity\InformationPayment;
 use App\Entity\Store;
+use App\Repository\CommercialServiceRepository;
+use App\Repository\InformationPaymentRepository;
+use App\Repository\OpenDaysRepository;
 use App\Repository\StoreRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -72,10 +75,12 @@ class MainController extends AbstractController
         */
         public function show(Store $store): Response 
         {
-             return $this->render('main/store_read.html.twig', 
+
+            return $this->render('main/store_read.html.twig',
+            
              [
                  'store' => $store,
-             ]);
+            ]);
         }
 
         /**

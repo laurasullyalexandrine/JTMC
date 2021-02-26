@@ -3,27 +3,34 @@
 {% block title %}Mes commerces - J'Trouve mon commerçant{% endblock %}
 {% block menu %}{% endblock %}
 {% block body %}
-    <a href="{{ path('account_store_add')}}" class="btn btn-info btn-sm float-right">Ajouter un commerce</a>
-    <h1>Mes commerces</h1>
-    Bienvenue {{ app.user.firstname }} dans votre compte.</br>
-    C'est dans cet espace que vous allez pouvoir gérer vos commerces.
-    <a href="{{ path('account')}}">Retour</a>
-    <hr>
+
+<div class="container-account">
+   
+    <p class="paraph-account"> Bienvenue <span class="user-account">{{ app.user.firstname }} </span>sur votre compte.</p></br>
+    <h1 class="title-account">Mes commerces <a class="nav-account-link" href="{{ path('account_store_add')}}" class="btn btn-info btn-sm float-right">Ajouter un commerce</a> <a class="nav-account-link" href="{{ path('account')}}">Retour</a></h1>
+    <p class="paraph-account">C'est dans cet espace que vous allez pouvoir gérer vos commerces.</p> 
+   
+
     {% if app.user.stores|length == 0 %}
-    Vous n'avez pas encore ajouté de commerce dans votre compte. Veuillez <a href="{{ path('account_store_add')}}">cliquer ici</a>
+     <p class="paraph-account">Vous n'avez pas encore ajouté de commerce dans votre compte. Veuillez <a href="{{ path('account_store_add')}}">cliquer ici</a></p>
     {% else %}
-    <div class="row">
-    {% for stores in  app.user.stores %}
-    <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-        <div class="card-body">
-        <h5 class="card-title">{{ stores.name }}</h5>
-        <p class="card-text">{{ stores.address }}</p>
-        <a href="{{ path('account_store_edit', { 'id' : stores.id }) }}">Modifier</a> | <a href="{{ path('account_store_delete', { 'id' : stores.id }) }}">Supprimer</a> | <a href="{{ path('account_store_show', { 'id' : stores.id }) }}">Afficher</a>
-    </div>
-    </div>
-    </div>
+
+    <div class="container-card">
+        {% for stores in  app.user.stores %}
+        <div class="card">
+                <div class="card-content">
+                    <h5 class="card-title">{{ stores.name }}</h5><br>
+                    <p class="card-text">{{ stores.address }}</p>
+                </div>
+                <div class="card-link">
+                    <a class="card-link-account" href="{{ path('account_store_edit', { 'id' : stores.id }) }}">Modifier</a>  
+                    <a class="card-link-account" href="{{ path('account_store_delete', { 'id' : stores.id }) }}">Supprimer</a>  
+                    <a class="card-link-account" href="{{ path('account_store_show', { 'id' : stores.id }) }}">Afficher</a></p>
+                </div>
+        </div>
     {% endfor %}
     </div>
     {% endif %}
+
+</div>
 {% endblock %}

@@ -76,7 +76,7 @@ class Store
     private $website;
 
     /**
-     * @ORM\ManyToMany(targetEntity=OpenDays::class, mappedBy="Store")
+     * @ORM\ManyToMany(targetEntity=OpenDays::class, inversedBy="store")
      */
     private $openDays;
 

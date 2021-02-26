@@ -22,11 +22,11 @@
       <div class="opening">
         <h2 class="subtitle-store"><strong>Jours et horaires d'ouvertures :</strong> </h2>
        
-        {#{% for day in days %}
+        {% for days in store.OpenDays %}
         <p class="days-hours">
-        {{ store.days }}
+        {{ days }}
         </p>
-        {% endfor %}#}
+        {% endfor %}
 
         <p class="days-hours">
         {{ store.openHours }}
@@ -36,22 +36,22 @@
       <div class="information-payment">
         <h2 class="subtitle-store"><strong>Mode de paiement accepté :</strong> </h2>
         
-        {#{% for payment in payments %}
+        {% for payments in store.InfomationPayment %}
         <p class="payment">
-        {{payment.paymentTypes}}
+        {{payments}}
         </p>
-        {% endfor %}#}
+        {% endfor %}
 
       </div>
 
       <div class="commercial-service">
         <h2 class="subtitle-store"><strong>Service commercial proposé :</strong> </h2>
         
-        {#{% for service in services %}
+        {% for services in store.InformationService %}
         <p class="service">
-        {{service.serviceTypes}}
+        {{services}}
         </p>
-        {% endfor %}#}
+        {% endfor %}
 
       </div>
       <div class="description">{{store.description}}</div>
