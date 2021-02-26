@@ -56,13 +56,25 @@
             <td>{{ store.website }}</td>
         </tr>
         <tr>
-            <th>Open_days</th>
-            {# <td>{{ store.days }}</td> #}
-        </tr>
-        <tr>
             <th>Open_hours</th>
             <td>{{ store.openHours }}</td>
         </tr>
+        <tr>
+            {% for days in store.OpenDays %}
+            <th>Open_days</th>
+            <td>{{ days }}</td>
+            {% endfor %}
+        </tr>
+            {% for payments in store.InformationPayment %}
+            <th>Payment information</th>
+            <td>{{payments}}</td>
+            {% endfor %}
+        <tr>
+        </tr>
+            {% for services in store.CommercialService %}
+            <th>Commercial information</th>
+            <td>{{services}}</td>
+            {% endfor %}
         <tr>
             <th>Description</th>
             <td>{{ store.description }}</td>

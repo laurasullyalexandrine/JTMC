@@ -7,52 +7,51 @@
 
     <table class="table">
         <thead>
-            <tr class="head">
-                <th class="list-head">Activité du magasin</th>
-                <th class="list-head">Photo du magasin</th>
-                <th class="list-head">Nom de votre commerce</th>
-                <th class="list-head">Numéro de siret</th>
-                <th class="list-head">Numéro de la voie</th>
-                <th class="list-head">Adresse</th>
-                <th class="list-head">Code postal</th>
-                <th class="list-head">Ville</th>
-                <th class="list-head">e-mail</th>
-                <th class="list-head">Téléphone</th>
-                <th class="list-head">Site internet</th>
-                <th class="list-head">Jour d'ouverture</th>
-                <th class="list-head">Horraire d'ouverture</th>
-                <th class="list-head">Information de paiement</th>
-                <th class="list-head">Service commerciale</th>
-                <th class="list-head">Décrire votre activité</th>
+            <tr class="">
+                <th class="">Activité du magasin</th>
+                <th class="">Photo du magasin</th>
+                <th class="">Nom de votre commerce</th>
+                <th class="">Numéro de siret</th>
+                <th class="">Numéro de la voie</th>
+                <th class="">Adresse</th>
+                <th class="">Code postal</th>
+                <th class="">Ville</th>
+                <th class="">e-mail</th>
+                <th class="">Téléphone</th>
+                <th class="">Site internet</th>
+                <th class="">Jour d'ouverture</th>
+                <th class="">Horraire d'ouverture</th>
+                <th class="">Information de paiement</th>
+                <th class="">Service commerciale</th>
+                <th class="">Décrire votre activité</th>
             </tr>
         </thead>
         <tbody>
         {% for store in stores %}
             <tr>
-                <td class="head-content">{{ store.storeActivity }}</td>
-                <td class="head-content"><img class="list-picture"src="{{ asset('uploads/' ~ store.picture ) }}" width="150px" /></td>
-                <td class="head-content">{{ store.name }}</td>
-                <td class="head-content">{{ store.siret }}</td>
-                <td class="head-content">{{ store.roadNumber }}</td>
-                <td class="head-content">{{ store.address }}</td>
-                <td class="head-content">{{ store.postalCode }}</td>
-                <td class="head-content">{{ store.city }}</td>
-                <td class="head-content">{{ store.email }}</td>
-                <td class="head-content">{{ store.phone }}</td>
-                <td class="head-content">{{ store.website }}</td>
+                <td class="">{{ store.storeActivity }}</td>
+                <td class=""><img class="list-picture"src="{{ asset('uploads/' ~ store.picture ) }}" width="150px" /></td>
+                <td class="">{{ store.name }}</td>
+                <td class="">{{ store.siret }}</td>
+                <td class="">{{ store.roadNumber }}</td>
+                <td class="">{{ store.address }}</td>
+                <td class="">{{ store.postalCode }}</td>
+                <td class="">{{ store.city }}</td>
+                <td class="">{{ store.email }}</td>
+                <td class="">{{ store.phone }}</td>
+                <td class="">{{ store.website }}</td>
                 {% for days in store.OpenDays %}
-                <td class="head-content">{{ days }}</td>
+                <td class="">{{ days }}</td>
                 {% endfor %}
-                <td class="head-content">{{ store.openHours }}</td>
+                <td class="">{{ store.openHours }}</td>
                 {% for payments in store.informationPayment %}
-                <td class="head_content">{{ payments }}</td>
+                <td class="">{{ payments }}</td>
                 {% endfor %}
-                {% for services in store.commercialService %}
-                <tr class="head-content">{{ services }}</tr>
-                {% endfor %}
-
-                <td class="head-content">{{ store.description }}</td>
-                <td class="head-content">
+                {% for services in store.CommercialService %}
+                <td class="">{{ services }}</td>
+                {% endfor %}                
+                <td class="">{{ store.description }}</td>
+                <td class="">
                 <a class="button-display" href="{{ path('store_read', {'id': store.id}) }}">Afficher le commerce</a>
                 </td>
             </tr>
