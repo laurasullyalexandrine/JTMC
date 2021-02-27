@@ -7,23 +7,25 @@
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-
-    <h1 class="h3 mb-3 font-weight-normal">Merci de vous connecter</h1>
-    <label for="inputEmail">Votre email</label>
+<div class="container-account">
+    <h1 class="title-account">Merci de vous connecter</h1>
+    <label for="inputEmail">Votre email : </label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Votre email" required autofocus>
-    <label for="inputPassword">Votre mot de passe</label>
+    
+    <label for="inputPassword">Votre mot de passe : </label>
     <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Votre mot de passe" required>
-
+    <button class="submit-log" type="submit">
+        Se connecter
+    </button>
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}">
         <div class="checkbox mb-3">
             <label>
-                <input type="checkbox" name="_remember_me"> Remember me
+                <input type="checkbox" name="_remember_me"> Se souvenir de moi
             </label>
         </div>
     <br>
-    <button class="btn btn-lg btn-primary" type="submit">
-        Se connecter
-    </button>
+
 </form>
+</div>
 {% endblock %}

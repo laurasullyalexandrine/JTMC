@@ -4,9 +4,19 @@
 {% block menu %}{% endblock %}
 
 {% block body %}
-<h1>Inscription</h1>
 
-{{ form(form) }}
+<div class="container-account">
+ <h1 class="title-account">Inscription</h1>
 
- 
+                {{ form_start(form) }}
+
+                {{ form_errors(form) }}
+<br>
+
+{{ form_row(form.firstname) }} 
+{{ form_row(form.lastname) }}
+{{ form_row(form.email) }}
+{{ form_row(form.password) }}
+{{ form_end(form) }}
+ </div>
 {% endblock %}

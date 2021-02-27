@@ -3,7 +3,7 @@ body
     color: #fff;
     background-color: #2c3e50;
 }
-/* ----- Top navigation ----- */
+/* --------------- Haeder navigation ---------------*/
 
 .logo
 {
@@ -107,7 +107,7 @@ padding-bottom: 3px;
 text-decoration: none;
 }
 
-/* ----- Responsive button -----*/
+/* --------------- Button responsive ---------------*/
 
 .toggle_btn
 {
@@ -145,7 +145,7 @@ text-decoration: none;
     transition-duration: 0.5s;
 }
 
-/* ----- Left search -----*/
+/* --------------- Left menu ---------------*/
 
 .submit
 {
@@ -209,7 +209,7 @@ input
 }
 
 
-/* ----- Mentions legals -----*/
+/* --------------- Legals mentions ---------------*/
 
 .space
 {
@@ -261,7 +261,7 @@ input
 
 
 
-/* ----- Stores informations -----*/
+/* --------------- Store _ Acccount---------------*/
 
 .container-store
 {
@@ -342,17 +342,101 @@ input
     padding: 0.5em;
 }
 
-tr
+
+.container-register-store-head
 {
-    font-size: 0.8em;
+   text-align: center;
+
 }
 
-/* ----- Acccount -----*/
+
+.register-store-paraph
+{
+    padding: 1%;
+    font-size: 1.1em;
+}
+
+.container-register-store
+{
+    margin-top: 1%;
+    margin-left: 5%;
+}
+
+.title-register-store
+{
+    color: #20bf6b;
+    font-size: 1.9em;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+}
+
+.content-one,
+.content-two,
+.content-three
+{
+    display: flex;
+    justify-content: center;
+}
+
+.form-register-store-content-one,
+.form-register-store-content-two
+{
+    width: 31%;
+    margin: 2%;
+}
+
+.form-register-store-content
+{
+    width: 31%;
+    margin: 2%;
+    display: flex;
+}
+
+
+.foo-form-bold,
+.foo-form
+{
+    font-weight: bold;
+}
+
+.foo_widget
+{
+    padding: 2%;
+}
+
+.foo_description
+{
+    width: 300px;
+    height: 50px;
+}
+
+.form-error
+{
+    color: #ff0000;
+}
+
+.foo-form
+{
+    color: #4cd137;
+}
+
+.submit-register-store
+{
+    border: 0;
+    padding: 0.5%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 5px;
+    background-color: #20bf6b;
+}
 
 .container-account
 {
-    margin-top: 3%;
+    height: 100vh;
+    margin-top: 7%;
     text-align: center;
+    
 }
 
 .title-account
@@ -368,6 +452,7 @@ tr
 {
     color: white;
     font-weight: bolder;
+    text-transform: uppercase;
 }
 
 .link-account
@@ -423,11 +508,10 @@ a.link-account:hover
     font-weight: bolder;
 }
 
-
 .card-link-account
 {
 
-    color: white;
+    color: #fff;
     font-size: 0.9em;
     text-decoration: none;
 }
@@ -440,7 +524,7 @@ a.card-link-account:hover
 .nav-account-link
 {
     font-size: 0.8em;
-    color: white;
+    color: #fff;
     margin-left: 30px;
     text-decoration: none;
 }
@@ -450,12 +534,40 @@ a.nav-account-link:hover
     color: #20bf6b;
 }
 
-/* ----- footer link -----*/
+.nav-account-here
+{
+    font-weight: bold;
+    color: #20bf6b;
+    text-decoration: none;
+}
+
+a.nav-account-here:hover
+{
+    color: #fff;
+}
+
+input
+{
+    padding: 0.5%;
+}
+
+.submit-log
+{
+    left: 50px;
+    border: 0;
+    cursor: pointer;
+    color: #20bf6b;
+    background: none;
+    font-size: 1.1em;
+    padding-right: 1%;
+}
+
+/* --------------- Footer ---------------*/
 
 .footer-nav
 {
     width: 100%;
-    height: 100px;
+    height: 60px;
     padding-top: 1%;
     text-align: center;
     background-color: #2c3e50;
@@ -485,7 +597,31 @@ a.menu-search-link:hover
     padding-top: 0.5%;
 }
 
-/* ----- Common navigation -----*/
+
+/* --------------- Map ---------------*/
+
+#map
+{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 4px 4px #1c1a19;
+}
+
+.popup-title
+{
+    color:#2c3e50;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.popup-link
+{
+    color: black;
+    text-decoration: none;
+}
+
+/* --------------- Nav common ---------------*/
 
 .button-back
 {
@@ -547,32 +683,9 @@ td
     box-shadow: 0px 0px 4px #1c1a19;
 }
 
-/* ----- Map -----*/
-
-#map
-{
-    width: 100%;
-    height: 100%;
-    box-shadow: 0px 4px 4px #1c1a19;
-}
-
-.popup-title
-{
-    color:#2c3e50;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-align: center;
-}
-
-.popup-link
-{
-    color: black;
-    text-decoration: none;
-
-}
 
 
-/* ----- @media queries -----*/
+/* --------------- @media queries ---------------*/
 
 @media (max-width: 1200px)
 {

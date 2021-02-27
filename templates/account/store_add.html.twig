@@ -5,10 +5,55 @@
 {% block body %}
 
 
-<div class="container-account">
-    <h1 class="title-account">Gérer mes commerces<a class="nav-account-link" href="{{ path('account_store')}}">Retour</a></h1>
-       <p class="paraph-account"> Bienvenue <span class="user-account">{{ app.user.firstname }} </span>sur votre compte.</p></br>
+<div class="container-register-store">
 
-    {{ form(form) }}
-</div>
+    <div class="container-register-store-head">
+        <h1 class="title-register-store">Gérer mes commerces<a class="nav-account-link" href="{{ path('account_store')}}">Retour</a></h1>
+        <p class="register-store-paraph"> Bienvenue <span class="user-account">{{ app.user.firstname }} </span>sur votre compte.</p></br>
+            <p class="register-store-paraph"> Merci de renseignez les informations relatives à votre commerce.</p></br>
+
+            <!--Form-->
+                {{ form_start(form) }}
+                <div class="form-error">{{ form_errors(form) }}</div>
+                {{ form_label(form.picture, 'Télécharger la photo de votre commerce', {'label_attr': {'class': 'foo-form'}}) }}{{ form_widget(form.picture) }}
+                {{ form_row(form.store_activity) }}
+    </div>
+                
+                    <div class="content-one">
+                        <div class="form-register-store-content-one">
+                        {{ form_label(form.name, 'Nom de votre commerce :') }} <br> {{ form_widget(form.name, {'attr': {'class': 'foo_widget'}}) }} <br><br>
+                        {{ form_label(form.road_number, 'Numéro de rue :') }} <br> {{ form_widget(form.road_number, {'attr': {'class': 'foo_widget'}}) }} <br><br>
+                        {{ form_label(form.address, 'Nom de rue :') }} <br> {{ form_widget(form.address, {'attr': {'class': 'foo_widget'}}) }} <br><br>
+                        {{ form_label(form.postal_code, 'Code postal :') }} <br> {{ form_widget(form.postal_code, {'attr': {'class': 'foo_widget'}}) }} <br><br>
+                        {{ form_label(form.city, 'Ville :') }} <br> {{ form_widget(form.city, {'attr': {'class': 'foo_widget'}}) }} <br><br>
+                        </div>
+                       
+
+                        <div class="form-register-store-content-one">
+                        {{ form_label(form.phone, 'Téléphone :') }} <br> {{ form_widget(form.phone, {'attr': {'class': 'foo_widget'}}) }} <br><br>
+                        {{ form_label(form.email, 'e-mail :') }} <br> {{ form_widget(form.email, {'attr': {'class': 'foo_widget'}}) }} <br><br>
+                        {{ form_label(form.website, 'Site web :') }} <br> {{ form_widget(form.website, {'attr': {'class': 'foo_widget'}}) }} <br><br>
+                        {{ form_label(form.siret, 'Siret :') }} <br> {{ form_widget(form.siret, {'attr': {'class': 'foo_widget'}}) }} <br><br>
+                        </div>
+                    </div>
+           
+                
+                <div class="content-two">
+                        <div class="form-register-store-content-two">
+                        {{ form_label(form.getOpenDays, 'Jours d\'ouverture :', {'label_attr': {'class': 'foo-form-bold'}}) }}{{ form_widget(form.getOpenDays) }} <br><br>
+                        {{ form_label(form.open_hours, 'Horaires d\'ouverture :', {'label_attr': {'class': 'foo-form-bold'}}) }}{{ form_widget(form.open_hours, {'attr': {'class': 'foo_widget'}}) }} <br><br>
+                        {{ form_label(form.description, 'Description de votre activité :', {'label_attr': {'class': 'foo-form-bold'}}) }}{{ form_widget(form.description, {'attr': {'class': 'foo_description'}}) }} <br><br>
+                </div>
+
+                        <div class="form-register-store-content-two">
+                        {{ form_label(form.InformationPayment, 'Mode de paiement accepté :', {'label_attr': {'class': 'foo-form-bold'}}) }}{{ form_widget(form.InformationPayment) }} <br><br>
+                        {{ form_label(form.CommercialService, 'Service commercial proposé :', {'label_attr': {'class': 'foo-form-bold'}}) }}{{ form_widget(form.CommercialService) }} <br><br>
+                         </div>
+    </div>
+                        <div class="content-three">
+                         <button class="submit-register-store" type="submit">Enregistrer</button>
+                        </div>
+                        
+                        {{ form_end(form) }} 
+
 {% endblock %}

@@ -46,13 +46,13 @@ class StoreType extends AbstractType {
                     'Restaurant'=>'restaurant',
                     'Autre'=>'autre',
                 ],
-                'label' => 'Activité du commerce',
+                'label' => 'Activité du commerce : ',
                 'constraints' => [
                     new NotBlank,
                 ],
             ])
             ->add('picture', FileType::class, [
-                'label' => 'Photo du commerce',
+                'label' => 'Photo de votre commerce :',
                 'mapped' => False,
                 'required' => False,
                 'constraints' => [
@@ -61,7 +61,7 @@ class StoreType extends AbstractType {
                 ]
             ])
             ->add('name', null, [
-                'label' => 'Nom du commerce',
+                'label' => 'Nom de votre commerce :',
                 'attr' => [
                     'placeholder' => 'Ex: O\'fleurs',
                 ],
@@ -70,7 +70,7 @@ class StoreType extends AbstractType {
                 ],
             ])
             ->add('siret', IntegerType::class, [
-                'label' => 'Numéro de siret',
+                'label' => 'Numéro de siret :',
                 'attr' => [
                     'placeholder' => 'Ex: 159357651 48562',
                 ],
@@ -79,7 +79,7 @@ class StoreType extends AbstractType {
                 ],
             ])
             ->add('road_number', IntegerType::class, [
-                'label' => 'Numéro de rue',
+                'label' => 'Numéro de rue :             ',
                 'attr' => [
                     'placeholder' => 'Ex: 352',
                 ],
@@ -88,7 +88,7 @@ class StoreType extends AbstractType {
                 ],
             ])
             ->add('address', null, [
-                'label' => 'Adresse',
+                'label' => 'Nom de rue :',
                 'attr' => [
                     'placeholder' => 'Ex: Rue des lilas',
                 ],
@@ -97,7 +97,7 @@ class StoreType extends AbstractType {
                 ],
             ])
             ->add('postal_code', IntegerType::class, [
-                'label' => 'Code postal',
+                'label' => 'Code postal :',
                 'attr' => [
                     'placeholder' => 'Ex: 60700'
                 ],
@@ -106,7 +106,7 @@ class StoreType extends AbstractType {
                 ],
             ])
             ->add('city', null, [
-                'label' => 'ville',
+                'label' => 'Ville : ',
                 'attr' => [
                     'placeholder' => 'Ex: Pont Sainte-Maxence'
                 ],
@@ -115,7 +115,7 @@ class StoreType extends AbstractType {
                ],
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Email',
+                'label' => 'email :',
                 'attr' => [
                     'placeholder' => 'Ex: ofleur@gmail.com',
                 ],
@@ -124,7 +124,7 @@ class StoreType extends AbstractType {
                 ],
             ])
             ->add('phone', TelType::class, [
-                'label' => 'Numéro de téléphone du commerce',
+                'label' => 'Téléphone :',
                 'attr' => [
                     'placeholder' => 'Ex: 0344531894',
                 ],
@@ -133,20 +133,21 @@ class StoreType extends AbstractType {
                 ],
             ])
             ->add('website', null, [
-                'label' => 'Site web du commerce',
+                'label' => 'Site web :',
                 'attr' => [
                     'placeholder' => 'Ex: www.ofleur.com'
                 ]
             ])
                 
             ->add('getOpenDays', EntityType::class, [
+                'label' => 'Jours d\'ouverture :',
                 'expanded' => true,
                 'multiple' => true,
                 'class' => OpenDays::class
             ])
                
             ->add('open_hours', null, [
-                'label' => 'Heures ouverture du commerce',
+                'label' => 'Horaires d\'ouverture :',
                 'attr' => [
                     'placeholder' => 'Ex: 9h00 - 18h30',
                 ],
@@ -156,19 +157,27 @@ class StoreType extends AbstractType {
             ])
             
             ->add('InformationPayment', EntityType::class, [
+                'label' => 'Mode de paiement accepté :',
+                'attr' => [
+                    'placeholder' => 'Carte bancaire, ticket restaurant etc...',
+                ],
                 'expanded' => true,
                 'multiple' => true,
                 'class' => InformationPayment::class
             ])
 
             ->add('CommercialService', EntityType::class, [
+                'label' => 'Service commercial :',
+                'attr' => [
+                    'placeholder' => 'Too good to go, relais colis etc...',
+                ],
                 'expanded' => true,
                 'multiple' => true,
                 'class' => CommercialService::class
             ])
 
             ->add('description', null, [
-                'label' => 'Description du commerce',
+                'label' => 'Description de votre activité :',
                 'attr' => [
                     'placeholder' => 'Décrivez les spécialités de votre commerce',
                 ],
@@ -177,9 +186,9 @@ class StoreType extends AbstractType {
                 ],            
             ])
 
-            ->add('submit', SubmitType::class,[
-                'label'=>"Valider",
-            ])
+            // ->add('submit', SubmitType::class,[
+            //     'label'=>"Valider",
+            // ])
         ;
     }
     public function onPreSubmit(FormEvent $event){
