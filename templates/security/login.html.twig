@@ -14,9 +14,7 @@
     
     <label for="inputPassword">Votre mot de passe : </label>
     <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Votre mot de passe" required>
-    <button class="submit-log" type="submit">
-        Se connecter
-    </button>
+<button class="submit-register" type="submit">Se connecter</button>
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}">
         <div class="checkbox mb-3">
