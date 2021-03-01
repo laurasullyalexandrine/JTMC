@@ -8,48 +8,37 @@
 <div class="container-register-store">
 
     <div class="container-register-store-head">
-        <h1 class="title-register-store"><img src="/images/store.png" width="50px "alt="icon-store"> &ensp;Gérer mes commerces</h1>
-       <a class="title-account nav-account-link" href="{{ path('account_store')}}">Retour</a>
-            <p class="register-store-paraph"> Merci de renseignez les informations relatives à votre commerce.</p></br>
+        <h1 class="title-register-store"><img src="/images/store.png" width="50px "alt="icon-store"> &ensp;Gérer mes commerces<a class="title-account nav-account-back" href="{{ path('account_store')}}">Retour</a></h1>
+
+            <p class="register-store-paraph"> Merci de renseignez les informations relatives à votre commerce.</p><br>
 
             <!--Form-->
                 {{ form_start(form) }}
                 <div class="form-error">{{ form_errors(form) }}</div>
-                {{ form_label(form.picture, 'Télécharger la photo de votre commerce', {'label_attr': {'class': 'foo-form'}}) }}{{ form_widget(form.picture) }}
-                {{ form_row(form.store_activity) }}
-    </div>
-                
-                    <div class="content-one">
-                        <div class="form-register-store-content-one">
-                        {{ form_label(form.name, 'Nom de votre commerce :') }} <br> {{ form_widget(form.name, {'attr': {'class': 'foo_widget'}}) }} <br><br>
-                        {{ form_label(form.road_number, 'Numéro de rue :') }} <br> {{ form_widget(form.road_number, {'attr': {'class': 'foo_widget'}}) }} <br><br>
-                        {{ form_label(form.address, 'Nom de rue :') }} <br> {{ form_widget(form.address, {'attr': {'class': 'foo_widget'}}) }} <br><br>
-                        {{ form_label(form.postal_code, 'Code postal :') }} <br> {{ form_widget(form.postal_code, {'attr': {'class': 'foo_widget'}}) }} <br><br>
-                        {{ form_label(form.city, 'Ville :') }} <br> {{ form_widget(form.city, {'attr': {'class': 'foo_widget'}}) }} <br><br>
-                        </div>
-                       
-
-                        <div class="form-register-store-content-one">
-                        {{ form_label(form.phone, 'Téléphone :') }} <br> {{ form_widget(form.phone, {'attr': {'class': 'foo_widget'}}) }} <br><br>
-                        {{ form_label(form.email, 'e-mail :') }} <br> {{ form_widget(form.email, {'attr': {'class': 'foo_widget'}}) }} <br><br>
-                        {{ form_label(form.website, 'Site web :') }} <br> {{ form_widget(form.website, {'attr': {'class': 'foo_widget'}}) }} <br><br>
-                        {{ form_label(form.siret, 'Siret :') }} <br> {{ form_widget(form.siret, {'attr': {'class': 'foo_widget'}}) }} <br><br>
-                        </div>
-                    </div>
-           
-                
-                <div class="content-two">
-                        <div class="form-register-store-content-two">
-                        {{ form_label(form.getOpenDays, 'Jours d\'ouverture :', {'label_attr': {'class': 'foo-form-bold'}}) }}{{ form_widget(form.getOpenDays) }} <br><br>
-                        {{ form_label(form.open_hours, 'Horaires d\'ouverture :', {'label_attr': {'class': 'foo-form-bold'}}) }}{{ form_widget(form.open_hours, {'attr': {'class': 'foo_widget'}}) }} <br><br>
-                        {{ form_label(form.description, 'Description de votre activité :', {'label_attr': {'class': 'foo-form-bold'}}) }}{{ form_widget(form.description, {'attr': {'class': 'foo_description'}}) }} <br><br>
+                {{ form_label(form.picture, 'Télécharger la photo de votre commerce', {'label_attr': {'class': 'foo-form'}}) }}{{ form_widget(form.picture) }} 
+                {{ form_row(form.store_activity) }}<br><br>
                 </div>
+                
+                        {{ form_row(form.name, {'label': 'Nom de votre commerce :'}, {'attr': {'class': 'name'}}) }}
+                        {{ form_row(form.road_number, {'label': 'Numéro de rue :'}, {'attr': {'class': 'road_number'}}) }}
+                        {{ form_row(form.address, {'label': 'Nom de rue :'}, {'attr': {'class': 'address'}}) }}
+                        {{ form_row(form.postal_code, {'label': 'code postal :'}, {'attr': {'class': 'postal_code'}}) }}
+                        {{ form_row(form.city, {'label': 'Ville :'}, {'attr': {'class': 'city'}}) }}
+                   
+                        {{ form_row(form.phone, {'label': 'Téléphone :'}, {'attr': {'class': 'phone'}}) }}
+                        {{ form_row(form.email, {'label': 'E-mail :'}, {'attr': {'class': 'email'}}) }}
+                        {{ form_label(form.website, 'Site web :', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.website) }}
+                        {{ form_row(form.siret, {'label': 'Siret :'}, {'attr': {'class': 'siret'}}) }}
+                        
+                        {{ form_label(form.open_hours, 'Horaires d\'ouverture :', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.open_hours) }}
 
-                        <div class="form-register-store-content-two">
-                        {{ form_label(form.InformationPayment, 'Mode de paiement accepté :', {'label_attr': {'class': 'foo-form-bold'}}) }}{{ form_widget(form.InformationPayment) }} <br><br>
-                        {{ form_label(form.CommercialService, 'Service commercial proposé :', {'label_attr': {'class': 'foo-form-bold'}}) }}{{ form_widget(form.CommercialService) }} <br><br>
-                         </div>
-    </div>
+                        <div class="col-form">
+                        {{ form_label(form.getOpenDays, 'Jours d\'ouverture :', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.getOpenDays) }}
+                        {{ form_label(form.InformationPayment, 'Mode de paiement accepté :', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.InformationPayment) }}
+                        {{ form_label(form.CommercialService, 'Service commercial proposé :', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.CommercialService) }}
+                        </div>
+
+                        {{ form_row(form.description, {'label': 'Description de votre activité :'}, {'attr': {'class': 'description'}}) }}
                         <div class="content-three">
                          <button class="submit-register" type="submit">Enregistrer</button>
                         </div>

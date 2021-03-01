@@ -6,7 +6,7 @@
 
 {% block body %}
 
-        <div class="container-account-login">
+        <div class="container-account">
          <img class="icon-picture-register" src="/images/modification.png" width="50px" alt="icon-inscription">
          <h1 class="title-account">Inscription</h1>
 
@@ -16,7 +16,7 @@
             <div class="form-error">{{ form_errors(form) }}</div>
 
             {{ form_row(form.firstname, {'label': 'Prénom :'}, {'attr': {'class': 'firstname'}}) }}
-            {{ form_row(form.lastname, {'label': 'Prénom :'}, {'attr': {'class': 'lastname'}}) }}
+            {{ form_row(form.lastname, {'label': 'Nom :'}, {'attr': {'class': 'lastname'}}) }}
             {{ form_row(form.email, {'label': 'E-mail :'}, {'attr': {'class': 'email'}}) }}
          
             {{ form_row(form.password.first, {'label': 'Mot de passe :'}, {'attr': {'class': 'password1'}}) }}
