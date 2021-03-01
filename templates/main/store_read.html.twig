@@ -6,10 +6,10 @@
 {% block body %}
 
     <div class="container-store">
-    <div class="container-picture"> <img src="{{ asset('uploads/' ~ store.picture ) }}" width="980px" /></div>
+    <div class="container-picture"> <img src="{{ asset('uploads/' ~ store.picture ) }}" width="980px" height="655px"/></div>
     
     <div class="store-information">
-      <h1 class="title-store"><strong>{{store.name}}</strong></h1>
+      <h1 class="title-store"><strong>{{store.name}}</strong><a class="nav-account-link" href="{{ path('home') }}">Retour</a></h1>
 
       <h2 class="subtitle-store"><strong>{{store.storeActivity}}</strong></h2>
 
@@ -20,14 +20,14 @@
       <a class="adress-store-email" href="mailto:">{{store.email}}</a>
 
       <div class="opening">
-        <h2 class="subtitle-store"><strong>Jours et horaires d'ouvertures :</strong> </h2>
+        <h2 class="subtitle-store"><strong>Jours d'ouverture :</strong> </h2>
        
         {% for days in store.OpenDays %}
         <p class="days-hours">
         {{ days }}
         </p>
         {% endfor %}
-
+        <h2 class="subtitle-store"><strong>Horaires d'ouverture :</strong> </h2>
         <p class="days-hours">
         {{ store.openHours }}
         </p>
@@ -37,7 +37,7 @@
         <h2 class="subtitle-store"><strong>Mode de paiement accepté :</strong> </h2>
         
         {% for payments in store.InformationPayment %}
-        <p class="payment">
+        <p class="mode-payment">
         {{payments}}
         </p>
         {% endfor %}
@@ -57,7 +57,7 @@
       <h2 class="subtitle-store"><strong>Description du commerce :</strong> </h2>
       <div class="description">{{store.description}}</div>
     </div>
-     <a class="button-back" href="{{ path('home') }}">Retour</a>
+     
     </div>
 
      

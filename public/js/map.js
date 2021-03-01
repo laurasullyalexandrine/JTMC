@@ -9,10 +9,10 @@
   }).addTo(carte);
 
   let icone = L.icon({
-      iconUrl: "images/JTMC-picto.png",
-      iconSize: [50, 50],
-      iconAnchor: [20, 50],
-      popupAnchor: [0, -50]
+      iconUrl: "images/marker-jtmc.png",
+      iconSize: [40, 60],
+      iconAnchor: [10, 40],
+      popupAnchor: [9, -40]
   })
 
   let xmlhttp = new XMLHttpRequest();
@@ -30,7 +30,7 @@
                   let id = donnees[i].id
                   let picture = donnees[i].picture
                   let marker = L.marker([donnees[i].latitude, donnees[i].longitude], { icon: icone }).addTo(carte)
-                  marker.bindPopup('<h1 class="popup-title">' + name + '</h1> <img src="uploads/' + picture + '" width="100px"/><br><a class="popup-link" href="http://0.0.0.0:8080/' + id + '/">Voir le commerce</a>')
+                  marker.bindPopup('<h1 class="popup-title">' + name + '</h1> <img class="popup-picture"src="uploads/' + picture + '" width="100px"/><br><a class="popup-link" href="http://0.0.0.0:8080/' + id + '/">Voir le commerce</a>')
               }
           } else {
               console.log(xmlhttp.statusText);

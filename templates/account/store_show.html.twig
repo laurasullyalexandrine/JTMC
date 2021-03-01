@@ -3,84 +3,60 @@
 {% block menu %}{% endblock %}
 {% block body %}
 
-<h2>Le commerce {{store.name}}</h2>
+<div class="container-store">
+    <div class="container-picture"> <img src="{{ asset('uploads/' ~ store.picture ) }}" width="980px" height="655px"/></div>
+    
+    <div class="store-information">
+      <h1 class="title-store"><strong>{{store.name}}</strong></h1>
 
-<table class="table">
-    <tbody>
-        <tr>
-            <th>Id</th>
-            <td>{{ store.id }}</td>
-        </tr>
-        <tr>
-            <th>Store_activity</th>
-            <td>{{ store.storeActivity }}</td>
-        </tr>
-        <tr>
-            <th>Picture</th>
-            <td><img src="{{ asset('uploads/' ~ store.picture ) }}" width="200px" /></td>
-        </tr>
-        <tr>
-            <th>Name</th>
-            <td>{{ store.name }}</td>
-        </tr>
-        <tr>
-            <th>Siret</th>
-            <td>{{ store.siret }}</td>
-        </tr>
-        <tr>
-            <th>Road_number</th>
-            <td>{{ store.roadNumber }}</td>
-        </tr>
-        <tr>
-            <th>Address</th>
-            <td>{{ store.address }}</td>
-        </tr>
-        <tr>
-            <th>Postal_code</th>
-            <td>{{ store.postalCode }}</td>
-        </tr>
-        <tr>
-            <th>City</th>
-            <td>{{ store.city }}</td>
-        </tr>
-        <tr>
-            <th>Email</th>
-            <td>{{ store.email }}</td>
-        </tr>
-        <tr>
-            <th>Phone</th>
-            <td>{{ store.phone }}</td>
-        </tr>
-        <tr>
-            <th>Website</th>
-            <td>{{ store.website }}</td>
-        </tr>
-        <tr>
-            <th>Open_hours</th>
-            <td>{{ store.openHours }}</td>
-        </tr>
-        <tr>
-            {% for days in store.OpenDays %}
-            <th>Open_days</th>
-            <td>{{ days }}</td>
-            {% endfor %}
-        </tr>
-            {% for payments in store.InformationPayment %}
-            <th>Payment information</th>
-            <td>{{payments}}</td>
-            {% endfor %}
-        <tr>
-        </tr>
-            {% for services in store.CommercialService %}
-            <th>Commercial information</th>
-            <td>{{services}}</td>
-            {% endfor %}
-        <tr>
-            <th>Description</th>
-            <td>{{ store.description }}</td>
-        </tr>
-    </tbody>
-</table>
-<a href="{{ path('account_store') }}">Retour</a>
+      <h2 class="subtitle-store"><strong>{{store.storeActivity}}</strong></h2>
 
+      <p class="adress-store">{{ store.roadNumber }},&ensp;  {{store.address}}</p>
+      <p class="adress-store">{{store.postalcode}} {{store.city}}</p>
+      <p class="adress-store">Tel : 0{{store.phone}}</p>
+      <p class="adress-store">Site internet : {{store.website}}</p>
+      <a class="adress-store-email" href="mailto:">{{store.email}}</a>
+
+      <div class="opening">
+        <h2 class="subtitle-store"><strong>Jours d'ouverture :</strong> </h2>
+       
+        {% for days in store.OpenDays %}
+        <p class="days-hours">
+        {{ days }}
+        </p>
+        {% endfor %}
+        <h2 class="subtitle-store"><strong>Horaires d'ouverture :</strong> </h2>
+        <p class="days-hours">
+        {{ store.openHours }}
+        </p>
+      </div>
+
+      <div class="information-payment">
+        <h2 class="subtitle-store"><strong>Mode de paiement accepté :</strong> </h2>
+        
+        {% for payments in store.InformationPayment %}
+        <p class="mode-payment">
+        {{payments}}
+        </p>
+        {% endfor %}
+
+      </div>
+
+      <div class="commercial-service">
+        <h2 class="subtitle-store"><strong>Service commercial proposé :</strong> </h2>
+        
+        {% for services in store.CommercialService %}
+        <p class="service">
+        {{services}}
+        </p>
+        {% endfor %}
+
+      </div>
+      <h2 class="subtitle-store"><strong>Description du commerce :</strong> </h2>
+      <div class="description">{{store.description}}</div>
+
+</div>
+    </div class="container-button">
+     <a class="submit-register" href="{{ path('account_store') }}">Retour</a>
+    </div>
 {% endblock %}

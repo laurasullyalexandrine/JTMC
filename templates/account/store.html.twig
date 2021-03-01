@@ -5,16 +5,19 @@
 {% block body %}
 
 <div class="container-account">
-   
-    <p class="paraph-account"> Bienvenue <span class="user-account">{{ app.user.firstname }} </span>sur votre compte.</p></br>
-    <h1 class="title-account">Mes commerces <a class="nav-account-link" href="{{ path('account_store_add')}}" class="btn btn-info btn-sm float-right">Ajouter un commerce</a> <a class="nav-account-link" href="{{ path('account')}}">Retour</a></h1>
+
     <p class="paraph-account">C'est dans cet espace que vous allez pouvoir gérer vos commerces.</p> 
+
+
+
+    <h1 class="title-account"><img src="/images/store.png" width="50px "alt="icon-store"> &ensp;Mes commerces</h1>
+     <a class="title-account nav-account-link" href="{{ path('account_store_add')}}" class="btn btn-info btn-sm float-right">Ajouter un commerce</a> <a class="title-account nav-account-link" href="{{ path('account')}}">Retour</a>
    
 
-    {% if app.user.stores|length == 0 %}
+       {% if app.user.stores|length == 0 %}
      <p class="paraph-account">Vous n'avez pas encore ajouté de commerce dans votre compte. Veuillez <a class="nav-account-here" href="{{ path('account_store_add')}}">cliquer ici</a></p>
     {% else %}
-
+    
     <div class="container-card">
         {% for stores in  app.user.stores %}
         <div class="card">
