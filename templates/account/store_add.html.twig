@@ -8,7 +8,7 @@
 <div class="container-register-store">
 
     <div class="container-register-store-head">
-        <h1 class="title-register-store"><img src="/images/store.png" width="50px "alt="icon-store"> &ensp;Gérer mes commerces<a class="title-account nav-account-back" href="{{ path('account_store')}}">Retour</a></h1>
+        <h1 class="title-register-store"><img src="/images/store.png" width="50px "alt="icon-store"> &ensp;Gérer mes commerces<a class="nav-account-back" href="{{ path('account_store')}}">Retour</a></h1>
 
             <p class="register-store-paraph"> Merci de renseignez les informations relatives à votre commerce.</p><br>
 
@@ -33,13 +33,14 @@
                         {{ form_label(form.open_hours, 'Horaires d\'ouverture :', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.open_hours) }}
 
                         <div class="col-form">
-                        {{ form_label(form.getOpenDays, 'Jours d\'ouverture :', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.getOpenDays) }}
-                        {{ form_label(form.InformationPayment, 'Mode de paiement accepté :', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.InformationPayment) }}
-                        {{ form_label(form.CommercialService, 'Service commercial proposé :', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.CommercialService) }}
+                        {{ form_label(form.getOpenDays, 'Jours d\'ouverture', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.getOpenDays) }}
+                        {{ form_label(form.InformationPayment, 'Modes de paiement acceptés', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.InformationPayment) }}
+                        {{ form_label(form.CommercialService, 'Services commerciaux proposés', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.CommercialService) }}
                         </div>
 
-                        {{ form_row(form.description, {'label': 'Description de votre activité :'}, {'attr': {'class': 'description'}}) }}
-                        <div class="content-three">
+                        <div class="description">{{ form_row(form.description, {'label': 'Description de votre activité :'}, {'attr': {'class': 'description'}}) }}</div>
+                        <div class="content-register">
+                        
                          <button class="submit-register" type="submit">Enregistrer</button>
                         </div>
                         

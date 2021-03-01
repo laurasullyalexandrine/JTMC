@@ -5,8 +5,8 @@
 {% block menu %}{% endblock %}
 {% block body %}
 
-    <div class="container-store">
-    <div class="container-picture"> <img src="{{ asset('uploads/' ~ store.picture ) }}" width="980px" height="655px"/></div>
+    <div class="container-store-read">
+    <div class="container-picture"> <img src="{{ asset('uploads/' ~ store.picture ) }}" width="980px" /></div>
     
     <div class="store-information">
       <h1 class="title-store"><strong>{{store.name}}</strong><a class="nav-account-link" href="{{ path('home') }}">Retour</a></h1>

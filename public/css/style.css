@@ -231,6 +231,11 @@ input {
 
 /* --------------- Store _ Acccount---------------*/
 
+.description
+{
+    margin: 2% 0;
+}
+
 .col-form
     {
         top: 20px;
@@ -242,8 +247,9 @@ input {
 
     .required
     {
+        
         top: 20px;
-        left:830px;
+        left: 830px;
         display: flex;
         font-weight: bold;
         position: relative;
@@ -252,24 +258,21 @@ input {
     .form-control
     {
         top: 20px;
-        left: 830px;
-        display: flex;
+        left: 30px;
+        display: inline;
         position: relative;
     }
 
     .col-form-label
     {
         display: flex;
-        position: relative;
+        margin-bottom: 0.5%;
     }
 
     .form-check
     {
-        margin:1%;
-        top: 20px;
-        display: flex;
+        display: inline;
         position: relative;
-        left:130px;
     }
 
     .website
@@ -286,7 +289,7 @@ input {
         margin: 0;
         top: 40px;
         left: 920px;
-        padding: 0.5%;
+        padding: 1.5%;
         color: #fff;
         display: flex;
         font-size: 1em;
@@ -295,12 +298,26 @@ input {
         background-color: #20bf6b;
     }
 
-.container-store {
+    .content-register
+    {   
+        margin: 2%;
+    }
+
+
+.container-store,
+.container-store-read
+ {
     display: flex;
     height: 100vh;
     flex-direction: row;
     justify-content: flex-end;
 }
+
+.container-store-read
+{
+    height: 655px;
+}
+
 
 .container-picture {
     box-shadow: 0px 0px 4px #1c1a19;
@@ -348,8 +365,9 @@ input {
 }
 
 .title-store,
-.list-title {
-    margin: 25px 0;
+.list-title 
+{
+    margin-bottom: 25px;
     color: #4cd137;
     font-size: 1.9em;
     font-weight: 700;
@@ -398,49 +416,14 @@ input {
     font-family: 'Oswald', sans-serif;
 }
 
-.content-one,
-.content-two,
-.content-three {
-    display: flex;
-    justify-content: center;
-}
-
-.form-register-store-content-one,
-.form-register-store-content-two {
-    width: 31%;
-    margin: 1%;
-}
-
-.form-register-store-content {
-    width: 31%;
-    margin: 2%;
-    display: flex;
-}
-
-.foo-form-bold,
-.foo-form {
-    font-weight: bold;
-}
-
-.foo_widget {
-    padding: 2%;
-}
-
-.foo_description {
-    width: 300px;
-    height: 50px;
-}
 
 .form-error {
     color: #ff0000;
 }
 
-.foo-form {
-    color: #4cd137;
-}
-
 .submit-register 
 {
+    text-align: center;
     height: 35px;
     border: 0;
     padding: 0.5%;
@@ -457,7 +440,7 @@ input {
     color: #20bf6b;
     font-size: 2.5em;
     font-weight: 700;
-    margin-bottom:2%;
+    margin-bottom: 1%;
     text-align: center;
     font-family: 'Oswald', sans-serif;
 }
@@ -523,12 +506,33 @@ a.card-link-account:hover {
     color: #20bf6b;
 }
 
+.nav-account-link2
+{
+    color: #fff;
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-bottom:2%;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+}
+
+a.nav-account-link2:hover 
+{
+    color: #20bf6b;
+}
+
 .nav-account-link 
 {
     color: #fff;
-    font-size: 1.2em;
+    font-size: 0.8em;
     padding: 2%;
     text-decoration: none;
+}
+
+a.nav-account-link:hover 
+{
+    color: #20bf6b;
 }
 
 .nav-account-back
@@ -537,11 +541,6 @@ a.card-link-account:hover {
     font-size: 1em;
     padding: 2%;
     text-decoration: none;
-}
-
-a.nav-account-link:hover 
-{
-    color: #20bf6b;
 }
 
 .nav-account-here 
@@ -835,6 +834,16 @@ td {
         text-align: center;
     }
 
+    .description
+    {
+        margin: 10% 0;
+    }   
+
+    .content-register
+    {   
+        margin: 0;
+    }
+
     .col-form
     {
         top: 20px;
@@ -931,6 +940,28 @@ td {
     {
         margin-left: 10px;
         font-size: 0.8em;
+    }
+
+    .container-picture
+    {
+        display: none;
+    }
+
+    .container-store-read
+    {
+        display: initial;
+    }
+
+    .store-information
+    {
+        width: 100%;
+        text-align: center;
+    }
+
+    .title-store,
+    .subtitle-store
+    {
+        text-align: center;
     }
 }
 
