@@ -754,23 +754,15 @@ td {
         position: relative;
     }
 
+    .container-account,
+    .container-account-login,
     .container-register-store
     {
-        height: 60vh;
-        width: 325px;
-        margin-top: 10%;
         text-align: center;
-        border-radius: 5px;
-        flex-direction: column;
-        border: 2px solid #4cd137;
-        justify-content: flex-start;
+
     }
 
-    .container-account,
-    .container-account-login 
-    {
-        text-align: center;
-    }
+
 
     .required
     {
@@ -796,13 +788,6 @@ td {
         position: relative;
     }
 
-
-    .icon-picture-welcome 
-    {
-        position: relative;
-        margin-left: 120px;
-    }
-
     .title-register-store,
     .title-account {
         margin: 5% 0;
@@ -819,7 +804,7 @@ td {
         width: 100px;
         margin-bottom: 5%;
         position: relative;
-        margin-left: 125px;
+
     }
 
     .register-store-paraph,
