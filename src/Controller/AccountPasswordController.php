@@ -20,7 +20,7 @@ class AccountPasswordController extends AbstractController
     }
 
     /**
-     * @Route("/account/edit-your-password", name="account_password")
+     * @Route("/compte/modifier-votre-mot-de-passe", name="account_password")
      */
     public function index(Request $request, UserPasswordEncoderInterface $encoder): Response
     {

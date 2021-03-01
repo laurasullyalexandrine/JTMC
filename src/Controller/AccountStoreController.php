@@ -27,7 +27,7 @@ class AccountStoreController extends AbstractController
     }
 
     /**
-     * @Route("/account/stores", name="account_store")
+     * @Route("/compte/commerces", name="account_store")
      */
     public function index(): Response
     {
@@ -35,7 +35,7 @@ class AccountStoreController extends AbstractController
     }
 
     /**
-     * @Route("/account/add-store", name="account_store_add")
+     * @Route("/compte/ajouter-votre-compte", name="account_store_add")
      */
     public function add(Request $request, FileUploader $fileUploader ): Response
     {
@@ -63,7 +63,7 @@ class AccountStoreController extends AbstractController
     }
 
     /**
-     * @Route("/account/edit-store/{id}", name="account_store_edit")
+     * @Route("/compte/editer-votre-commerce/{id}", name="account_store_edit")
     */
     public function edit(Request $request, $id, FileUploader $fileUploader): Response
     {
@@ -94,7 +94,7 @@ class AccountStoreController extends AbstractController
     }
 
     /**
-     * @Route("/account/delete-store/{id}", name="account_store_delete")
+     * @Route("/compte/supprimer-votre-commerce/{id}", name="account_store_delete")
     */
     public function delete($id): Response
     {
@@ -109,7 +109,7 @@ class AccountStoreController extends AbstractController
     }
 
     /**
-     * @Route("/account/show-store/{id}", name="account_store_show")
+     * @Route("/compte/votre-commerce/{id}", name="account_store_show")
     */
     public function read($id): Response
     {

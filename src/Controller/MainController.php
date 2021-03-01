@@ -60,7 +60,7 @@ class MainController extends AbstractController
         }
 
         /**
-        *@Route("/stores", name="store_index")
+        *@Route("/commerces", name="store_index")
         */
         public function index(StoreRepository $storeRepository): Response
         {   
