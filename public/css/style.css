@@ -3,6 +3,13 @@ body {
     background-color: #2c3e50;
 }
 
+.wrapper {
+    height: 100vh;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+}
+
 /* --------------- Haeder navigation ---------------*/
 
 .logo {
@@ -24,7 +31,7 @@ body {
 .title {
     margin: 2%;
     font-weight: 700;
-    color: #4cd137;
+    color: #20bf6b;
 }
 
 .title-link {
@@ -80,7 +87,8 @@ a.active,
     background: #20bf6b;
 }
 
-a.link-account:hover {
+a.link-account:hover 
+{
 
     background: #20bf6b;
 }
@@ -117,12 +125,12 @@ a.link-account:hover {
 }
 
 .nav {
-    margin-left: 0px;
+    margin-left: -250px;
     transition-duration: 0.5s;
 }
 
 .nav_open {
-    margin-left: -250px;
+    margin-left: 0;
     transition-duration: 0.5s;
 }
 
@@ -173,12 +181,6 @@ input {
     padding: 2%;
     border-radius: 5px;
     border: 1px solid black;
-}
-
-.wrapper {
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
 }
 
 
@@ -622,7 +624,7 @@ td {
 
 /* --------------- @media queries ---------------*/
 
-@media only screen and (max-width: 812px) {
+@media only screen and (max-width: 1024px) {
     body {
         width: 812px;
         margin: auto;
@@ -676,18 +678,18 @@ td {
     .menu-search-item {
         padding: 2.5% 0;
     }
-
 }
+
+
 
 @media only screen and (max-width: 480px) {
     #map
     {
-        width: 80%;
+        width: 90%;
     }
 
     body {
-        width: 375px;
-        margin: auto;
+        width: 480px;
     }
 
     .header-nav-top-link,
@@ -741,7 +743,7 @@ td {
 
     .menu-search-list
     {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 
     .footer-nav {
@@ -752,34 +754,52 @@ td {
         position: relative;
     }
 
-    .container-account,
-    .container-register-store,
-    .container-account-login {
-        border-radius: 5px;
+    .container-register-store
+    {
         height: 60vh;
         width: 325px;
-        display: flex;
         margin-top: 10%;
-        padding: 2%;
-        margin-left: 5%;
-        margin-right: 5%;
         text-align: center;
+        border-radius: 5px;
         flex-direction: column;
         border: 2px solid #4cd137;
         justify-content: flex-start;
     }
 
-    .icon-picture {
-        position: relative;
-        margin-left: 155px;
+    .container-account,
+    .container-account-login 
+    {
+        text-align: center;
     }
 
-    .icon-picture-welcome {
+    .required
+    {
+        top: 20px;
+        display: flex;
         position: relative;
-        margin-left: 120px;
+        left:150px;
     }
 
-    .icon-picture-register {
+    .form-control
+    {
+        top: 20px;
+        left: 150px;
+        display: flex;
+        position: relative;
+    }
+
+    .btn-primary
+    {
+        top: 40px;
+        left: 210px;
+        display: flex;
+        position: relative;
+    }
+
+
+    .icon-picture-welcome 
+    {
+        position: relative;
         margin-left: 120px;
     }
 
@@ -799,7 +819,7 @@ td {
         width: 100px;
         margin-bottom: 5%;
         position: relative;
-        margin-left: 135px;
+        margin-left: 125px;
     }
 
     .register-store-paraph,
