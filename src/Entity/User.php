@@ -75,6 +75,13 @@ class User implements UserInterface
         $this->stores = new ArrayCollection();
     }
 
+    public function __toString() 
+    {
+        return $this->lastname;
+    }
+    
+
+
     public function getId(): ?int
     {
         return $this->id;
