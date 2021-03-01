@@ -37,6 +37,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Commerce', 'fas fa-store', Store::class);
         yield MenuItem::linkToCrud('Information payements', 'fas fa-euro-sign', InformationPayment::class);
         yield MenuItem::linkToCrud('Information services', 'fas fa-concierge-bell', CommercialService::class);
-        yield MenuItem::linkToCrud('Jour d\'ouverture', 'fas fa-concierge-bell', OpenDays::class);
+        yield MenuItem::linkToCrud('Jour d\'ouverture', 'fas fa-door-open', OpenDays::class);
     }
 }
