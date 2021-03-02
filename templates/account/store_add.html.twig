@@ -19,18 +19,18 @@
                 {{ form_row(form.store_activity) }}<br><br>
                 </div>
                 
-                        {{ form_row(form.name, {'label': 'Nom de votre commerce :'}, {'attr': {'class': 'name'}}) }}
-                        {{ form_row(form.road_number, {'label': 'Numéro de rue :'}, {'attr': {'class': 'road_number'}}) }}
-                        {{ form_row(form.address, {'label': 'Nom de rue :'}, {'attr': {'class': 'address'}}) }}
-                        {{ form_row(form.postal_code, {'label': 'code postal :'}, {'attr': {'class': 'postal_code'}}) }}
-                        {{ form_row(form.city, {'label': 'Ville :'}, {'attr': {'class': 'city'}}) }}
+                        {{ form_row(form.name, {'label': 'Nom de votre commerce'}, {'attr': {'class': 'name'}}) }}
+                        {{ form_row(form.road_number, {'label': 'Numéro de rue'}, {'attr': {'class': 'road_number'}}) }}
+                        {{ form_row(form.address, {'label': 'Nom de rue'}, {'attr': {'class': 'address'}}) }}
+                        {{ form_row(form.postal_code, {'label': 'Code postal'}, {'attr': {'class': 'postal_code'}}) }}
+                        {{ form_row(form.city, {'label': 'Ville'}, {'attr': {'class': 'city'}}) }}
                    
-                        {{ form_row(form.phone, {'label': 'Téléphone :'}, {'attr': {'class': 'phone'}}) }}
-                        {{ form_row(form.email, {'label': 'E-mail :'}, {'attr': {'class': 'email'}}) }}
-                        {{ form_label(form.website, 'Site web :', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.website) }}
-                        {{ form_row(form.siret, {'label': 'Siret :'}, {'attr': {'class': 'siret'}}) }}
+                        {{ form_row(form.phone, {'label': 'Téléphone'}, {'attr': {'class': 'phone'}}) }}
+                        {{ form_row(form.email, {'label': 'E-mail'}, {'attr': {'class': 'email'}}) }}
+                        {{ form_label(form.website, 'Site web', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.website) }}
+                        {{ form_row(form.siret, {'label': 'Siret'}, {'attr': {'class': 'siret'}}) }}
                         
-                        {{ form_label(form.open_hours, 'Horaires d\'ouverture :', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.open_hours) }}
+                        {{ form_label(form.open_hours, 'Horaires d\'ouverture', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.open_hours) }}
 
                         <div class="col-form">
                         {{ form_label(form.getOpenDays, 'Jours d\'ouverture', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.getOpenDays) }}
@@ -38,7 +38,7 @@
                         {{ form_label(form.CommercialService, 'Services commerciaux proposés', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.CommercialService) }}
                         </div>
 
-                        <div class="description">{{ form_row(form.description, {'label': 'Description de votre activité :'}, {'attr': {'class': 'description'}}) }}</div>
+                        <div class="description">{{ form_row(form.description, {'label': 'Description de votre activité'}, {'attr': {'class': 'description'}}) }}</div>
                         <div class="content-register">
                         
                          <button class="submit-register" type="submit">Enregistrer</button>
