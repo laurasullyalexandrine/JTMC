@@ -7,6 +7,7 @@ use App\Entity\InformationPayment;
 use App\Entity\OpenDays;
 use App\Entity\Store;
 use App\Service\Geoloc;
+use App\Enum\ShopTypeEnum;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
