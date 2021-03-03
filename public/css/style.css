@@ -3,12 +3,7 @@ body {
     background-color: #2c3e50;
 }
 
-<<<<<<< HEAD
-.wrapper 
-{
-=======
 .wrapper {
->>>>>>> 7293eff7a4bad6e7dae0112b654dbe36c695815b
     height: 75vh;
     display: flex;
     position: relative;
@@ -117,7 +112,7 @@ a.link-account:hover {
     top: 70px;
     z-index: 10;
     border: none;
-    padding: 0.5%;
+    padding: 0.6%;
     cursor: pointer;
     font-size: 35px;
     color: #20bf6b;
@@ -179,12 +174,7 @@ a.link-account:hover {
     border-top: 1px solid white;
 }
 
-<<<<<<< HEAD
-.menu-search-item 
-{
-=======
 .menu-search-item {
->>>>>>> 7293eff7a4bad6e7dae0112b654dbe36c695815b
     width: 50vh;
     padding: 2% 0%;
 }
@@ -204,65 +194,13 @@ input
     border: 1px solid black;
 }
 
-<<<<<<< HEAD
-.form{
-=======
 .form {
->>>>>>> 7293eff7a4bad6e7dae0112b654dbe36c695815b
-    margin-bottom: 9%;
+    margin-bottom: 8%;
 }
 
 
 /* --------------- Legals mentions ---------------*/
 
-<<<<<<< HEAD
-.space 
-{
-    width: 5%;
-}
-
-.title-mention 
-{
-    font-size: 1.8em;
-    color: #20bf6b;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    font-family: 'Oswald', sans-serif;
-}
-
-#legals,
-#login-logout 
-{
-    margin: auto;
-    width: 900px;
-    height: 370px;
-    display: flex;
-    padding: 5%;
-    color: white;
-    text-align: justify;
-    flex-direction: column;
-}
-
-.subtitle 
-{
-    font-size: 0.9em;
-    padding: 1% 0 0 1%;
-    font-weight: 700;
-    text-transform: capitalize;
-}
-
-.lorem 
-{
-    padding: 1%;
-    font-size: 0.8em;
-}
-
-#login 
-{
-    width: 100%;
-=======
 .main {
     width: 100%;
     height: auto;
@@ -278,7 +216,7 @@ input
     margin-left: 200px;
     margin-right: 200px;
     column-count: 1;
-    font-size: 22px;
+
     letter-spacing: 1px;
 }
 
@@ -292,8 +230,8 @@ input
 .headml h1 {
     text-align: center;
     color: #20bf6b;
-    text-decoration: underline;
-    font-size: 50px;
+    text-transform: uppercase;
+    font-size: 30px;
     margin-bottom: 50px;
 }
 
@@ -307,7 +245,11 @@ input
 
 .mention-texte {
     margin-top: 10px;
->>>>>>> 7293eff7a4bad6e7dae0112b654dbe36c695815b
+}
+
+.mention-link
+{
+    color: #20bf6b;
 }
 
 
@@ -541,11 +483,7 @@ a.link-account:hover {
 }
 
 .card {
-<<<<<<< HEAD
-    max-width: 400px;
-=======
     max-width: 220px;
->>>>>>> 7293eff7a4bad6e7dae0112b654dbe36c695815b
     margin: 15px;
     padding: 15px;
     border-radius: 10px;
@@ -571,7 +509,6 @@ a.link-account:hover {
 
 .card-link-account 
 {   
-    
     color: #fff;
     font-size: 0.9em;
     font-weight: bold;
@@ -696,22 +633,11 @@ a.menu-search-link:hover {
     box-shadow: 0px 4px 4px #1c1a19;
 }
 
-<<<<<<< HEAD
-.popup
-{
-    max-width: 100px;
-}
-
-.popup-title 
-{
-
-=======
 .popup {
     max-width: 100px;
 }
 
 .popup-title {
->>>>>>> 7293eff7a4bad6e7dae0112b654dbe36c695815b
     color: #2c3e50;
     font-size: 1.1em;
     font-weight: bold;
@@ -839,7 +765,8 @@ td {
     .headml h1 {
         text-align: center;
         color: #20bf6b;
-        text-decoration: underline;
+        font-weight: bold;
+        text-transform: uppercase;
         font-size: 30px;
         margin-bottom: 50px;
     }
@@ -1044,7 +971,6 @@ td {
     .headml h1 {
         text-align: center;
         color: #20bf6b;
-        text-decoration: underline;
         font-size: 20px;
         margin-bottom: 50px;
     }
