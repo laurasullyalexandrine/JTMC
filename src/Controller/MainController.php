@@ -90,4 +90,12 @@ class MainController extends AbstractController
         {
             return $this->render('main/legal_mention.html.twig');
         }
+        /**
+        * @Route("/team-jtmc", name="team_jtmc")
+        */
+        public function portrait (): Response
+        {
+            return $this->render('main/team_jtmc.html.twig');
+        }
+
     }
