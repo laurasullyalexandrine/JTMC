@@ -13,27 +13,23 @@ body {
 
 /* --------------- Header navigation ---------------*/
 
-.logo 
-{
+.logo {
     width: 15%;
     display: flex;
     padding: 15px 35px;
 }
 
-.logo-mobile
-{
+.logo-mobile {
     display: none;
 }
 
 .title,
 .header-nav-top-link,
-.menu-search-link 
-{
+.menu-search-link {
     text-transform: capitalize;
 }
 
-.title 
-{
+.title {
     margin: 2%;
     font-weight: 700;
     color: #20bf6b;
@@ -43,13 +39,11 @@ body {
     text-decoration: none;
 }
 
-.header-nav-top 
-{
+.header-nav-top {
     display: flex;
 }
 
-.header-nav 
-{
+.header-nav {
     display: flex;
     height: 150px;
     background: #2c3e50;
@@ -153,22 +147,19 @@ a.link-account:hover {
     padding-right: 1%;
 }
 
-.menu 
-{
+.menu {
     width: 250px;
     display: flex;
     flex-direction: column;
 }
 
 .search-city,
-.menu-search-list 
-{
+.menu-search-list {
     color: #20bf6b;
     font-size: 1em;
 }
 
-.menu-search-list 
-{
+.menu-search-list {
     padding: 5% 0;
     color: #20bf6b;
     border-top: 1px solid white;
@@ -179,15 +170,13 @@ a.link-account:hover {
     padding: 2% 0%;
 }
 
-.menu-search-link 
-{
+.menu-search-link {
     color: white;
     font-size: 0.9em;
     text-decoration: none;
 }
 
-input 
-{
+input {
     margin: 1%;
     padding: 1%;
     border-radius: 3px;
@@ -207,8 +196,6 @@ input
     margin: 30px;
     font-size: medium;
     line-height: 23px;
-    font-size: medium;
-    line-height: 23px;
 }
 
 .headml {
@@ -216,8 +203,8 @@ input
     margin-left: 200px;
     margin-right: 200px;
     column-count: 1;
-
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
 .legals {
@@ -247,8 +234,7 @@ input
     margin-top: 10px;
 }
 
-.mention-link
-{
+.mention-link {
     color: #20bf6b;
 }
 
@@ -507,8 +493,7 @@ a.link-account:hover {
     font-weight: bolder;
 }
 
-.card-link-account 
-{   
+.card-link-account {
     color: #fff;
     font-size: 0.9em;
     font-weight: bold;
@@ -644,13 +629,11 @@ a.menu-search-link:hover {
     text-align: center;
 }
 
-.popup-picture 
-{
+.popup-picture {
     text-align: center;
 }
 
-.popup-link 
-{
+.popup-link {
     text-align: center;
     color: black;
     text-decoration: none;
@@ -841,7 +824,6 @@ td {
         flex-direction: column;
         position: relative;
     }
-
     .required {
         top: 20px;
         left: 130px;
@@ -849,7 +831,6 @@ td {
         justify-content: flex-start;
         position: relative;
     }
-
     .form-control {
         top: 20px;
         left: 130px;
@@ -857,12 +838,10 @@ td {
         justify-content: flex-end;
         position: relative;
     }
-
     .col-form-label {
         display: flex;
         position: relative;
     }
-
     .form-check {
         margin: 1%;
         top: 20px;
@@ -870,27 +849,23 @@ td {
         position: relative;
         left: 130px;
     }
-
     .website {
         top: 20px;
         display: flex;
         position: relative;
         left: 130px;
     }
-
     .btn-primary {
         top: 40px;
         left: 190px;
         display: flex;
         position: relative;
     }
-
     .title-account {
         font-size: 1.8em;
         margin: 10px 0;
         font-weight: normal;
     }
-
     .title-register-store {
         font-weight: normal;
     }
@@ -912,20 +887,16 @@ td {
     .container-account-login {
         display: inherit;
     }
-
     .nav-account-link {
         margin-left: 10px;
         font-size: 0.8em;
     }
-
     .container-picture {
         display: none;
     }
-
     .container-store-read {
         display: initial;
     }
-
     .container-picture {
         display: none;
     }
@@ -940,11 +911,9 @@ td {
     .subtitle-store {
         text-align: center;
     }
-
     .container-card {
         padding-bottom: 5px;
     }
-
     .container-card {
         padding-bottom: 5px;
     }
