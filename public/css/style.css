@@ -11,6 +11,7 @@ body {
     flex-direction: row;
 }
 
+
 /* --------------- Haeder navigation ---------------*/
 
 .logo 
@@ -95,7 +96,6 @@ a.active,
 }
 
 a.link-account:hover {
-
     background: #20bf6b;
 }
 
@@ -105,6 +105,7 @@ a.link-account:hover {
     padding-bottom: 3px;
     text-decoration: none;
 }
+
 
 /* --------------- Button responsive ---------------*/
 
@@ -139,6 +140,7 @@ a.link-account:hover {
     margin-left: 0;
     transition-duration: 0.5s;
 }
+
 
 /* --------------- Left menu ---------------*/
 
@@ -252,13 +254,11 @@ input
 
 /* --------------- Store _ Acccount---------------*/
 
-.description 
-{
+.description {
     margin: 2% 0;
 }
 
-.col-form 
-{
+.col-form {
     top: 20px;
     left: 10px;
     display: flex;
@@ -266,8 +266,7 @@ input
     position: relative;
 }
 
-.required 
-{
+.required {
     top: 20px;
     left: 830px;
     display: flex;
@@ -317,7 +316,6 @@ input
     margin: 2%;
 }
 
-
 .container-store,
 .container-store-read {
     display: flex;
@@ -326,8 +324,7 @@ input
     justify-content: flex-end;
 }
 
-.container-store-read 
-{
+.container-store-read {
     height: 655px;
 }
 
@@ -426,7 +423,6 @@ input
     font-family: 'Oswald', sans-serif;
 }
 
-
 .form-error {
     color: #ff0000;
 }
@@ -452,7 +448,6 @@ input
     text-align: center;
     font-family: 'Oswald', sans-serif;
 }
-
 
 .user-account {
     color: white;
@@ -592,6 +587,7 @@ a.nav-account-here:hover {
     padding: 0.8%;
 }
 
+
 /* --------------- Footer ---------------*/
 
 .footer-nav {
@@ -657,6 +653,7 @@ a.menu-search-link:hover {
     text-decoration: none;
 }
 
+
 /* --------------- Nav common ---------------*/
 
 .button-back {
@@ -709,6 +706,7 @@ td {
     box-shadow: 0px 0px 4px #1c1a19;
 }
 
+
 /* --------------- @media queries ---------------*/
 
 @media only screen and (max-width: 1024px) {
@@ -716,127 +714,108 @@ td {
         width: 812px;
         margin: auto;
     }
-
     .header-nav-top-link,
     .logo-web,
     .title {
         display: none;
     }
-
     .slogan-nav {
         width: 55%;
         flex-direction: column-reverse;
     }
-
     .slogan {
         font-size: 0.8em;
         text-align: center;
     }
-
     .logo-mobile {
         display: block;
     }
-
     .header-nav {
         background: none;
     }
-
     .header-nav-top-item {
         padding: 0;
         margin: 10px;
     }
-
     .menu {
         margin: 0;
         padding: 0;
     }
-
     .menu-search-list,
     .menu-search-item {
         padding: 2.5% 0;
     }
 }
 
-
-
 @media only screen and (max-width: 480px) {
     #map {
         width: 90%;
     }
-
     body {
         width: 480px;
     }
-
     .header-nav-top-link,
     .logo-web,
     .title {
         display: none;
     }
-
     .slogan-nav {
         width: 55%;
         flex-direction: column-reverse;
     }
-
     .slogan {
         font-size: 0.8em;
         text-align: center;
     }
-
     .logo-mobile {
         display: block;
     }
-
     .header-nav {
         background: none;
     }
-
     .header-nav-top-item {
         padding: 0;
         margin: 10px;
     }
-
     .menu {
         margin: 0;
         padding: 0;
         z-index: 5;
     }
-
     .nav {
         margin-left: -250px;
         transition-duration: 0.5s;
     }
-
     .nav_open {
         margin-left: 0;
         transition-duration: 0.5s;
     }
-
     .menu-search-list,
     .menu-search-item {
         padding: 1.5% 0;
     }
-
     .menu-search-list {
         font-size: 0.8em;
     }
-
+    .footer-nav {
+        top: 140px;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        position: relative;
+    }
     .container-account,
     .container-account-login,
     .container-register-store {
         height: 100vh;
         text-align: center;
     }
-
     .description {
         margin: 10% 0;
     }
-
     .content-register {
         margin: 0;
     }
-
     .col-form {
         top: 20px;
         left: 10px;
@@ -897,26 +876,21 @@ td {
     .title-register-store {
         font-weight: normal;
     }
-
     .login-input {
         padding: 2%;
         width: 150px;
         margin: 4% 30%;
     }
-
     .submit-register {
         width: 100px;
         margin-bottom: 1%;
         position: relative;
-
     }
-
     .register-store-paraph,
     .paraph-account {
         font-size: 0.9em;
         margin: 1%;
     }
-
     .container-account-login {
         display: inherit;
     }
@@ -934,11 +908,16 @@ td {
         display: initial;
     }
 
+    .container-picture {
+        display: none;
+    }
+    .container-store-read {
+        display: initial;
+    }
     .store-information {
         width: 100%;
         text-align: center;
     }
-
     .title-store,
     .subtitle-store {
         text-align: center;
@@ -948,14 +927,15 @@ td {
         padding-bottom: 5px;
     }
 
+    .container-card {
+        padding-bottom: 5px;
+    }
     .nav-account-link2 {
         font-size: 1.2em;
     }
-
     .title-mention {
         font-size: 1.2em;
     }
-
     #legals {
         width: 400px;
         overflow: scroll;
