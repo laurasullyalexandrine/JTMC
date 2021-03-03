@@ -92,15 +92,13 @@
               <label for="city" class="search-city">Quelle ville ?</label>
               <input type="text" name="city" id="city" placeholder="Code Postal / Ville"/>
               <button class="submit"> <img src="/images/m-glass.png" width="30px" alt="icon-magnifying-glass"> </button>
+              <a href="{{ path('home',{reset: "1"})}}" class="menu-search-link"><img src="https://img.icons8.com/windows/32/000000/cancel.png" width="25px" alt="shop-icon"/>&ensp; Supprimer le filtre</a>            
             </div>
           </form>
 
 
         <ul class="menu-search-list">Quel commerce ?
             
-            <li class="menu-search-item">
-            <a href="{{ path('home',{reset: "1"})}}" class="menu-search-link"><img src="https://img.icons8.com/windows/32/000000/cancel.png" width="25px" alt="shop-icon"/>&ensp; Supprimer le filtre</a>
-            </li>
             <li class="menu-search-item">
               <a href="{{ path('home',{filter: "boucherie-charcuterie"})}}" class="menu-search-link"><img src="https://img.icons8.com/windows/32/000000/year-of-pig.png" width="25px" alt="shop-icon"/>&ensp; Boucherie/Charcuterie</a>
             </li>
@@ -164,6 +162,7 @@
         <div class="footer-nav">
             <a class ="footer-nav-link" href="{{ path('legal_mention')}}">Mentions légales</a>
             <a class="footer-nav-link" href="mailto:jtrouvemoncommercant@gmail.com">Contactez-nous</a>
+            <a class ="footer-nav-link" href="{{ path('team_jtmc')}}">Team JTMC</a>
             <p class="footer-nav-made">JTMC made with &#169; by <i>#teamsymfony</i></p>
             </div>
         </footer>
