@@ -164,13 +164,14 @@ a.link-account:hover {
     color: #20bf6b;
     border-top: 1px solid white;
     margin-left: 5%;
-    padding-top: 10%;
+    padding-top: 20%;
     padding-bottom: 10%;
 }
 
 .menu-search-item {
     width: 50vh;
     padding-top: 8%;
+    padding-bottom: 5%;
 }
 
 .menu-search-item img {
@@ -885,9 +886,13 @@ td {
         margin-left: 0;
         transition-duration: 0.5s;
     }
+    .menu-search-item {
+        width: 50vh;
+        padding-top: 8%;
+    }
     .menu-search-list,
     .menu-search-item {
-        padding: 2.5% 0;
+        padding-left: 5px;
     }
     .container-account-login,
     .container-register-store {
@@ -1058,7 +1063,11 @@ td {
     }
     .menu-search-list,
     .menu-search-item {
-        padding-top: 2px;
+        padding-top: 5px;
+    }
+    .menu-search-item {
+        width: 50vh;
+        padding-top: 8%;
     }
     .menu-search-list {
         font-size: 0.8em;
