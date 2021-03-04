@@ -20,7 +20,7 @@
         }}{{ form_widget(form.picture) }}
         {{ form_row(form.store_activity) }}<br><br>
     </div>
-
+    <div class ="register-form">
     {{ form_row(form.name, {'label': 'Nom de votre commerce'}, {'attr': {'class': 'name'}}) }}
     {{ form_row(form.road_number, {'label': 'Numéro de rue'}, {'attr': {'class': 'road_number'}}) }}
     {{ form_row(form.address, {'label': 'Nom de rue'}, {'attr': {'class': 'address'}}) }}
@@ -34,7 +34,7 @@
 
     {{ form_label(form.open_hours, 'Horaires d\'ouverture', {'label_attr': {'class': 'required'}})
     }}{{ form_widget(form.open_hours) }}
-
+    </div>
     <div class="col-form">
         {{ form_label(form.getOpenDays, 'Jours d\'ouverture', {'label_attr': {'class': 'required'}})
         }}{{ form_widget(form.getOpenDays) }}

@@ -35,7 +35,7 @@ class AccountStoreController extends AbstractController
     }
 
     /**
-     * @Route("/compte/ajouter-votre-compte", name="account_store_add")
+     * @Route("/compte/ajouter-votre-commerce", name="account_store_add")
      */
     public function add(Request $request, FileUploader $fileUploader ): Response
     {

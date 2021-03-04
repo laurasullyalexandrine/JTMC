@@ -170,7 +170,7 @@ a.link-account:hover {
 
 .menu-search-item {
     width: 50vh;
-    padding-top: 8%;
+    padding-top: 6%;
     padding-bottom: 5%;
 }
 
@@ -363,8 +363,14 @@ input {
     text-align: center;
 }
 
+.container-account-store {
+    height: 80vh;
+    margin-top: 5%;
+    text-align: center;
+}
+
 .container-account {
-    height: 65vh;
+    height: 60vh;
     margin-top: 5%;
     text-align: center;
 }
