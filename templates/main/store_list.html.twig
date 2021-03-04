@@ -3,63 +3,63 @@
 {% block title %}La liste des commerces - J'Trouve mon commerçant{% endblock %}
 {% block menu %}{% endblock %}
 {% block body %}
-    <h1 class ="list-title">La liste des commerces</h1>
+<h1 class="list-title">La liste des commerces</h1>
 
-    <table class="table">
-        <thead>
-            <tr class="">
-                <th class="">Activité du magasin</th>
-                <th class="">Photo du magasin</th>
-                <th class="">Nom de votre commerce</th>
-                <th class="">Numéro de siret</th>
-                <th class="">Numéro de la voie</th>
-                <th class="">Adresse</th>
-                <th class="">Code postal</th>
-                <th class="">Ville</th>
-                <th class="">e-mail</th>
-                <th class="">Téléphone</th>
-                <th class="">Site internet</th>
-                <th class="">Jour d'ouverture</th>
-                <th class="">Horraire d'ouverture</th>
-                <th class="">Information de paiement</th>
-                <th class="">Service commerciale</th>
-                <th class="">Décrire votre activité</th>
-            </tr>
-        </thead>
-        <tbody>
+<table class="table">
+    <thead>
+        <tr class="">
+            <th class="">Activité du magasin</th>
+            <th class="">Photo du magasin</th>
+            <th class="">Nom de votre commerce</th>
+            <th class="">Numéro de siret</th>
+            <th class="">Numéro de la voie</th>
+            <th class="">Adresse</th>
+            <th class="">Code postal</th>
+            <th class="">Ville</th>
+            <th class="">e-mail</th>
+            <th class="">Téléphone</th>
+            <th class="">Site internet</th>
+            <th class="">Jour d'ouverture</th>
+            <th class="">Horraire d'ouverture</th>
+            <th class="">Information de paiement</th>
+            <th class="">Service commerciale</th>
+            <th class="">Décrire votre activité</th>
+        </tr>
+    </thead>
+    <tbody>
         {% for store in stores %}
-            <tr>
-                <td class="">{{ store.storeActivity }}</td>
-                <td class=""><img class="list-picture"src="{{ asset('uploads/' ~ store.picture ) }}" width="150px" /></td>
-                <td class="">{{ store.name }}</td>
-                <td class="">{{ store.siret }}</td>
-                <td class="">{{ store.roadNumber }}</td>
-                <td class="">{{ store.address }}</td>
-                <td class="">{{ store.postalCode }}</td>
-                <td class="">{{ store.city }}</td>
-                <td class="">{{ store.email }}</td>
-                <td class="">{{ store.phone }}</td>
-                <td class="">{{ store.website }}</td>
-                {% for days in store.OpenDays %}
-                <td class="">{{ days }}</td>
-                {% endfor %}
-                <td class="">{{ store.openHours }}</td>
-                {% for payments in store.informationPayment %}
-                <td class="">{{ payments }}</td>
-                {% endfor %}
-                {% for services in store.CommercialService %}
-                <td class="">{{ services }}</td>
-                {% endfor %}                
-                <td class="">{{ store.description }}</td>
-                <td class="">
+        <tr>
+            <td class="">{{ store.storeActivity }}</td>
+            <td class=""><img class="list-picture" src="{{ asset('uploads/' ~ store.picture ) }}" width="150px" /></td>
+            <td class="">{{ store.name }}</td>
+            <td class="">{{ store.siret }}</td>
+            <td class="">{{ store.roadNumber }}</td>
+            <td class="">{{ store.address }}</td>
+            <td class="">{{ store.postalCode }}</td>
+            <td class="">{{ store.city }}</td>
+            <td class="">{{ store.email }}</td>
+            <td class="">{{ store.phone }}</td>
+            <td class="">{{ store.website }}</td>
+            {% for days in store.OpenDays %}
+            <td class="">{{ days }}</td>
+            {% endfor %}
+            <td class="">{{ store.openHours }}</td>
+            {% for payments in store.informationPayment %}
+            <td class="">{{ payments }}</td>
+            {% endfor %}
+            {% for services in store.CommercialService %}
+            <td class="">{{ services }}</td>
+            {% endfor %}
+            <td class="">{{ store.description }}</td>
+            <td class="">
                 <a class="button-display" href="{{ path('store_read', {'id': store.id}) }}">Afficher le commerce</a>
-                </td>
-            </tr>
+            </td>
+        </tr>
         {% else %}
-            <tr>
-                <td colspan="15">no records found</td>
-            </tr>
+        <tr>
+            <td colspan="15">no records found</td>
+        </tr>
         {% endfor %}
-        </tbody>
-    </table>
+    </tbody>
+</table>
 {% endblock %}

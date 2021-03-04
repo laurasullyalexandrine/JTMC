@@ -20,19 +20,19 @@ class RegisterType extends AbstractType
             ->add('firstname', TypeTextType::class, [
                 'label' => 'Votre prénom',
                 'attr' => [
-                    'placeholder' => 'Merci de saisir votre prénom'
+                    'placeholder' => 'Saisir le prénom'
                 ]
             ])
             ->add('lastname', TypeTextType::class, [
                 'label' => 'Votre nom',
                 'attr' => [
-                    'placeholder' => 'Merci de saisir votre nom'
+                    'placeholder' => 'Saisir le nom'
                 ]
             ])
             ->add('email', EmailType::class, [
                 'label' => 'Votre email',
                 'attr' => [
-                    'placeholder' => 'Merci de saisir votre adresse email'
+                    'placeholder' => 'Saisir l\'adresse email'
                 ]
             ])
             ->add('password', RepeatedType::class, [
@@ -42,12 +42,12 @@ class RegisterType extends AbstractType
                 'required' => true,
                 'first_options' => ['label' => 'Mot de passe : ',
                 'attr' => [
-                    'placeholder' => 'Merci de saisir votre mot de passe : '
+                    'placeholder' => 'Saisir le mot de passe : '
                 ]
             ],
                 'second_options' => ['label' => 'Confirmez votre mot de passe : ',
                 'attr' => [
-                    'placeholder' => 'Merci de confirmer votre mot de passe'
+                    'placeholder' => 'Confirmer le mot de passe'
                 ]
             ],
             ])

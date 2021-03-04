@@ -1,242 +1,1076 @@
+body {
+    color: #fff;
+    background-color: #2c3e50;
+}
+
+.wrapper {
+    height: 90vh;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+}
+
+
+/* --------------- Header navigation ---------------*/
+
+.logo {
+    width: 15%;
+    display: flex;
+    padding: 15px 35px;
+}
+
+.logo-mobile {
+    display: none;
+}
+
+.title,
+.header-nav-top-link,
+.menu-search-link {
+    text-transform: capitalize;
+}
+
+.title {
+    margin: 2%;
+    font-weight: 700;
+    color: #20bf6b;
+}
+
+.title-link {
+    text-decoration: none;
+}
+
+.header-nav-top {
+    display: flex;
+}
+
+.header-nav {
+    display: flex;
+    height: 130px;
+    background: #2c3e50;
+}
+
+.slogan {
+    text-align: center;
+}
+
+.slogan-nav {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.title,
+.slogan,
+.header-nav-top {
+    align-self: center;
+}
+
+.header-nav-top-list {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav-top-item {
+    margin: 15px;
+}
+
+.header-nav-top-link,
+.link-account {
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 3px;
+}
+
+a.active,
+.header-nav-top-link:hover {
+    transition: .3s;
+    background: #20bf6b;
+}
+
+a.link-account:hover {
+    background: #20bf6b;
+}
+
+.slogan,
+.header-nav-top-link {
+    font-size: 0.9em;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
+
+
+/* --------------- Button responsive ---------------*/
+
+.toggle_btn {
+    top: 70px;
+    z-index: 10;
+    border: none;
+    padding: 0.6%;
+    cursor: pointer;
+    font-size: 35px;
+    color: #20bf6b;
+    line-height: 47px;
+    background-color: #2c3e50;
+}
+
+.toggle_btn span:after {
+    left: 0;
+    top: 10px;
+    content: '';
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    background-color: #20bf6b;
+}
+
+.nav {
+    margin-left: -250px;
+    transition-duration: 0.5s;
+}
+
+.nav_open {
+    margin-left: 0;
+    transition-duration: 0.5s;
+}
+
+
+/* --------------- Left menu ---------------*/
+
+.submit {
+    border: 0;
+    left: 50px;
+    font-size: 1em;
+    cursor: pointer;
+    color: #20bf6b;
+    background: none;
+    padding-right: 1%;
+}
+
+.menu {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-city,
+.menu-search-list {
+    color: #20bf6b;
+    font-size: 1em;
+    padding-bottom: 20px;
+}
+
+.menu-search-list {
+    color: #20bf6b;
+    border-top: 1px solid white;
+    margin-left: 5%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.menu-search-item {
+    width: 50vh;
+    padding-top: 8%;
+}
+
+.menu-search-item img {
+    position: relative;
+    left: 2px;
+    top: 7px;
+}
+
+.menu-search-link {
+    color: white;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+input {
+    margin: 1%;
+    padding: 1%;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+.form {
+    margin-top: 10%;
+    margin-bottom: 8%;
+    margin-left: 5%;
+}
+
+.form img {
+    position: relative;
+    left: 2px;
+    top: 7px;
+}
+
+
+/* --------------- Legals mentions ---------------*/
+
+.main {
+    width: 100%;
+    height: auto;
+    margin: 30px;
+    font-size: medium;
+    line-height: 23px;
+}
+
+.headml {
+    margin-top: 150px;
+    margin-left: 200px;
+    margin-right: 200px;
+    column-count: 1;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.legals {
+    margin-top: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    column-count: 1;
+}
+
+.headml h1 {
+    text-align: center;
+    color: #20bf6b;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.mention-title {
+    font-size: 20px;
+    column-span: all;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #20bf6b;
+}
+
+.mention-texte {
+    margin-top: 10px;
+}
+
+.mention-link {
+    color: #20bf6b;
+}
+
+
+/* --------------- Store_Acccount---------------*/
+
+.description {
+    margin: 2% 0;
+}
+
+.col-form {
+    top: 20px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.container-account-reg {
+    height: 70vh;
+    text-align: center;
+}
+
+.form-group-reg {
+    display: flex;
+    margin-left: 330px;
+}
+
+.required {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    font-weight: bold;
+    position: relative;
+    top: 20px;
+    left: 490px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    height: 23px;
+    position: relative;
+    top: 20px;
+    left: 540px;
+}
+
+.col-form-label {
+    display: flex;
+    margin-bottom: 0.5%;
+}
+
+.form-check {
+    display: inline;
+    position: relative;
+}
+
+.website {
+    top: 20px;
+    display: flex;
+    position: relative;
+    left: 130px;
+}
+
+.btn-primary {
+    border: 0;
+    margin: 0;
+    top: 70px;
+    left: 575px;
+    padding: 5px 15px;
+    color: #fff;
+    display: flex;
+    font-size: 1em;
+    position: relative;
+    border-radius: 3px;
+    background-color: #20bf6b;
+}
+
+.content-register {
+    margin: 2%;
+}
+
+.content-register {
+    margin: 2%;
+}
+
+.container-store,
+.container-store-read {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.container-store-read {
+    height: 655px;
+}
+
+.container-picture {
+    max-height: 650px;
+    box-shadow: 0px 0px 4px #1c1a19;
+}
+
+.container-register-store {
+    margin-top: 1%;
+    text-align: center;
+}
+
+.container-account {
+    height: 65vh;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.container-account-con {
+    height: 65vh;
+    margin-top: 2%;
+    text-align: center;
+}
+
+.form-control-con {
+    display: block;
+    margin-bottom: 50px;
+    margin-left: 320px;
+}
+
+.label-con {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    font-weight: bold;
+    position: relative;
+    top: 20px;
+    left: 490px;
+}
+
+.login-input-con {
+    display: flex;
+    flex-direction: column;
+    height: 5px;
+    position: relative;
+    top: 20px;
+    left: 520px;
+}
+
+.container-account-link {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-account-login {
+    height: 100vh;
+    margin-top: 4%;
+    text-align: center;
+}
+
+.adress-store-email,
+.store-information,
+.subtitle-store,
+.adress-store {
+    color: white;
+}
+
+.subtitle-store {
+    text-transform: capitalize;
+}
+
+.store-information {
+    width: 30%;
+    padding: 0 2%;
+    text-align: justify;
+}
+
+.title-store,
+.list-title {
+    margin-bottom: 25px;
+    color: #4cd137;
+    font-size: 1.9em;
+    font-weight: 700;
+    text-align: justify;
+    font-family: 'Oswald', sans-serif;
+}
+
+.subtitle-store {
+    padding: 1% 0;
+    font-weight: 700;
+    text-align: justify;
+}
+
+.adress-store,
+.mode-payment,
+.days-hours,
+.service {
+    padding: 0.4em 0;
+    font-size: 0.8em;
+}
+
+.opening,
+.information-payment,
+.commercial-service {
+    margin: 2% 0;
+}
+
+.adress-store-email {
+    padding: 0.4em 0;
+    font-size: 0.8em;
+}
+
+.description {
+    padding: 0.5em;
+}
+
+.register-store-paraph {
+    padding: 1%;
+    font-size: 1.1em;
+}
+
+.title-register-store {
+    color: #20bf6b;
+    font-size: 1.9em;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+}
+
+.form-error {
+    color: #ff0000;
+}
+
+.submit-register {
+    text-align: center;
+    height: 35px;
+    border: 0;
+    padding: 5px 15px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #20bf6b;
+}
+
+.title-account {
+    color: #20bf6b;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 1%;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.user-account {
+    color: white;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+
+.link-account {
+    color: white;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+a.link-account:hover {
+    background: #20bf6b;
+}
+
+.paraph-account {
+    padding: 1%;
+    font-size: 1.1em;
+}
+
+.container-card {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 35px;
+    justify-content: center;
+}
+
+.card {
+    max-width: 220px;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #1c1a19;
+    box-shadow: 0px 0px 4px #1c1a19;
+}
+
+.card-content {
+    margin: 5px;
+    padding: 5px;
+}
+
+.card-text {
+    font-size: 1em;
+    color: gainsboro;
+}
+
+.card-title {
+    font-size: 1.1em;
+    color: #4cd137;
+    font-weight: bolder;
+}
+
+.card-link-account {
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.card-link-account:hover {
+    color: #20bf6b;
+}
+
+.nav-account-link2 {
+    color: #fff;
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-bottom: 2%;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+}
+
+.container-account-modif {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    text-align: center;
+}
+
+.form-group-modif {
+    display: flex;
+    margin-left: 325px;
+}
+
+a.nav-account-link2:hover {
+    color: #20bf6b;
+}
+
+.nav-account-link {
+    color: #fff;
+    font-size: 0.8em;
+    padding: 2%;
+    text-decoration: none;
+}
+
+a.nav-account-link:hover {
+    color: #20bf6b;
+}
+
+.nav-account-back {
+    color: #fff;
+    font-size: 0.8em;
+    padding: 2%;
+    text-decoration: none;
+}
+
+.nav-account-here {
+    font-weight: bold;
+    color: #20bf6b;
+    text-decoration: none;
+}
+
+a.nav-account-here:hover {
+    color: #fff;
+}
+
+.submit-log {
+    left: 50px;
+    border: 0;
+    cursor: pointer;
+    color: #20bf6b;
+    background: none;
+    font-size: 1.1em;
+    padding-right: 1%;
+}
+
+.password {
+    margin-top: 1%;
+}
+
+.alert {
+    color: #00a8ff;
+    margin-top: 1%;
+}
+
+.display-account-store-picture {
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px #1c1a19;
+}
+
+.login-picture {
+    text-align: center;
+}
+
+.login-input {
+    padding: 0.8%;
+}
+
+
+/* --------------- Footer ---------------*/
+
+.footer-nav {
+    width: 100%;
+    height: 50px;
+    padding-top: 1%;
+    text-align: center;
+    background-color: #2c3e50;
+    margin-left: 20px;
+}
+
+.footer-nav-link {
+    font-size: 0.9em;
+    color: white;
+    padding-right: 15px;
+    text-decoration: none;
+}
+
+a.footer-nav-link:hover {
+    color: #20bf6b;
+}
+
+a.menu-search-link:hover {
+    color: #20bf6b;
+}
+
+.footer-nav-made {
+    font-size: 0.7em;
+    padding-top: 0.5%;
+}
+
+
+/* --------------- Map ---------------*/
+
+#map {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 4px 4px #1c1a19;
+}
+
+.popup {
+    max-width: 100px;
+}
+
+.popup-title {
+    color: #2c3e50;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.popup-picture {
+    text-align: center;
+}
+
+.popup-link {
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+
+
+/* --------------- Nav common ---------------*/
+
+.button-back {
+    top: 630px;
+    right: 525px;
+    color: white;
+    position: relative;
+    text-decoration: none;
+}
+
+.button-display {
+    color: white;
+    position: relative;
+    text-decoration: none;
+}
+
+a.button-back:hover {
+    color: #20bf6b;
+}
+
+a.button-display:hover {
+    color: #20bf6b;
+}
+
+td {
+    border-bottom: 5px solid white;
+}
+
+.list-title {
+    padding: 0 1%;
+}
+
+.head {
+    margin: 10.5%;
+    font-size: 0.9em;
+}
+
+.list-head,
+.head-content {
+    padding: 1%;
+}
+
+.head-content {
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.list-picture {
+    border-radius: 15px;
+    box-shadow: 0px 0px 4px #1c1a19;
+}
+
+
+/* --------------- team jtmc ---------------*/
+
+.main-picture {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 75px;
+    margin-bottom: 80px;
+}
+
+.laura {
+    border: 5px double;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: #20bf6b;
+}
+
+.laura h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(223, 246, 223);
+}
+
+.ben {
+    border: 5px double;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: #20bf6b;
+}
+
+.ben h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(223, 246, 223);
+}
+
+.tayeb {
+    border: 5px double;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: #20bf6b;
+}
+
+.tayeb h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(223, 246, 223);
+}
+
+.guy {
+    border: 5px double;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: #20bf6b;
+}
+
+.guy h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(223, 246, 223);
+}
+
+
+/* --------------- @media queries 1024px ---------------*/
+
+@media only screen and (max-width: 1024px) {
     body {
-        color: #fff;
-        background-color: #2c3e50;
+        width: 812px;
+        margin: auto;
     }
-    
-    .wrapper {
-        height: 75vh;
-        display: flex;
-        position: relative;
-        flex-direction: row;
+    #map {
+        width: 1800px;
     }
-    /* --------------- Header navigation ---------------*/
-    
-    .logo {
-        width: 15%;
-        display: flex;
-        padding: 15px 35px;
-    }
-    
-    .logo-mobile {
+    .header-nav-top-link,
+    .logo-web,
+    .title {
         display: none;
     }
-    
-    .title,
-    .header-nav-top-link,
-    .menu-search-link {
-        text-transform: capitalize;
+    .slogan-nav {
+        width: 55%;
+        flex-direction: column-reverse;
+        margin-left: 100px;
     }
-    
-    .title {
-        margin: 2%;
-        font-weight: 700;
-        color: #20bf6b;
-    }
-    
-    .title-link {
-        text-decoration: none;
-    }
-    
-    .header-nav-top {
-        display: flex;
-    }
-    
-    .header-nav {
-        display: flex;
-        height: 150px;
-        background: #2c3e50;
-    }
-    
     .slogan {
+        font-size: 0.8em;
         text-align: center;
     }
-    
-    .slogan-nav {
-        width: 80%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+    .logo-mobile {
+        display: block;
     }
-    
-    .title,
-    .slogan,
-    .header-nav-top {
-        align-self: center;
+    .header-nav {
+        background: none;
     }
-    
-    .header-nav-top-list {
-        display: flex;
-        align-items: center;
-    }
-    
     .header-nav-top-item {
-        margin: 15px;
+        padding: 0;
+        margin: 10px;
     }
-    
-    .header-nav-top-link,
-    .link-account {
-        color: #fff;
-        padding: 5px 15px;
-        border-radius: 3px;
+    .menu {
+        margin: 0;
+        padding: 0;
     }
-    
-    a.active,
-    .header-nav-top-link:hover {
-        transition: .3s;
-        background: #20bf6b;
-    }
-    
-    a.link-account:hover {
-        background: #20bf6b;
-    }
-    
-    .slogan,
-    .header-nav-top-link {
-        font-size: 0.9em;
-        padding-bottom: 3px;
-        text-decoration: none;
-    }
-    /* --------------- Button responsive ---------------*/
-    
-    .toggle_btn {
-        top: 70px;
-        z-index: 10;
-        border: none;
-        padding: 0.6%;
-        cursor: pointer;
-        font-size: 35px;
-        color: #20bf6b;
-        line-height: 47px;
-        background-color: #2c3e50;
-    }
-    
-    .toggle_btn span:after {
-        left: 0;
-        top: 10px;
-        content: '';
-        height: 3px;
-        width: 100%;
-        position: absolute;
-        background-color: #20bf6b;
-    }
-    
     .nav {
         margin-left: -250px;
         transition-duration: 0.5s;
     }
-    
     .nav_open {
         margin-left: 0;
         transition-duration: 0.5s;
     }
-    /* --------------- Left menu ---------------*/
-    
-    .submit {
-        border: 0;
-        left: 50px;
-        font-size: 1em;
-        cursor: pointer;
-        color: #20bf6b;
-        background: none;
-        padding-right: 1%;
+    .menu-search-list,
+    .menu-search-item {
+        padding: 2.5% 0;
     }
-    
-    .menu {
-        width: 250px;
+    .container-account-login,
+    .container-register-store {
+        height: 63vh;
+        text-align: center;
+        margin-left: 180px;
+    }
+    .container-account-reg {
+        height: 70vh;
+        text-align: center;
+        margin-left: 210px;
+    }
+    .form-group-reg {
+        display: flex;
+        margin-left: 0px;
+    }
+    .container-account-modif {
         display: flex;
         flex-direction: column;
+        height: 30vh;
+        text-align: center;
+        margin-left: 170px;
     }
-    
-    .search-city,
-    .menu-search-list {
-        color: #20bf6b;
-        font-size: 1em;
+    .form-group-modif {
+        display: flex;
+        margin-left: 20px;
     }
-    
-    .menu-search-list {
-        padding: 5%;
-        color: #20bf6b;
-        border-top: 1px solid white;
+    .required {
+        margin-left: -330px;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
-    
-    .menu-search-item {
-        width: 50vh;
-        padding: 2% 0%;
+    .form-control {
+        margin-left: -320px;
     }
-    
-    .menu-search-link {
-        color: white;
-        font-size: 0.9em;
-        text-decoration: none;
-    }
-    
-    input {
-        margin: 1%;
-        padding: 1%;
-        border-radius: 3px;
-        border: 1px solid black;
-    }
-    
-    .form {
-        margin-top: 10%;
-        margin-bottom: 8%;
-        margin-left: 5%;
-    }
-    /* --------------- Legals mentions ---------------*/
-    
-    .main {
-        width: 100%;
-        height: auto;
-        margin: 30px;
-        font-size: medium;
-        line-height: 23px;
-    }
-    
     .headml {
         margin-top: 150px;
-        margin-left: 200px;
-        margin-right: 200px;
+        margin-left: 20px;
+        margin-right: 20px;
         column-count: 1;
-        letter-spacing: 2px;
-        font-weight: bold;
+        font-size: 15px;
     }
-    
     .legals {
         margin-top: 20px;
-        margin-left: 200px;
-        margin-right: 200px;
+        margin-left: 20px;
+        margin-right: 20px;
         column-count: 1;
+        font-size: 12px;
     }
-    
     .headml h1 {
         text-align: center;
         color: #20bf6b;
+        font-weight: bold;
         text-transform: uppercase;
         font-size: 30px;
         margin-bottom: 50px;
     }
-    
-    .mention-title {
-        font-size: 20px;
-        column-span: all;
-        margin-top: 30px;
-        margin-bottom: 15px;
-        color: #20bf6b;
+    .main-picture {
+        width: 30%;
+        margin-left: 400px;
+        margin-top: 20px;
+        margin-bottom: 100px;
     }
-    
-    .mention-texte {
-        margin-top: 10px;
+    .container-account {
+        height: 20vh;
+        margin-top: 5%;
+        text-align: center;
+        margin-left: 200px;
     }
-    
-    .mention-link {
-        color: #20bf6b;
+    .container-card {
+        width: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0px;
+        justify-content: center;
+        margin-left: -50px;
     }
-    /* --------------- Store_Acccount---------------*/
-    
+    .container-account-con {
+        height: 65vh;
+        margin-top: 2%;
+        margin-left: 210px;
+        text-align: center;
+    }
+    .form-control-con {
+        display: block;
+        margin-bottom: 50px;
+        margin-left: 00px;
+    }
+    .label-con {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        position: relative;
+        top: 20px;
+        left: 150px;
+    }
+    .login-input-con {
+        display: flex;
+        flex-direction: column;
+        height: 5px;
+        position: relative;
+        top: 20px;
+        left: 200px;
+    }
+    .btn-primary {
+        top: 40px;
+        left: 260px;
+        display: flex;
+        position: relative;
+    }
+    .footer-nav {
+        width: 100%;
+        height: 50px;
+        padding-top: px;
+        text-align: center;
+        background-color: #2c3e50;
+        margin-left: 130px;
+        margin-top: 350px
+    }
+}
+
+
+/* --------------- @media queries 480px ---------------*/
+
+@media only screen and (max-width: 480px) {
+    #map {
+        width: 90%;
+    }
+    body {
+        width: 480px;
+    }
+    .header-nav-top-link,
+    .logo-web,
+    .title {
+        display: none;
+    }
+    .slogan-nav {
+        margin-left: 0px;
+        width: 55%;
+        flex-direction: column-reverse;
+    }
+    .slogan {
+        font-size: 0.8em;
+        text-align: center;
+    }
+    .logo-mobile {
+        display: block;
+    }
+    .header-nav {
+        background: none;
+    }
+    .header-nav-top-item {
+        padding: 0;
+        margin: 10px;
+    }
+    .menu {
+        margin: 0;
+        padding: 0;
+        z-index: 5;
+    }
+    .nav {
+        margin-left: -250px;
+        transition-duration: 0.5s;
+    }
+    .nav_open {
+        margin-left: 0;
+        transition-duration: 0.5s;
+    }
+    .menu-search-list,
+    .menu-search-item {
+        padding-top: 2px;
+    }
+    .menu-search-list {
+        font-size: 0.8em;
+        margin: 5%;
+        padding-top: 5%;
+    }
     .description {
-        margin: 2% 0;
+        margin: 10% 0;
     }
-    
+    .content-register {
+        margin: 0;
+    }
     .col-form {
         top: 20px;
         left: 10px;
@@ -244,811 +1078,210 @@
         flex-direction: column;
         position: relative;
     }
-    
+    .container-account-reg {
+        height: 70vh;
+        text-align: center;
+        margin-left: 10px;
+    }
     .required {
-        top: 20px;
-        left: 830px;
-        display: flex;
-        font-weight: bold;
         position: relative;
+        top: 20px;
+        left: 420px;
+        margin-bottom: 10px;
     }
-    
     .form-control {
-        top: 20px;
-        left: 30px;
-        display: inline;
         position: relative;
+        top: 20px;
+        left: 470px;
+        margin-bottom: 10px;
     }
-    
+    .form {
+        margin-top: 10%;
+        margin-bottom: 8%;
+        margin-left: 5%;
+    }
+    .form img {
+        position: relative;
+        left: 2px;
+        top: 7px;
+    }
     .col-form-label {
         display: flex;
-        margin-bottom: 0.5%;
-    }
-    
-    .form-check {
-        display: inline;
         position: relative;
     }
-    
+    .form-check {
+        margin: 1%;
+        top: 20px;
+        display: flex;
+        position: relative;
+        left: 130px;
+    }
     .website {
         top: 20px;
         display: flex;
         position: relative;
         left: 130px;
     }
-    
     .btn-primary {
-        border: 0;
-        margin: 0;
-        top: 40px;
-        left: 920px;
-        padding: 5px 15px;
-        color: #fff;
+        top: 20px;
+        left: 190px;
         display: flex;
-        font-size: 1em;
         position: relative;
-        border-radius: 3px;
-        background-color: #20bf6b;
     }
-    
-    .content-register {
-        margin: 2%;
+    .title-account {
+        font-size: 1.8em;
+        margin: 10px 0;
+        font-weight: normal;
     }
-    
-    .content-register {
-        margin: 2%;
+    .title-register-store {
+        font-weight: normal;
     }
-    
-    .container-store,
-    .container-store-read {
-        display: flex;
-        height: 100vh;
-        flex-direction: row;
-        justify-content: flex-end;
+    .login-input {
+        padding: 2%;
+        width: 150px;
+        margin: 4% 20%;
     }
-    
-    .container-store-read {
-        height: 655px;
+    .submit-register {
+        width: 100px;
+        margin-bottom: 1%;
+        position: relative;
     }
-    
+    .register-store-paraph,
+    .paraph-account {
+        font-size: 0.9em;
+        margin: 1%;
+    }
+    .container-account-login {
+        display: inherit;
+    }
+    .nav-account-link {
+        margin-left: 10px;
+        font-size: 0.8em;
+    }
     .container-picture {
-        max-height: 650px;
-        box-shadow: 0px 0px 4px #1c1a19;
+        display: none;
     }
-    
-    .container-register-store {
-        margin-top: 1%;
+    .container-store-read {
+        display: initial;
+    }
+    .container-picture {
+        display: none;
+    }
+    .container-store-read {
+        display: initial;
+    }
+    .store-information {
+        width: 100%;
         text-align: center;
     }
-    
+    .title-store,
+    .subtitle-store {
+        text-align: center;
+    }
+    .nav-account-link2 {
+        font-size: 1.2em;
+    }
+    .title-mention {
+        font-size: 1.2em;
+    }
     .container-account {
-        height: 100vh;
+        height: 20vh;
         margin-top: 5%;
         text-align: center;
+        margin-left: 00px;
     }
-    
-    .container-account-link {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .container-account-login {
-        height: 100vh;
-        margin-top: 4%;
-        text-align: center;
-    }
-    
-    .adress-store-email,
-    .store-information,
-    .subtitle-store,
-    .adress-store {
-        color: white;
-    }
-    
-    .subtitle-store {
-        text-transform: capitalize;
-    }
-    
-    .store-information {
-        width: 30%;
-        padding: 0 2%;
-        text-align: justify;
-    }
-    
-    .title-store,
-    .list-title {
-        margin-bottom: 25px;
-        color: #4cd137;
-        font-size: 1.9em;
-        font-weight: 700;
-        text-align: justify;
-        font-family: 'Oswald', sans-serif;
-    }
-    
-    .subtitle-store {
-        padding: 1% 0;
-        font-weight: 700;
-        text-align: justify;
-    }
-    
-    .adress-store,
-    .mode-payment,
-    .days-hours,
-    .service {
-        padding: 0.4em 0;
-        font-size: 0.8em;
-    }
-    
-    .opening,
-    .information-payment,
-    .commercial-service {
-        margin: 2% 0;
-    }
-    
-    .adress-store-email {
-        padding: 0.4em 0;
-        font-size: 0.8em;
-    }
-    
-    .description {
-        padding: 0.5em;
-    }
-    
-    .register-store-paraph {
-        padding: 1%;
-        font-size: 1.1em;
-    }
-    
-    .title-register-store {
-        color: #20bf6b;
-        font-size: 1.9em;
-        font-weight: 700;
-        font-family: 'Oswald', sans-serif;
-    }
-    
-    .form-error {
-        color: #ff0000;
-    }
-    
-    .submit-register {
-        text-align: center;
-        height: 35px;
-        border: 0;
-        padding: 5px 15px;
-        color: #fff;
-        cursor: pointer;
-        font-size: 1em;
-        border-radius: 5px;
-        text-decoration: none;
-        background-color: #20bf6b;
-    }
-    
-    .title-account {
-        color: #20bf6b;
-        font-size: 2.5em;
-        font-weight: 700;
-        margin-bottom: 1%;
-        text-align: center;
-        font-family: 'Oswald', sans-serif;
-    }
-    
-    .user-account {
-        color: white;
-        font-weight: bolder;
-        text-transform: capitalize;
-    }
-    
-    .link-account {
-        color: white;
-        border-radius: 3px;
-        text-decoration: none;
-    }
-    
-    a.link-account:hover {
-        background: #20bf6b;
-    }
-    
-    .paraph-account {
-        padding: 1%;
-        font-size: 1.1em;
-    }
-    
     .container-card {
         display: flex;
-        flex-wrap: wrap;
-        margin: 35px;
+        flex-direction: column;
         justify-content: center;
+        margin-left: 100px;
     }
-    
-    .card {
-        max-width: 220px;
-        margin: 15px;
-        padding: 15px;
-        border-radius: 10px;
-        border: 1px solid #1c1a19;
-        box-shadow: 0px 0px 4px #1c1a19;
+    .container-account-con {
+        height: 65vh;
+        margin-top: 2%;
+        margin-left: 10px;
     }
-    
-    .card-content {
-        margin: 5px;
-        padding: 5px;
+    .form-control-con {
+        display: block;
+        margin-bottom: 50px;
+        margin-left: 00px;
     }
-    
-    .card-text {
-        font-size: 1em;
-        color: gainsboro;
+    .label-con {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        position: relative;
+        top: 20px;
+        left: 90px;
     }
-    
-    .card-title {
-        font-size: 1.1em;
-        color: #4cd137;
-        font-weight: bolder;
+    .login-input-con {
+        display: flex;
+        flex-direction: column;
+        height: 5px;
+        position: relative;
+        top: 20px;
+        left: 140px;
     }
-    
-    .card-link-account {
-        color: #fff;
-        font-size: 0.9em;
-        font-weight: bold;
-        text-decoration: none;
-    }
-    
-    a.card-link-account:hover {
-        color: #20bf6b;
-    }
-    
-    .nav-account-link2 {
-        color: #fff;
-        font-size: 1.6em;
-        font-weight: 700;
-        margin-bottom: 2%;
+    .container-account-modif {
+        display: flex;
+        flex-direction: column;
+        height: 30vh;
         text-align: center;
-        text-decoration: none;
-        font-family: 'Oswald', sans-serif;
+        margin-left: 0px;
     }
-    
-    a.nav-account-link2:hover {
-        color: #20bf6b;
+    .form-group-modif {
+        display: flex;
+        margin-left: -10px;
     }
-    
-    .nav-account-link {
-        color: #fff;
-        font-size: 0.8em;
-        padding: 2%;
-        text-decoration: none;
-    }
-    
-    a.nav-account-link:hover {
-        color: #20bf6b;
-    }
-    
-    .nav-account-back {
-        color: #fff;
-        font-size: 0.8em;
-        padding: 2%;
-        text-decoration: none;
-    }
-    
-    .nav-account-here {
-        font-weight: bold;
-        color: #20bf6b;
-        text-decoration: none;
-    }
-    
-    a.nav-account-here:hover {
-        color: #fff;
-    }
-    
-    .submit-log {
-        left: 50px;
-        border: 0;
-        cursor: pointer;
-        color: #20bf6b;
-        background: none;
-        font-size: 1.1em;
-        padding-right: 1%;
-    }
-    
-    .password {
-        margin-top: 1%;
-    }
-    
-    .alert {
-        color: #00a8ff;
-        margin-top: 1%;
-    }
-    
-    .display-account-store-picture {
-        border-radius: 5px;
-        box-shadow: 0px 4px 4px #1c1a19;
-    }
-    
-    .login-picture {
-        text-align: center;
-    }
-    
-    .login-input {
-        padding: 0.8%;
-    }
-    /* --------------- Footer ---------------*/
-    
     .footer-nav {
         width: 100%;
-        height: 60px;
-        padding-top: 1%;
+        height: 50px;
+        padding-top: 5px;
         text-align: center;
         background-color: #2c3e50;
+        margin-left: 10px;
+        /*margin-top: 1100px;*/
     }
-    
-    .footer-nav-link {
-        font-size: 0.9em;
-        color: white;
-        padding-right: 15px;
-        text-decoration: none;
+    #legals {
+        width: 400px;
+        overflow: scroll;
     }
-    
-    a.footer-nav-link:hover {
-        color: #20bf6b;
+    .headml {
+        margin-top: 150px;
+        column-count: 1;
+        font-size: 13px;
     }
-    
-    a.menu-search-link:hover {
-        color: #20bf6b;
+    .legals {
+        margin-top: 20px;
+        column-count: 1;
+        font-size: 10px;
     }
-    
-    .footer-nav-made {
-        font-size: 0.7em;
-        padding-top: 0.5%;
-    }
-    /* --------------- Map ---------------*/
-    
-    #map {
-        width: 100%;
-        height: 100%;
-        box-shadow: 0px 4px 4px #1c1a19;
-    }
-    
-    .popup {
-        max-width: 100px;
-    }
-    
-    .popup-title {
-        color: #2c3e50;
-        font-size: 1.1em;
-        font-weight: bold;
+    .headml h1 {
         text-align: center;
-    }
-    
-    .popup-picture {
-        text-align: center;
-    }
-    
-    .popup-link {
-        text-align: center;
-        color: black;
-        text-decoration: none;
-    }
-    /* --------------- Nav common ---------------*/
-    
-    .button-back {
-        top: 630px;
-        right: 525px;
-        color: white;
-        position: relative;
-        text-decoration: none;
-    }
-    
-    .button-display {
-        color: white;
-        position: relative;
-        text-decoration: none;
-    }
-    
-    a.button-back:hover {
         color: #20bf6b;
+        font-size: 20px;
+        margin-bottom: 50px;
     }
-    
-    a.button-display:hover {
-        color: #20bf6b;
-    }
-    
-    td {
-        border-bottom: 5px solid white;
-    }
-    
-    .list-title {
-        padding: 0 1%;
-    }
-    
-    .head {
-        margin: 10.5%;
-        font-size: 0.9em;
-    }
-    
-    .list-head,
-    .head-content {
-        padding: 1%;
-    }
-    
-    .head-content {
-        font-size: 0.8em;
-        text-align: center;
-    }
-    
-    .list-picture {
-        border-radius: 15px;
-        box-shadow: 0px 0px 4px #1c1a19;
-    }
-    /* --------------- team jtmc ---------------*/
-    
     .main-picture {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        margin-top: 130px;
-        margin-bottom: 170px;
+        display: block;
+        width: 60%;
+        margin: auto;
     }
-    
-    .laura {
-        border: 5px double;
-        border-radius: 20px;
-        padding: 10px 15px;
-        color: #20bf6b;
+    .laura img {
+        margin-left: 25px;
     }
-    
-    .laura h1 {
-        font-size: 40px;
-        text-align: center;
-        margin-bottom: 20px;
-        color: rgb(223, 246, 223);
+    .ben img {
+        margin-left: 25px;
     }
-    
-    .ben {
-        border: 5px double;
-        border-radius: 20px;
-        padding: 10px 15px;
-        color: #20bf6b;
+    .tayeb img {
+        margin-left: 25px;
     }
-    
-    .ben h1 {
-        font-size: 40px;
-        text-align: center;
-        margin-bottom: 20px;
-        color: rgb(223, 246, 223);
+    .guy img {
+        margin-left: 25px;
     }
-    
-    .tayeb {
-        border: 5px double;
-        border-radius: 20px;
-        padding: 10px 15px;
-        color: #20bf6b;
-    }
-    
-    .tayeb h1 {
-        font-size: 40px;
-        text-align: center;
-        margin-bottom: 20px;
-        color: rgb(223, 246, 223);
-    }
-    
-    .guy {
-        border: 5px double;
-        border-radius: 20px;
-        padding: 10px 15px;
-        color: #20bf6b;
-    }
-    
-    .guy h1 {
-        font-size: 40px;
-        text-align: center;
-        margin-bottom: 20px;
-        color: rgb(223, 246, 223);
-    }
-    /* --------------- @media queries 1024px ---------------*/
-    
-    @media only screen and (max-width: 1024px) {
-        body {
-            width: 812px;
-            margin: auto;
-        }
-        #map {
-            width: 1800px;
-        }
-        .header-nav-top-link,
-        .logo-web,
-        .title {
-            display: none;
-        }
-        .slogan-nav {
-            width: 55%;
-            flex-direction: column-reverse;
-            margin-left: 100px;
-        }
-        .slogan {
-            font-size: 0.8em;
-            text-align: center;
-        }
-        .logo-mobile {
-            display: block;
-        }
-        .header-nav {
-            background: none;
-        }
-        .header-nav-top-item {
-            padding: 0;
-            margin: 10px;
-        }
-        .menu {
-            margin: 0;
-            padding: 0;
-        }
-        .nav {
-            margin-left: -250px;
-            transition-duration: 0.5s;
-        }
-        .nav_open {
-            margin-left: 0;
-            transition-duration: 0.5s;
-        }
-        .menu-search-list,
-        .menu-search-item {
-            padding: 2.5% 0;
-        }
-        .container-account,
-        .container-account-login,
-        .container-register-store {
-            height: 100vh;
-            text-align: center;
-            margin-left: 180px;
-        }
-        .required {
-            top: 20px;
-            left: 130px;
-            display: flex;
-            justify-content: flex-start;
-            position: relative;
-        }
-        .form-control {
-            top: 20px;
-            left: 130px;
-            display: flex;
-            justify-content: flex-end;
-            position: relative;
-        }
-        .headml {
-            margin-top: 150px;
-            margin-left: 20px;
-            margin-right: 20px;
-            column-count: 1;
-            font-size: 15px;
-        }
-        .legals {
-            margin-top: 20px;
-            margin-left: 20px;
-            margin-right: 20px;
-            column-count: 1;
-            font-size: 12px;
-        }
-        .headml h1 {
-            text-align: center;
-            color: #20bf6b;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 30px;
-            margin-bottom: 50px;
-        }
-        .main-picture {
-            display: block;
-            width: 60%;
-            margin: auto;
-        }
-    }
-    /* --------------- @media queries 480px ---------------*/
-    
-    @media only screen and (max-width: 480px) {
-        #map {
-            width: 90%;
-        }
-        body {
-            width: 480px;
-        }
-        .header-nav-top-link,
-        .logo-web,
-        .title {
-            display: none;
-        }
-        .slogan-nav {
-            margin-left: 0px;
-            width: 55%;
-            flex-direction: column-reverse;
-        }
-        .slogan {
-            font-size: 0.8em;
-            text-align: center;
-        }
-        .logo-mobile {
-            display: block;
-        }
-        .header-nav {
-            background: none;
-        }
-        .header-nav-top-item {
-            padding: 0;
-            margin: 10px;
-        }
-        .menu {
-            margin: 0;
-            padding: 0;
-            z-index: 5;
-        }
-        .nav {
-            margin-left: -250px;
-            transition-duration: 0.5s;
-        }
-        .nav_open {
-            margin-left: 0;
-            transition-duration: 0.5s;
-        }
-        .menu-search-list,
-        .menu-search-item {
-            padding: 1.5% 0;
-        }
-        .menu-search-list {
-            font-size: 0.8em;
-        }
-        .container-account {
-            height: 60vh;
-            text-align: center;
-            margin-right: 100px;
-            margin-left: 100px;
-            margin-top: 20px;
-            margin-bottom: 50px;
-        }
-        .description {
-            margin: 10% 0;
-        }
-        .content-register {
-            margin: 0;
-        }
-        .col-form {
-            top: 20px;
-            left: 10px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-        .required {
-            position: relative;
-            top: 20px;
-            left: 50px;
-            margin-bottom: 10px;
-        }
-        .form-control {
-            position: relative;
-            top: 20px;
-            left: 50px;
-            margin-bottom: 10px;
-        }
-        .col-form-label {
-            display: flex;
-            position: relative;
-        }
-        .form-check {
-            margin: 1%;
-            top: 20px;
-            display: flex;
-            position: relative;
-            left: 130px;
-        }
-        .website {
-            top: 20px;
-            display: flex;
-            position: relative;
-            left: 130px;
-        }
-        .btn-primary {
-            top: 40px;
-            left: 100px;
-            display: flex;
-            position: relative;
-        }
-        .title-account {
-            font-size: 1.8em;
-            margin: 10px 0;
-            font-weight: normal;
-        }
-        .title-register-store {
-            font-weight: normal;
-        }
-        .login-input {
-            padding: 2%;
-            width: 150px;
-            margin: 4% 20%;
-        }
-        .submit-register {
-            width: 100px;
-            margin-bottom: 1%;
-            position: relative;
-        }
-        .register-store-paraph,
-        .paraph-account {
-            font-size: 0.9em;
-            margin: 1%;
-        }
-        .container-account-login {
-            display: inherit;
-        }
-        .nav-account-link {
-            margin-left: 10px;
-            font-size: 0.8em;
-        }
-        .container-picture {
-            display: none;
-        }
-        .container-store-read {
-            display: initial;
-        }
-        .container-picture {
-            display: none;
-        }
-        .container-store-read {
-            display: initial;
-        }
-        .store-information {
-            width: 100%;
-            text-align: center;
-        }
-        .title-store,
-        .subtitle-store {
-            text-align: center;
-        }
-        .container-card {
-            padding-bottom: 5px;
-        }
-        .container-card {
-            padding-bottom: 5px;
-        }
-        .nav-account-link2 {
-            font-size: 1.2em;
-        }
-        .title-mention {
-            font-size: 1.2em;
-        }
-        #legals {
-            width: 400px;
-            overflow: scroll;
-        }
-        .headml {
-            margin-top: 150px;
-            column-count: 1;
-            font-size: 13px;
-        }
-        .legals {
-            margin-top: 20px;
-            column-count: 1;
-            font-size: 10px;
-        }
-        .headml h1 {
-            text-align: center;
-            color: #20bf6b;
-            font-size: 20px;
-            margin-bottom: 50px;
-        }
-        .main-picture {
-            display: block;
-            width: 60%;
-            margin: auto;
-        }
-        .laura img {
-            margin-left: 25px;
-        }
-        .ben img {
-            margin-left: 25px;
-        }
-        .tayeb img {
-            margin-left: 25px;
-        }
-        .guy img {
-            margin-left: 25px;
-        }
-    }
+}
+
+
+}
+
+}

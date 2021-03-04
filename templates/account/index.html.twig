@@ -5,15 +5,16 @@
 {% block body %}
 
 <div class="container-account">
-  <img class="icon-picture-welcome" src="/images/welcome.png" width="80px "alt="icon-welcome"> 
+  <img class="icon-picture-welcome" src="/images/welcome.png" width="80px " alt="icon-welcome">
 
-      <p class="paraph-account"> Bienvenue <span class="user-account">{{ app.user.firstname }} </span>sur votre compte.</p></br>
-      <p class="paraph-account">C'est dans cet espace que vous allez pouvoir gérer votre compte ainsi que vos commerces.</p> 
+  <p class="paraph-account"> Bienvenue <span class="user-account">{{ app.user.firstname }} </span>sur votre compte.</p>
+  </br>
+  <p class="paraph-account">C'est dans cet espace que vous allez pouvoir gérer votre compte ainsi que vos commerces.</p>
 
-      <h1 class="title-account">Mon compte</h1>
-      <div class="container-account-link">
-      <a class="nav-account-link2" href="{{ path('account_store') }}">Gérer mes commerces</a>
-      <a class="nav-account-link2" href="{{ path('account_password') }}">Modifier mon mot de passe</a>
-    </div>
+  <h1 class="title-account">Mon compte</h1>
+  <div class="container-account-link">
+    <a class="nav-account-link2" href="{{ path('account_store') }}">Gérer mes commerces</a>
+    <a class="nav-account-link2" href="{{ path('account_password') }}">Modifier mon mot de passe</a>
+  </div>
 </div>
 {% endblock %}
