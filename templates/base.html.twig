@@ -19,12 +19,14 @@
 
 <body>
   <header class="header-nav">
+
     <!--Block logo-->
     <div class="logo">
       <!--Logo for the sreen desktop-->
       <a class="logo-link" href="{{ path('home') }}">
         <img class="logo-web" src="/images/logo_jtmc_v2.png" width="85" alt="logo_jtmc">
-        <!--Small logo for the sreen mobile-->
+
+        <!--Small logo for the screen mobile-->
         <img class="logo-mobile" src="/images/logo_jtmc_small_v2.png" width="80px" alt="logo_jtmc">
       </a>
       <a class="title-link" href="{{ path('home') }}">
@@ -46,6 +48,7 @@
           </li>
 
           {% if app.user %}
+          <!--If user connected else display button my account and button logount-->
           <a href="{{ path('app_login')}}"><img src="/images/account.png" width="30px " alt="icon-account"></a>
           <li class="header-nav-top-item">
             <a class="header-nav-top-link" href="{{ path('app_login')}}">Mon compte</a>
@@ -57,6 +60,7 @@
           </li>
 
           {% else %}
+           <!--else display button login and register-->
           <a href="{{ path('app_login')}}"><img src="/images/logout.png" width="30px " alt="icon-login"></a>
           <li class="header-nav-top-item">
             <a class="header-nav-top-link" href="{{ path('app_login')}}">Connexion</a>
@@ -74,6 +78,7 @@
           </li>-->
 
           {% if is_granted ('ROLE_ADMIN') %}
+          <!--if user has a role admin else display button administration this control access is determined in file security.yaml-->
           <a href="/admin" target="_blank"><img src="/images/admin.png" width="30px " alt="icon-administration"></a>
           <li class="header-nav-top-item">
             <a class="header-nav-top-link" href="/admin" target="_blank">Administration</a>
