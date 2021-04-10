@@ -66,7 +66,7 @@
             <a class="header-nav-top-link" href="{{ path('app_login')}}">Connexion</a>
           </li>
 
-          <a href="{{ path('register')}}"><img src="/images/modification.png" width="25px " alt="icon-inscription"></a>
+          <a href="{{ path('register')}}"><img src="/images/register.png" width="25px " alt="icon-inscription"></a>
           <li class="header-nav-top-item">
             <a class="header-nav-top-link" href="{{ path('register')}}">Inscription</a>
           </li>
@@ -87,105 +87,127 @@
         </ul>
       </nav>
     </div>
+
   </header>
+
+{# display every flash message available #}
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert alert-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+
   {% block menu %}
-  <!--Block lateral navigation-->
+
 
   <main class="wrapper">
-    <!--Menu Burger-->
-    <button class="toggle_btn">&#9776;</button>
-
-    <!--Block drawer menu-->
-    <aside class="menu nav">
-
-      <form class="form-city" action="{{path('home')}}" method="post">
-        <div class="form">
-          <label for="city" class="search-city">Quelle ville ?</label>
-          <input type="text" name="city" id="city" placeholder="Code Postal / Ville" />
-          <button class="submit"> <img src="/images/m-glass.png" width="30px" alt="icon-magnifying-glass"> </button>
-          <a href="{{ path('home',{reset: "1"})}}" class="menu-search-link"><img
-              src="https://img.icons8.com/windows/32/000000/cancel.png" width="25px" alt="shop-icon" />&ensp; Supprimer
-            le filtre</a>
+    <!--Block Menu-->
+    <div class="block-menu nav">
+    <!--Respnsive Button-->
+    <button class="hamburger-button">&#9776;</button>
+    <!--Search Engine-->
+        <div class="search-engine">
+              <form class="form-city" action="{{path('home')}}" method="post">
+                <div class="form">
+                  <label for="city" class="search-city">Quelle ville ?</label><br>
+                  <input type="text" name="city" ="city" placeholder="Code Postal / Ville" />
+                  <button class="submit"> Aller ! &ensp;<img src="/images/m-glass.png" width="27px" alt="icon-magnifying-glass"> </button><br>
+                  <a href="{{ path('home',{reset: "1"})}}" class="menu-search-link">
+                  <img src="https://img.icons8.com/windows/32/000000/cancel.png" width="25px" alt="shop-icon" />&ensp; Supprimer le filtre</a>
+                </div>
+              </form>
+              
         </div>
-      </form>
+    <!--Select filters-->
+        <div class="hamburger">
+          <div class="hamburger-sidebar">
+            <div class="hamburger-sidebar-header"></div>
+            <div class="hamburger-sidebar-body"></div>
+          </div>
+            <div class="hamburger-overlay"></div>
+          <div class="hamburger-content">
+            <ul class="menu-search-list">Quel commerce ?
+              <li class="menu-search-item">
+                <a href="{{ path('home',{activity: "boucherie-charcuterie"})}}" class="menu-search-link"><img
+                    src="https://img.icons8.com/windows/32/000000/year-of-pig.png" width="25px" alt="shop-icon" />&ensp;
+                  Boucherie/Charcuterie</a>
+              </li>
+              <li class="menu-search-item">
+                <a href="{{ path('home',{activity: "boulangerie"})}}" class="menu-search-link"><img
+                    src="https://img.icons8.com/windows/32/000000/bread.png" width="25px" alt="shop-icon" />&ensp;
+                  Boulangerie</a>
+              </li>
+              <li class="menu-search-item">
+                <a href="{{ path('home',{activity: "cafe-bar-tabac"})}}" class="menu-search-link"><img
+                    src="https://img.icons8.com/ios-filled/50/000000/smoking.png" width="25px" alt="shop-icon" />&ensp;
+                  Café-Bar/tabac</a>
+              </li>
+              <li class="menu-search-item">
+                <a href="{{ path('home',{activity: "coiffeur"})}}" class="menu-search-link"><img
+                    src="https://img.icons8.com/windows/32/000000/barbershop.png" width="25px" alt="shop-icon" />&ensp;
+                  Coiffeur</a>
+              </li>
+              <li class="menu-search-item">
+                <a href="{{ path('home',{activity: "epicerie"})}}" class="menu-search-link"><img
+                    src="https://img.icons8.com/windows/32/000000/shopping-basket.png" width="25px" alt="shop-icon" />&ensp;
+                  Epicerie</a>
+              </li>
+              <li class="menu-search-item">
+                <a href="{{ path('home',{activity: "fleuriste"})}}" class="menu-search-link"><img
+                    src="https://img.icons8.com/ios/50/000000/bridal-bouquet.png" width="25px" alt="shop-icon" />&ensp;
+                  Fleuriste</a>
+              </li>
+              <li class="menu-search-item">
+                <a href="{{ path('home',{activity: "librairie-presse"})}}" class="menu-search-link"><img
+                    src="https://img.icons8.com/windows/32/000000/books--v1.png" width='25px' alt="shop-icon" />&ensp;
+                  Librairie/Presse</a>
+              </li>
+              <li class="menu-search-item">
+                <a href="{{ path('home',{activity: "pharmacie"})}}" class="menu-search-link"><img
+                    src="https://img.icons8.com/pastel-glyph/64/000000/doctors-bag--v2.png" width="25px"
+                    alt="shop-icon" />&ensp; Pharmacie</a>
+              </li>
+              <li class="menu-search-item">
+                <a href="{{ path('home',{activity: "restaurant"})}}" class="menu-search-link"><img
+                    src="https://img.icons8.com/pastel-glyph/64/000000/restaurant--v2.png" width='25px'
+                    alt="shop-icon" />&ensp; Restaurant</a>
+              </li>
+              <li class="menu-search-item">
+                <a href="{{ path('home',{activity: "autre"})}}" class="menu-search-link"><img
+                    src="https://img.icons8.com/pastel-glyph/64/000000/market--v2.png" width='25px' alt="shop-icon" />&ensp;
+                  Autre</a>
+              </li>
+            </ul>
+            <ul class="menu-search-list">Quel service commercial ?
+              <li class="menu-search-item">
+                <a href="{{ path('home',{filter: "Click and collect"})}}" class="menu-search-link"><img src="/images/click-and-collect.png" alt="commercial-icon"width='25px'/>&ensp; click and collect</a>
+              </li>
+              <li class="menu-search-item">
+                <a href="{{ path('home',{filter: "Livraison à domicile"})}}" class="menu-search-link"><img src="https://img.icons8.com/windows/32/000000/deliver-food.png" width='25px'/>&ensp; livraison à domicile</a>
+              </li>
+              <li class="menu-search-item">
+                <a href="{{ path('home',{filter: "Mondial relais"})}}" class="menu-search-link"><img src="/images/mondial-relais.png" alt="commercial-icon"width='25px'/>&ensp; mondial relais </a>
+              </li>
+              <li class="menu-search-item">
+                <a href="{{ path('home',{filter: "Phenix"})}}" class="menu-search-link"><img src="/images/phenix.png" alt="commercial-icon"width='25px'/>&ensp; phenix</a>
+              </li>
+              <li class="menu-search-item">
+                <a href="{{ path('home',{filter: "Relais colis"})}}" class="menu-search-link"><img src="/images/relais-colis.png" alt="commercial-icon"width='25px'/>&ensp; relais colis</a>
+              </li>
+              <li class="menu-search-item">
+                <a href="{{ path('home',{filter: "Too good to go"})}}" class="menu-search-link"><img src="../images/tgtg.png" alt="commercial-icon"width='25px'/>&ensp; too good to go</a>
+              </li>
+            </ul>
+          </div>
+        
+        </div>
+        <div class="promotion"></div>
+          
 
-
-      <ul class="menu-search-list">Quel commerce ?
-
-        <li class="menu-search-item">
-          <a href="{{ path('home',{filter: "boucherie-charcuterie"})}}" class="menu-search-link"><img
-              src="https://img.icons8.com/windows/32/000000/year-of-pig.png" width="25px" alt="shop-icon" />&ensp;
-            Boucherie/Charcuterie</a>
-        </li>
-        <li class="menu-search-item">
-          <a href="{{ path('home',{filter: "boulangerie"})}}" class="menu-search-link"><img
-              src="https://img.icons8.com/windows/32/000000/bread.png" width="25px" alt="shop-icon" />&ensp;
-            Boulangerie</a>
-        </li>
-        <li class="menu-search-item">
-          <a href="{{ path('home',{filter: "cafe-bar-tabac"})}}" class="menu-search-link"><img
-              src="https://img.icons8.com/ios-filled/50/000000/smoking.png" width="25px" alt="shop-icon" />&ensp;
-            Café-Bar/tabac</a>
-        </li>
-        <li class="menu-search-item">
-          <a href="{{ path('home',{filter: "coiffeur"})}}" class="menu-search-link"><img
-              src="https://img.icons8.com/windows/32/000000/barbershop.png" width="25px" alt="shop-icon" />&ensp;
-            Coiffeur</a>
-        </li>
-        <li class="menu-search-item">
-          <a href="{{ path('home',{filter: "epicerie"})}}" class="menu-search-link"><img
-              src="https://img.icons8.com/windows/32/000000/shopping-basket.png" width="25px" alt="shop-icon" />&ensp;
-            Epicerie</a>
-        </li>
-        <li class="menu-search-item">
-          <a href="{{ path('home',{filter: "fleuriste"})}}" class="menu-search-link"><img
-              src="https://img.icons8.com/ios/50/000000/bridal-bouquet.png" width="25px" alt="shop-icon" />&ensp;
-            Fleuriste</a>
-        </li>
-        <li class="menu-search-item">
-          <a href="{{ path('home',{filter: "librairie-presse"})}}" class="menu-search-link"><img
-              src="https://img.icons8.com/windows/32/000000/books--v1.png" width='25px' alt="shop-icon" />&ensp;
-            Librairie/Presse</a>
-        </li>
-        <li class="menu-search-item">
-          <a href="{{ path('home',{filter: "pharmacie"})}}" class="menu-search-link"><img
-              src="https://img.icons8.com/pastel-glyph/64/000000/doctors-bag--v2.png" width="25px"
-              alt="shop-icon" />&ensp; Pharmacie</a>
-        </li>
-        <li class="menu-search-item">
-          <a href="{{ path('home',{filter: "restaurant"})}}" class="menu-search-link"><img
-              src="https://img.icons8.com/pastel-glyph/64/000000/restaurant--v2.png" width='25px'
-              alt="shop-icon" />&ensp; Restaurant</a>
-        </li>
-        <li class="menu-search-item">
-          <a href="{{ path('home',{filter: "autre"})}}" class="menu-search-link"><img
-              src="https://img.icons8.com/pastel-glyph/64/000000/market--v2.png" width='25px' alt="shop-icon" />&ensp;
-            Autre</a>
-        </li>
-      </ul>
-
-      <!--<ul class="menu-search-list">Quel service commercial ?
-          <li class="menu-search-item">
-            <a href="{{ path('home',{filter: "Click and collect"})}}" class="menu-search-link"><img src="/images/click-and-collect.png" alt="commercial-icon"width='25px'/>&ensp; click and collect</a>
-          </li>
-          <li class="menu-search-item">
-            <a href="{{ path('home',{filter: "Livraison à domicile"})}}" class="menu-search-link"><img src="https://img.icons8.com/windows/32/000000/deliver-food.png" width='25px'/>&ensp; livraison à domicile</a>
-          </li>
-          <li class="menu-search-item">
-            <a href="{{ path('home',{filter: "Mondial relais"})}}" class="menu-search-link"><img src="/images/mondial-relais.png" alt="commercial-icon"width='25px'/>&ensp; mondial relais </a>
-          </li>
-          <li class="menu-search-item">
-            <a href="{{ path('home',{filter: "Phenix"})}}" class="menu-search-link"><img src="/images/phenix.png" alt="commercial-icon"width='25px'/>&ensp; phenix</a>
-          </li>
-          <li class="menu-search-item">
-            <a href="{{ path('home',{filter: "Relais colis"})}}" class="menu-search-link"><img src="/images/relais-colis.png" alt="commercial-icon"width='25px'/>&ensp; relais colis</a>
-          </li>
-          <li class="menu-search-item">
-            <a href="{{ path('home',{filter: "Too good to go"})}}" class="menu-search-link"><img src="../images/tgtg.png" alt="commercial-icon"width='25px'/>&ensp; too good to go</a>
-          </li>
-      </ul>-->
-
-    </aside>
+  </div>
     {% endblock %}
 
     {% block body %}{% endblock %}
@@ -200,7 +222,7 @@
     </div>
   </footer>
 
-  <script src="{{ asset('js/menu-burger.js') }}"></script>
+  <script src="{{ asset('js/hamburger-button.js') }}"></script>
   <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
     integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
     crossorigin=""></script>

@@ -21,21 +21,25 @@ class MainController extends AbstractController
     {
         /**
         * @Route("/", name="home")
+        * This function manage the filters activity of responsive menu
         */
         public function homepage (Request $request,SessionInterface $session): Response
         {
-
-           $filter = $request->query->get('filter');
+           // dump($request);
+           $activity = $request->query->get('activity');
+           // dump($activity);
            $reset = $request->query->get('reset');
+           // dump($reset);
            if($request->getMethod() === Request::METHOD_POST){
-                $session->set('zip-city',$request->request->get('city'));
+                $session->set('search-city',$request->request->get('city'));
            }
-           if($filter){
-               $session->set('filter',$filter);
+           // dump($session);
+           if($activity){
+               $session->set('activity',$activity);
            }
            if($reset){
-            $session->remove('filter');
-            $session->remove('zip-city');
+            $session->remove('activity');
+            $session->remove('search-city');
             
             return $this->redirectToRoute('home');
            }
@@ -43,13 +47,33 @@ class MainController extends AbstractController
         }
 
         /**
-         * @Route("/get", name="api")
+         * This function display map markers from database and use custom function for active activity filters
+         * @Route("/get", name="apiActivity")
          */
-        public function map(StoreRepository $storeRepository,SessionInterface $session): Response
+        public function mapActivity(StoreRepository $storeRepository, SessionInterface $session): Response
         {
-           
-            $store = $storeRepository->findByFilter($session);
+            $store = $storeRepository->findByActivity($session);
+            dump($store);
+            
             return $this->json($store, 200, [], [
+                AbstractNormalizer::IGNORED_ATTRIBUTES => [
+                        'user',
+                        'openDays',
+                        'InformationPayment',
+                        'CommercialService',
+                ]
+            ]);
+        }
+
+        /**
+         * This function display map markers from database and use custom function for active activity filters
+         * @Route("/get", name="apiService")
+         */
+        public function mapService(CommercialServiceRepository $commercialServiceRepository, SessionInterface $session): Response
+        {
+            $commercial = $commercialServiceRepository->findByService($session);
+
+            return $this->json($commercial, 200, [], [
                 AbstractNormalizer::IGNORED_ATTRIBUTES => [
                         'user',
                         'openDays',

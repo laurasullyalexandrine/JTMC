@@ -24,7 +24,7 @@
           if (xmlhttp.status == 200) {
               // On traite les données reçues
               let donnees = JSON.parse(xmlhttp.responseText)
-              console.log(donnees)
+              // console.log(donnees)
               for (let i = 0; i < donnees.length; i++) {
                   let name = donnees[i].name
                   let id = donnees[i].id

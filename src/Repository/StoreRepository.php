@@ -19,27 +19,28 @@ class StoreRepository extends ServiceEntityRepository
         parent::__construct($registry, Store::class);
     }
 
-   
-    public function findByFilter($session)
+   // create a custom function for active activity filters
+    public function findByActivity($session)
     {
-        $cityZip = $session->get('zip-city');
-        $filter = $session->get('filter');
+        $citySearch = $session->get('search-city');
+        $activity = $session->get('activity');
         $qb = $this->createQueryBuilder('s');
-        if($filter !== null){
-            $qb->andWhere("s.storeActivity = :filter")
-            ->setParameter('filter', $filter);
-        }
-        if($cityZip !== null){
-            $qb->andWhere("s.city = :cityZip")
-            ->orWhere("s.postalCode = :cityZip ")
-            ->setParameter('cityZip', $cityZip);
-        } 
-          return  $qb->getQuery()
-            ->getResult()
-        ;
-    }
-  
 
+        if($activity !== null)
+        {
+            $qb->andWhere("s.storeActivity = :activity")
+            ->setParameter('activity', $activity);
+        }
+
+        if($citySearch !== null)
+        {
+            $qb->andWhere("s.city = :citySearch")
+            ->orWhere("s.postalCode = :citySearch ")
+            ->setParameter('citySearch', $citySearch);
+        }
+
+          return  $qb->getQuery()->getResult();
+    }
     /*
     public function findOneBySomeField($value): ?Store
     {

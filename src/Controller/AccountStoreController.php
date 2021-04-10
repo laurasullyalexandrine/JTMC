@@ -54,6 +54,8 @@ class AccountStoreController extends AbstractController
 
             $this->entityManager->flush();
 
+            $this->addFlash('success', 'Votre commerce à bien été ajouté à votre compte');
+
             return $this->redirectToRoute('account_store');
         }
 

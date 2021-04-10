@@ -7,24 +7,28 @@
 {% block body %}
 
 <div class="container-account-reg">
-   <img class="icon-picture-register" src="/images/modification.png" width="50px" alt="icon-inscription">
+   <p class="paraph-hook">Vous voulez prendre part à cette nouvelle aventure !</p>
+   <p class="paraph-hook">Commençez par créez votre compte !</p>
+   <img class="icon-picture-register" src="/images/register.png" width="50px" alt="icon-inscription">
    <h1 class="title-account">Inscription</h1>
 
 
-<div class="form-group-reg">
-   {{ form_start(form) }}
-   <div class="form-error">{{ form_errors(form) }}</div>
 
-   {{ form_row(form.firstname, {'label': 'Prénom :'}, {'attr': {'class': 'firstname'}}) }}
-   {{ form_row(form.lastname, {'label': 'Nom :'}, {'attr': {'class': 'lastname'}}) }}
-   {{ form_row(form.email, {'label': 'E-mail :'}, {'attr': {'class': 'email'}}) }}
+   <div class="form-group-reg">
+      {{ form_start(form) }}
+      <div class="form-error">{{ form_errors(form) }}</div>
 
-   {{ form_row(form.password.first, {'label': 'Mot de passe :'}, {'attr': {'class': 'password1'}}) }}
+      {{ form_row(form.firstname, {'label': 'Prénom '}, {'attr': {'class': 'firstname'}}) }}
+      {{ form_row(form.lastname, {'label': 'Nom '}, {'attr': {'class': 'lastname'}}) }}
+      {{ form_row(form.email, {'label': 'E-mail '}, {'attr': {'class': 'email'}}) }}
 
-   {{ form_row(form.password.second) }}
+      {{ form_row(form.password.first, {'label': 'Mot de passe '}, {'attr': {'class': 'password1'}}) }}
 
-   {{ form_end(form) }}
+      {{ form_row(form.password.second) }}
+   
+   </div>
+ {{ form_end(form) }}
 </div>
-</div>
+     
 
 {% endblock %}

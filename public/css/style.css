@@ -4,8 +4,11 @@ body {
 }
 
 .wrapper {
-    height: 90vh;
+    margin: auto;
+    width: 1800px;
+    height: 100vh;
     display: flex;
+    justify-content: space-between;
     position: relative;
     flex-direction: row;
 }
@@ -99,43 +102,66 @@ a.link-account:hover {
     text-decoration: none;
 }
 
+/* --------------- Hamburger button responsive ---------------
 
-/* --------------- Button responsive ---------------*/
+#search-engine {
+    height: 100%;
+}*/
 
-.toggle_btn {
-    top: 70px;
-    z-index: 10;
-    border: none;
-    padding: 0.6%;
-    cursor: pointer;
-    font-size: 35px;
-    color: #20bf6b;
-    line-height: 47px;
-    background-color: #2c3e50;
+.form img {
+    position: relative;
+    left: 2px;
+    top: 7px;
 }
 
-.toggle_btn span:after {
+/*.hamburger {
     left: 0;
-    top: 10px;
-    content: '';
-    height: 3px;
+    width: 320px;
+    flex-direction: column;
+}*/
+
+.hamburger-button {
+    display: none;
+    cursor: pointer;
+    background-color: #2c3e50;
+    border: 1px solid #20bf6b;
+    border-radius: 5px;
+    font-size: 30px;
+    color: #20bf6b;
+    margin-bottom: 4%;
+    padding: 0;
+    line-height: 47px;
+}
+
+.hamburger-overlay {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
     width: 100%;
-    position: absolute;
-    background-color: #20bf6b;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
 }
 
-.nav {
-    margin-left: -250px;
-    transition-duration: 0.5s;
-}
-
-.nav_open {
-    margin-left: 0;
-    transition-duration: 0.5s;
+/*.hamburger-sidebar {
+    display: none;
+    width: 360px;
+    z-index: 20;
+    height: 100%;
+    background-color: #0a3d62;
+    transform: translateX(-150%);
+    transition: transform 0.5s ease-out;
 }
 
 
 /* --------------- Left menu ---------------*/
+
+.block-menu {
+    margin-top: 0.5%;
+    display: flex;
+    flex-direction: column;
+}
 
 .submit {
     border: 0;
@@ -147,31 +173,24 @@ a.link-account:hover {
     padding-right: 1%;
 }
 
-.menu {
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-}
-
 .search-city,
-.menu-search-list {
+.menu-search-list,
+.promotion {
     color: #20bf6b;
     font-size: 1em;
-    padding-bottom: 20px;
 }
 
-.menu-search-list {
-    color: #20bf6b;
-    border-top: 1px solid white;
-    margin-left: 5%;
-    padding-top: 20%;
-    padding-bottom: 10%;
+.menu-search-list,
+.promotion {
+    width: 320px;
+    padding: 5%;
+    margin-bottom: 5%;
+    box-shadow: 0px 0px 4px #1c1a19;
 }
 
 .menu-search-item {
-    width: 50vh;
-    padding-top: 6%;
-    padding-bottom: 5%;
+    padding-bottom: 0.5%;
+    width: 320px;
 }
 
 .menu-search-item img {
@@ -188,22 +207,19 @@ a.link-account:hover {
 
 input {
     margin: 1%;
-    padding: 1%;
+    padding: 3%;
     border-radius: 3px;
     border: 1px solid black;
 }
 
 .form {
-    margin-top: 10%;
-    margin-bottom: 8%;
-    margin-left: 5%;
+    width: 320px;
+    margin-bottom: 5%;
+    padding: 5%;
+    box-shadow: 0px 0px 4px #1c1a19;
 }
 
-.form img {
-    position: relative;
-    left: 2px;
-    top: 7px;
-}
+
 
 
 /* --------------- Legals mentions ---------------*/
@@ -263,43 +279,55 @@ input {
     margin: 2% 0;
 }
 
+.paraph-hook {
+    margin-top: 5%;
+}
+
+.title-account {
+    color: #20bf6b;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 2% 0;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
 .col-form {
     top: 20px;
     left: 10px;
     display: flex;
-    flex-direction: column;
     position: relative;
+    flex-direction: column;
 }
 
 .container-account-reg {
-    height: 70vh;
-    text-align: center;
+    width: 900px;
+    height: 90vh;
+    margin: auto;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 4px #1c1a19;
 }
 
-.form-group-reg {
+.container-account-con {
+    width: 900px;
+    height: 90vh;
     display: flex;
-    margin-left: 330px;
+    border-radius: 5px;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 4px #1c1a19;
+}
+
+.icon-picture-register {
+    margin: 7% 0 2% 0;
 }
 
 .required {
     display: flex;
-    flex-direction: column;
-    width: 300px;
-    font-weight: bold;
-    position: relative;
-    top: 20px;
-    left: 490px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.form-control {
-    display: flex;
-    flex-direction: column;
-    height: 23px;
-    position: relative;
-    top: 20px;
-    left: 540px;
+    margin: 5% 0;
 }
 
 .col-form-label {
@@ -323,12 +351,10 @@ input {
     border: 0;
     margin: 0;
     top: 70px;
-    left: 575px;
-    padding: 5px 15px;
     color: #fff;
-    display: flex;
     font-size: 1em;
-    position: relative;
+    margin-top: 50%;
+    padding: 5px 15px;
     border-radius: 3px;
     background-color: #20bf6b;
 }
@@ -372,12 +398,6 @@ input {
 .container-account {
     height: 60vh;
     margin-top: 5%;
-    text-align: center;
-}
-
-.container-account-con {
-    height: 65vh;
-    margin-top: 2%;
     text-align: center;
 }
 
@@ -500,15 +520,6 @@ input {
     border-radius: 5px;
     text-decoration: none;
     background-color: #20bf6b;
-}
-
-.title-account {
-    color: #20bf6b;
-    font-size: 2.5em;
-    font-weight: 700;
-    margin-bottom: 1%;
-    text-align: center;
-    font-family: 'Oswald', sans-serif;
 }
 
 .user-account {
@@ -644,8 +655,10 @@ a.nav-account-here:hover {
 }
 
 .alert {
-    color: #00a8ff;
-    margin-top: 1%;
+    margin: 1% 0;
+    color: #38ada9;
+    text-align: center;
+    font-size: 1.1em;
 }
 
 .display-account-store-picture {
@@ -697,8 +710,11 @@ a.menu-search-link:hover {
 /* --------------- Map ---------------*/
 
 #map {
+    z-index: 10;
     width: 100%;
     height: 100%;
+    margin-left: 3%;
+    border-radius: 3px;
     box-shadow: 0px 4px 4px #1c1a19;
 }
 
@@ -926,13 +942,28 @@ td {
         display: flex;
         margin-left: 20px;
     }
-    .required {
-        margin-left: -330px;
-        margin-top: 5px;
-        margin-bottom: 5px;
+    .title-account {
+        font-size: 2em;
     }
-    .form-control {
-        margin-left: -320px;
+    .required {
+        display: flex;
+        margin-top: 6%;
+        font-size: 0.9em;
+
+     }
+     .form-control {
+        display: flex;
+        margin-top: 2%;
+
+    }
+    .btn-primary {
+        border: 0;
+        margin: 0;
+        padding: 5px 15px;
+        color: #fff;
+        font-size: 1em;
+        border-radius: 3px;
+        background-color: #20bf6b;
     }
     .headml {
         margin-top: 150px;
@@ -1003,12 +1034,6 @@ td {
         top: 20px;
         left: 200px;
     }
-    .btn-primary {
-        top: 40px;
-        left: 260px;
-        display: flex;
-        position: relative;
-    }
     .footer-nav {
         width: 100%;
         height: 50px;
@@ -1024,279 +1049,8 @@ td {
 /* --------------- @media queries 480px ---------------*/
 
 @media only screen and (max-width: 480px) {
-    #map {
-        width: 90%;
-    }
-    body {
-        width: 480px;
-    }
-    .header-nav-top-link,
-    .logo-web,
-    .title {
-        display: none;
-    }
-    .slogan-nav {
-        margin-left: 0px;
-        width: 55%;
-        flex-direction: column-reverse;
-    }
-    .slogan {
-        font-size: 0.8em;
-        text-align: center;
-    }
-    .logo-mobile {
-        display: block;
-    }
-    .header-nav {
-        background: none;
-    }
-    .header-nav-top-item {
-        padding: 0;
-        margin: 10px;
-    }
-    .menu {
-        margin: 0;
-        padding: 0;
-        z-index: 5;
-    }
-    .nav {
-        margin-left: -250px;
-        transition-duration: 0.5s;
-    }
-    .nav_open {
-        margin-left: 0;
-        transition-duration: 0.5s;
-    }
-    .menu-search-list,
-    .menu-search-item {
-        padding-top: 5px;
-    }
-    .menu-search-item {
-        width: 50vh;
-        padding-top: 8%;
-    }
-    .menu-search-list {
-        font-size: 0.8em;
-        margin: 5%;
-        padding-top: 5%;
-    }
-    .description {
-        margin: 10% 0;
-    }
-    .content-register {
-        margin: 0;
-    }
-    .col-form {
-        top: 20px;
-        left: 10px;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-    }
-    .container-account-reg {
-        height: 70vh;
-        text-align: center;
-        margin-left: 10px;
-    }
-    .required {
-        position: relative;
-        top: 20px;
-        left: 420px;
-        margin-bottom: 10px;
-    }
-    .form-control {
-        position: relative;
-        top: 20px;
-        left: 470px;
-        margin-bottom: 10px;
-    }
-    .form {
-        margin-top: 10%;
-        margin-bottom: 8%;
-        margin-left: 5%;
-    }
-    .form img {
-        position: relative;
-        left: 2px;
-        top: 7px;
-    }
-    .col-form-label {
-        display: flex;
-        position: relative;
-    }
-    .form-check {
-        margin: 1%;
-        top: 20px;
-        display: flex;
-        position: relative;
-        left: 130px;
-    }
-    .website {
-        top: 20px;
-        display: flex;
-        position: relative;
-        left: 130px;
-    }
-    .btn-primary {
-        top: 20px;
-        left: 190px;
-        display: flex;
-        position: relative;
-    }
-    .title-account {
-        font-size: 1.8em;
-        margin: 10px 0;
-        font-weight: normal;
-    }
-    .title-register-store {
-        font-weight: normal;
-    }
-    .login-input {
-        padding: 2%;
-        width: 150px;
-        margin: 4% 20%;
-    }
-    .submit-register {
-        width: 100px;
-        margin-bottom: 1%;
-        position: relative;
-    }
-    .register-store-paraph,
-    .paraph-account {
-        font-size: 0.9em;
-        margin: 1%;
-    }
-    .container-account-login {
-        display: inherit;
-    }
-    .nav-account-link {
-        margin-left: 10px;
-        font-size: 0.8em;
-    }
-    .container-picture {
-        display: none;
-    }
-    .container-store-read {
-        display: initial;
-    }
-    .container-picture {
-        display: none;
-    }
-    .container-store-read {
-        display: initial;
-    }
-    .store-information {
-        width: 100%;
-        text-align: center;
-    }
-    .title-store,
-    .subtitle-store {
-        text-align: center;
-    }
-    .nav-account-link2 {
-        font-size: 1.2em;
-    }
-    .title-mention {
-        font-size: 1.2em;
-    }
-    .container-account {
-        height: 20vh;
-        margin-top: 5%;
-        text-align: center;
-        margin-left: 00px;
-    }
-    .container-card {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-left: 100px;
-    }
-    .container-account-con {
-        height: 65vh;
-        margin-top: 2%;
-        margin-left: 10px;
-    }
-    .form-control-con {
-        display: block;
-        margin-bottom: 50px;
-        margin-left: 00px;
-    }
-    .label-con {
-        display: flex;
-        flex-direction: column;
-        width: 300px;
-        position: relative;
-        top: 20px;
-        left: 90px;
-    }
-    .login-input-con {
-        display: flex;
-        flex-direction: column;
-        height: 5px;
-        position: relative;
-        top: 20px;
-        left: 140px;
-    }
-    .container-account-modif {
-        display: flex;
-        flex-direction: column;
-        height: 30vh;
-        text-align: center;
-        margin-left: 0px;
-    }
-    .form-group-modif {
-        display: flex;
-        margin-left: -10px;
-    }
-    .footer-nav {
-        width: 100%;
-        height: 50px;
-        padding-top: 5px;
-        text-align: center;
-        background-color: #2c3e50;
-        margin-left: 10px;
-        /*margin-top: 1100px;*/
-    }
-    #legals {
-        width: 400px;
-        overflow: scroll;
-    }
-    .headml {
-        margin-top: 150px;
-        column-count: 1;
-        font-size: 13px;
-    }
-    .legals {
-        margin-top: 20px;
-        column-count: 1;
-        font-size: 10px;
-    }
-    .headml h1 {
-        text-align: center;
-        color: #20bf6b;
-        font-size: 20px;
-        margin-bottom: 50px;
-    }
-    .main-picture {
-        display: block;
-        width: 60%;
-        margin: auto;
-    }
-    .laura img {
-        margin-left: 25px;
-    }
-    .ben img {
-        margin-left: 25px;
-    }
-    .tayeb img {
-        margin-left: 25px;
-    }
-    .guy img {
-        margin-left: 25px;
-    }
-}
 
+#map
 
-}
-
+    
 }
