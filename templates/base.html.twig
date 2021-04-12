@@ -104,30 +104,32 @@
 
 
   <main class="wrapper">
-    <!--Block Menu-->
-    <div class="block-menu nav">
-    <!--Respnsive Button-->
-    <button class="hamburger-button">&#9776;</button>
-    <!--Search Engine-->
+   
+    <div class="hamburger">
+
+      <!--Respnsive Button-->
+      <button class="hamburger-button">&#9776;</button>
+      <!--Search Engine-->
         <div class="search-engine">
-              <form class="form-city" action="{{path('home')}}" method="post">
-                <div class="form">
+              <form class="form-search-engine" action="{{path('home')}}" method="post">
+                <div class="form-search-engine-city">
                   <label for="city" class="search-city">Quelle ville ?</label><br>
                   <input type="text" name="city" ="city" placeholder="Code Postal / Ville" />
-                  <button class="submit"> Aller ! &ensp;<img src="/images/m-glass.png" width="27px" alt="icon-magnifying-glass"> </button><br>
+                  <button class="submit"> Par ici ! </button><br>
                   <a href="{{ path('home',{reset: "1"})}}" class="menu-search-link">
                   <img src="https://img.icons8.com/windows/32/000000/cancel.png" width="25px" alt="shop-icon" />&ensp; Supprimer le filtre</a>
                 </div>
               </form>
-              
         </div>
-    <!--Select filters-->
-        <div class="hamburger">
-          <div class="hamburger-sidebar">
+
+      <!--Select filters-->
+          <div class="hamburger-sidebar sidebar">
             <div class="hamburger-sidebar-header"></div>
             <div class="hamburger-sidebar-body"></div>
           </div>
-            <div class="hamburger-overlay"></div>
+
+            <div class="hamburger-overlay overlay"></div>
+
           <div class="hamburger-content">
             <ul class="menu-search-list">Quel commerce ?
               <li class="menu-search-item">
@@ -202,17 +204,14 @@
               </li>
             </ul>
           </div>
-        
-        </div>
-        <div class="promotion"></div>
           
+      </div>
 
-  </div>
     {% endblock %}
 
     {% block body %}{% endblock %}
   </main>
-
+<div class="promotion"><img class="promo" src="/images/promo-picture.png" alt="promo-picture"></div>
   <footer>
     <div class="footer-nav">
       <a class="footer-nav-link" href="{{ path('legal_mention')}}">Mentions légales</a>
