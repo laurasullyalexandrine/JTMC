@@ -268,13 +268,15 @@ a.link-account:hover {
 }
 
 .title-account {
+    width:100%;
     color: #20bf6b;
-    font-size: 2.3em;
+    font-size: 2em;
     font-weight: 700;
     margin: 1.5% 0;
     text-align: center;
     font-family: 'Oswald', sans-serif;
 }
+
 
 .col-form-store {
     top: 20px;
@@ -284,7 +286,8 @@ a.link-account:hover {
     flex-direction: column;
 }
 
-.container-account-reg {
+.container-account-reg,
+.container-account-modif {
     width: 900px;
     height: 650px;
     margin: auto;
@@ -299,6 +302,7 @@ a.link-account:hover {
     margin-top: 2%;
 }
 
+.icon-picture-welcome,
 .icon-picture-reg,
 .icon-picture-con {
     margin-top: 5%;
@@ -341,6 +345,7 @@ input {
 .btn-con {
     border: 0;
     margin: 0;
+    cursor: pointer;
     margin-left: 5%;
     margin-top: 2.8%;
     color: #fff;
@@ -353,8 +358,22 @@ input {
 .btn-reg {
     border: 0;
     margin: 0;
+    cursor: pointer;
     margin-left: 3%;
     margin-top: 2.8%;
+    color: #fff;
+    font-size: 1em;
+    padding: 5px 15px;
+    border-radius: 3px;
+    background-color: #20bf6b;
+}
+
+.btn-modif {
+    border: 0;
+    margin: 0;
+    cursor: pointer;
+    margin-top: 2.8%;
+    margin-right: 5.7%;
     color: #fff;
     font-size: 1em;
     padding: 5px 15px;
@@ -384,8 +403,6 @@ input {
     position: relative;
     left: 130px;
 }
-
-
 
 .content-register {
     margin: 2%;
@@ -423,9 +440,6 @@ input {
     text-align: center;
 }
 
-
-
-
 .container-account-link {
     display: flex;
     flex-direction: column;
@@ -441,7 +455,7 @@ input {
 .store-information,
 .subtitle-store,
 .adress-store {
-    color: white;
+    color: #fff;
 }
 
 .subtitle-store {
@@ -533,7 +547,6 @@ input {
     border-radius: 3px;
     text-decoration: none;
 }
-
 a.link-account:hover {
     background: #20bf6b;
 }
@@ -586,39 +599,14 @@ a.card-link-account:hover {
     color: #20bf6b;
 }
 
-.nav-account-link2 {
+.nav-account-link {
     color: #fff;
-    font-size: 1.6em;
-    font-weight: 700;
-    margin-bottom: 2%;
+    font-size: 1.5em;
+    margin-bottom: 10%;
     text-align: center;
     text-decoration: none;
     font-family: 'Oswald', sans-serif;
 }
-
-.container-account-modif {
-    display: flex;
-    flex-direction: column;
-    height: 70vh;
-    text-align: center;
-}
-
-.form-group-modif {
-    display: flex;
-    margin-left: 325px;
-}
-
-a.nav-account-link2:hover {
-    color: #20bf6b;
-}
-
-.nav-account-link {
-    color: #fff;
-    font-size: 0.8em;
-    padding: 2%;
-    text-decoration: none;
-}
-
 a.nav-account-link:hover {
     color: #20bf6b;
 }
@@ -628,6 +616,19 @@ a.nav-account-link:hover {
     font-size: 0.8em;
     padding: 2%;
     text-decoration: none;
+}
+a.nav-account-back:hover {
+    color: #20bf6b;
+}
+
+.nav-account-back-2 {
+    color: #fff;
+    font-size: 1.5em;
+    padding: 2%;
+    text-decoration: none;
+}
+a.nav-account-back-2:hover {
+    color: #20bf6b;
 }
 
 .nav-account-here {

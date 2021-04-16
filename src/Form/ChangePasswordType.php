@@ -53,9 +53,9 @@ class ChangePasswordType extends AbstractType
                 ]
             ],
             ])
-             ->add('submit', SubmitType::class,[
-                  'label'=>"Mettre à jour",
-              ])
+             //->add('submit', SubmitType::class,[
+             //     'label'=>"Mettre à jour",
+             // ])
         ;
     }
 
