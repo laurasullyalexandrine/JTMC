@@ -51,9 +51,9 @@ class RegisterType extends AbstractType
                 ]
             ],
             ])
-            ->add('submit', SubmitType::class,[
-                'label'=>"S'inscrire",
-            ])
+            //->add('submit', SubmitType::class,[
+            //    'label'=>"S'inscrire",
+            //])
         ;
     }
 

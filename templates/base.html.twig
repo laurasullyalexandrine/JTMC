@@ -211,7 +211,11 @@
 
     {% block body %}{% endblock %}
   </main>
-<div class="promotion"><img class="promo" src="/images/promo-picture.png" alt="promo-picture"></div>
+
+  {% block promotion %}
+    <div class="promotion"><img class="promo" src="/images/promo-picture.png" alt="promo-picture"></div>
+  {% endblock %}
+  
   <footer>
     <div class="footer-nav">
       <a class="footer-nav-link" href="{{ path('legal_mention')}}">Mentions légales</a>

@@ -7,9 +7,9 @@
 {% block body %}
 
 <div class="container-account-reg">
-   <p class="paraph-hook">Vous voulez prendre part à cette nouvelle aventure !</p>
-   <p class="paraph-hook">Commençez par créez votre compte !</p>
-   <img class="icon-picture-register" src="/images/register.png" width="50px" alt="icon-inscription">
+   <p class="paraph-hook-reg">Vous voulez prendre part à cette nouvelle aventure !</p>
+   <p class="paraph-hook-reg">Commençez par créez votre compte !</p>
+   <img class="icon-picture-reg" src="/images/register.png" width="50px" alt="icon-inscription">
    <h1 class="title-account">Inscription</h1>
 
 
@@ -26,7 +26,9 @@
 
       {{ form_row(form.password.second) }}
    
+   
    </div>
+   <button class="btn-reg" type="submit">S'inscrire</button>
  {{ form_end(form) }}
 </div>
      
