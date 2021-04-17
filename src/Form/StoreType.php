@@ -46,13 +46,13 @@ class StoreType extends AbstractType {
                     'Restaurant'=>'restaurant',
                     'Autre'=>'autre',
                 ],
-                'label' => 'Activité du commerce : ',
+                'label' => 'Activité du commerce',
                 'constraints' => [
                     new NotBlank,
                 ],
             ])
             ->add('picture', FileType::class, [
-                'label' => 'Photo de votre commerce :',
+                'label' => 'Photo de votre commerce',
                 'mapped' => False,
                 'required' => False,
                 'constraints' => [
@@ -61,7 +61,7 @@ class StoreType extends AbstractType {
                 ]
             ])
             ->add('name', null, [
-                'label' => 'Nom de votre commerce :',
+                'label' => 'Nom de votre commerce',
                 'attr' => [
                     'placeholder' => 'Ex: O\'fleurs',
                 ],

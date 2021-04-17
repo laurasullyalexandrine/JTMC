@@ -9,14 +9,11 @@
     <h1 class="title-account"><img src="/images/store.png" width="50px " alt="icon-store"> &ensp;Mes commerces<a
             class="nav-account-back" href="{{ path('account')}}">Retour</a></h1>
     <p class="paraph-account">C'est dans cet espace que vous allez pouvoir gérer vos commerces.</p>
-    <div class="container-account-link">
 
-
-    </div>
 
     {% if app.user.stores|length == 0 %}
-    <p class="paraph-account">Vous n'avez pas encore ajouté de commerce dans votre compte. Veuillez
-        <a class="nav-account-here" href="{{ path('account_store_add')}}">cliquer ici</a></p>
+    <p class="paraph-account">Vous n'avez pas encore ajouté de commerce dans votre compte.<br> </p> <p class="paraph-account">
+        <a class="nav-account-here" href="{{ path('account_store_add')}}">Cliquez ici</a></p>
     {% else %}
     <a class="nav-account-link2" href="{{ path('account_store_add')}}" class="btn btn-info btn-sm float-right">Ajouter
         un commerce</a>

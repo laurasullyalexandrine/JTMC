@@ -277,15 +277,6 @@ a.link-account:hover {
     font-family: 'Oswald', sans-serif;
 }
 
-
-.col-form-store {
-    top: 20px;
-    left: 10px;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-}
-
 .container-account-reg,
 .container-account-modif {
     width: 900px;
@@ -309,7 +300,7 @@ a.link-account:hover {
 }
 
 .required,
-.label-con  {
+.label-con {
     font-size: 0.9em;
     display: flex;
     margin: 3% 0 1% 0;
@@ -325,7 +316,8 @@ input {
 }
 
 .container-account,
-.container-account-con {
+.container-account-con,
+.container-account-store {
     width: 900px;
     margin: auto;
     height: 450px;
@@ -371,9 +363,10 @@ input {
 .btn-modif {
     border: 0;
     margin: 0;
+    margin-left: 78px;
     cursor: pointer;
-    margin-top: 2.8%;
-    margin-right: 5.7%;
+    position: relative;
+    margin-top: 25px;
     color: #fff;
     font-size: 1em;
     padding: 5px 15px;
@@ -404,11 +397,7 @@ input {
     left: 130px;
 }
 
-.content-register {
-    margin: 2%;
-}
-
-.content-register {
+.content-add {
     margin: 2%;
 }
 
@@ -427,17 +416,6 @@ input {
 .container-picture {
     max-height: 650px;
     box-shadow: 0px 0px 4px #1c1a19;
-}
-
-.container-register-store {
-    margin-top: 1%;
-    text-align: center;
-}
-
-.container-account-store {
-    height: 80vh;
-    margin-top: 5%;
-    text-align: center;
 }
 
 .container-account-link {
@@ -503,20 +481,33 @@ input {
     font-size: 0.8em;
 }
 
-.description {
+.container-add-store {
+    margin: auto;
+    width: 900px;
+    height: 100%;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 4px #1c1a19;
+}
+
+.add-form-first {
+    display: flex;
+    justify-content: center;
+}
+
+.add-form-second {
+    display: flex;
+    width: 750px;
+    flex-direction: column;
+    align-self: center;
+}
+
+.add-description {
+    display: flex;
+    align-self: center;
     padding: 0.5em;
-}
-
-.register-store-paraph {
-    padding: 1%;
-    font-size: 1.1em;
-}
-
-.title-register-store {
-    color: #20bf6b;
-    font-size: 1.9em;
-    font-weight: 700;
-    font-family: 'Oswald', sans-serif;
 }
 
 .form-error {
@@ -552,6 +543,7 @@ a.link-account:hover {
 }
 
 .paraph-account {
+    text-align: center;
     padding: 1%;
     font-size: 1.1em;
 }
@@ -636,7 +628,6 @@ a.nav-account-back-2:hover {
     color: #20bf6b;
     text-decoration: none;
 }
-
 a.nav-account-here:hover {
     color: #fff;
 }
@@ -653,13 +644,6 @@ a.nav-account-here:hover {
 
 .password {
     margin-top: 1%;
-}
-
-.alert {
-    margin: 1% 0;
-    color: #38ada9;
-    text-align: center;
-    font-size: 1.1em;
 }
 
 .display-account-store-picture {
@@ -749,6 +733,20 @@ a.menu-search-link:hover {
 
 
 /* --------------- Nav common ---------------*/
+
+.alert {
+    margin: 1% 0;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.alert-success {
+    color: #38ada9;
+}
+
+.alert-info {
+    color: #ff6100;
+}
 
 .button-back {
     top: 630px;
