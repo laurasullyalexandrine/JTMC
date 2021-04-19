@@ -30,7 +30,7 @@
                   let id = donnees[i].id
                   let picture = donnees[i].picture
                   let marker = L.marker([donnees[i].latitude, donnees[i].longitude], { icon: icone }).addTo(carte)
-                  marker.bindPopup('<div class="popup"><h1 class="popup-title">' + name + '</h1> <img class="popup-picture"src="uploads/' + picture + '" width="100px"/><br><a class="popup-link" href="http://0.0.0.0:8080/' + id + '/">Voir le commerce</a></div>')
+                  marker.bindPopup('<div class="popup"><h1 class="popup-title">' + name + '</h1> <img class="popup-picture"src="uploads/' + picture + '" width="100px"/><br><a class="popup-link" href="http://localhost:8080/' + id + '/">Voir le commerce</a></div>')
               }
           } else {
               console.log(xmlhttp.statusText);
