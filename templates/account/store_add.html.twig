@@ -11,21 +11,20 @@
             <h1 class="title-account"><img src="/images/store.png" width="50px " alt="icon-store"> &ensp;Gérer mes
                 commerces<a class="nav-account-back" href="{{ path('account_store')}}">Retour</a></h1>
             <p class="paraph-account"> Merci de renseignez les informations relatives à votre commerce.</p><br>
-        </div>    
-
-        <!--Form-->
-        <div class ="add-form-first">
             {{ form_start(form) }}
             <div class="form-error">{{ form_errors(form) }}</div>
             {{ form_label(form.picture, 'Télécharger la photo de votre commerce', {'label_attr': {'class': 'foo-form'}})
             }}{{ form_widget(form.picture) }}
             {{ form_row(form.store_activity) }}<br><br>
+        </div>    
+
+        <!--Form-->
+        <div class ="add-form-first">
             {{ form_row(form.name, {'label': 'Nom de votre commerce'}, {'attr': {'class': 'name'}}) }}
             {{ form_row(form.road_number, {'label': 'Numéro de rue'}, {'attr': {'class': 'road_number'}}) }}
             {{ form_row(form.address, {'label': 'Nom de rue'}, {'attr': {'class': 'address'}}) }}
             {{ form_row(form.postal_code, {'label': 'Code postal'}, {'attr': {'class': 'postal_code'}}) }}
             {{ form_row(form.city, {'label': 'Ville'}, {'attr': {'class': 'city'}}) }}
-
             {{ form_row(form.phone, {'label': 'Téléphone'}, {'attr': {'class': 'phone'}}) }}
             {{ form_row(form.email, {'label': 'E-mail'}, {'attr': {'class': 'email'}}) }}
             {{ form_label(form.website, 'Site web', {'label_attr': {'class': 'required'}}) }}{{ form_widget(form.website) }}
@@ -48,8 +47,8 @@
             {{ form_row(form.description, {'label': 'Description de votre activité'}, {'attr': {'class': 'description'}}) }}
         </div>
         
-        <div class="content-add">
-            <button class="submit-register" type="submit">Enregistrer</button>
+        <div class="btn-add">
+            <button class="submit-add" type="submit">Enregistrer</button>
         </div>
 
     {{ form_end(form) }}

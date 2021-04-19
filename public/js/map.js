@@ -37,5 +37,5 @@
           }
       }
   }
-  xmlhttp.open("GET", "http://0.0.0.0:8080/get");
+  xmlhttp.open("GET", "http://localhost:8080/get");
   xmlhttp.send(null);

@@ -7,7 +7,7 @@ body {
 
 .wrapper {
     margin: auto;
-    width: 1800px;
+    width: 1300px;
     height: 100vh;
     display: flex;
     flex-direction: row;
@@ -385,11 +385,6 @@ input {
     font-size: 0.8em;
 }
 
-.form-check {
-    display: inline;
-    position: relative;
-}
-
 .website {
     top: 20px;
     display: flex;
@@ -397,11 +392,11 @@ input {
     left: 130px;
 }
 
-.content-add {
+.btn-add {
     margin: 2%;
 }
 
-.container-store,
+
 .container-store-read {
     display: flex;
     height: 100vh;
@@ -411,11 +406,6 @@ input {
 
 .container-store-read {
     height: 655px;
-}
-
-.container-picture {
-    max-height: 650px;
-    box-shadow: 0px 0px 4px #1c1a19;
 }
 
 .container-account-link {
@@ -429,10 +419,7 @@ input {
     text-align: center;
 }
 
-.adress-store-email,
-.store-information,
-.subtitle-store,
-.adress-store {
+.adress-store-email {
     color: #fff;
 }
 
@@ -440,26 +427,31 @@ input {
     text-transform: capitalize;
 }
 
-.store-information {
+.store-show-information {
     width: 30%;
-    padding: 0 2%;
-    text-align: justify;
+    padding: 2% 1%;
+    margin: 0 2%;
+    font-size: 0.9em;
+    text-align: center;
+}
+.title-store {
+    width: 100%;
 }
 
 .title-store,
 .list-title {
     margin-bottom: 25px;
     color: #4cd137;
-    font-size: 1.9em;
+    font-size: 1.8em;
     font-weight: 700;
-    text-align: justify;
+    text-align: center;
     font-family: 'Oswald', sans-serif;
 }
 
 .subtitle-store {
     padding: 1% 0;
     font-weight: 700;
-    text-align: justify;
+    text-align: center;
 }
 
 .adress-store,
@@ -470,10 +462,34 @@ input {
     font-size: 0.8em;
 }
 
-.opening,
-.information-payment,
-.commercial-service {
+.store-show-opening,
+.store-show-information-payment,
+.store-show-commercial-service {
     margin: 2% 0;
+}
+
+.container-store-show {
+    margin: auto;
+    width: 980px;
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px #1c1a19;
+}
+
+.container-picture-show {
+    height: 485px;
+    flex: 2.5;
+    position: relative;
+    background-color: #20bf6b;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.green-arrow {
+    position: absolute;
+    top: -0.2%;
+    left: 667.5px;
 }
 
 .adress-store-email {
@@ -481,40 +497,39 @@ input {
     font-size: 0.8em;
 }
 
+.store-show-description {
+    font-size: 0.8em;
+}
+
 .container-add-store {
     margin: auto;
     width: 900px;
     height: 100%;
-    border-radius: 5px;
-    text-align: center;
     display: flex;
+    border-radius: 5px;
     flex-direction: column;
+    align-items: center;
     box-shadow: 0px 0px 4px #1c1a19;
+}
+
+.add-store-head {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .add-form-first {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .add-form-second {
     display: flex;
-    width: 750px;
+    align-items: center;
     flex-direction: column;
-    align-self: center;
 }
-
-.add-description {
-    display: flex;
-    align-self: center;
-    padding: 0.5em;
-}
-
-.form-error {
-    color: #ff0000;
-}
-
-.submit-register {
+.submit-add {
     text-align: center;
     height: 35px;
     border: 0;
@@ -525,6 +540,26 @@ input {
     border-radius: 5px;
     text-decoration: none;
     background-color: #20bf6b;
+}
+
+.form-check {
+    width: 100vh;
+    text-align: center;
+}
+
+.form-check-label {
+    font-size: 0.8em;
+}
+
+.add-description,
+.store-show-description {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.form-error {
+    color: #ff0000;
 }
 
 .user-account {
@@ -567,11 +602,11 @@ a.link-account:hover {
 .card-content {
     margin: 5px;
     padding: 5px;
+    text-align: center;
 }
 
 .card-text {
     font-size: 1em;
-    color: gainsboro;
 }
 
 .card-title {
@@ -583,10 +618,9 @@ a.link-account:hover {
 .card-link-account {
     color: #fff;
     font-size: 0.9em;
-    font-weight: bold;
+
     text-decoration: none;
 }
-
 a.card-link-account:hover {
     color: #20bf6b;
 }
@@ -606,7 +640,7 @@ a.nav-account-link:hover {
 .nav-account-back {
     color: #fff;
     font-size: 0.8em;
-    padding: 2%;
+    padding: 8%;
     text-decoration: none;
 }
 a.nav-account-back:hover {

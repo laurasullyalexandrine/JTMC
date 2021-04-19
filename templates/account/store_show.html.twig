@@ -3,38 +3,39 @@
 {% block menu %}{% endblock %}
 {% block body %}
 
-<div class="container-store">
-  <div class="container-picture"> <img src="{{ asset('uploads/' ~ store.picture ) }}" width="980px" height="655px" />
-  </div>
+<section class="container-store-show">
 
-  <div class="store-information">
+  <div class="container-picture-show"> <img class="store-picture" src="{{ asset('uploads/' ~ store.picture ) }}" width="650px" />
+  <img class="green-arrow" src="/images/green-arrow.png"  alt="bubble-arrow"  /></div>
+  
+  <aside class="store-show-information">
     <h1 class="title-store"><strong>{{store.name}}</strong><a class="nav-account-back"
         href="{{ path('account_store') }}">Retour</a></h1>
 
-    <h2 class="subtitle-store"><strong>{{store.storeActivity}}</strong></h2>
+      <h2 class="subtitle-store"><strong>{{store.storeActivity}}</strong><br></h2>
 
-    <p class="adress-store">{{ store.roadNumber }},&ensp; {{store.address}}</p>
-    <p class="adress-store">{{store.postalcode}} {{store.city}}</p>
-    <p class="adress-store">Tel : 0{{store.phone}}</p>
-    <p class="adress-store">Site internet : {{store.website}}</p>
-    <a class="adress-store-email" href="mailto:">{{store.email}}</a>
+        <p class="adress-store">{{ store.roadNumber }}, {{store.address}}</p>
+        <p class="adress-store">{{store.postalcode}} {{store.city}}</p>
+        <p class="adress-store">Tel : 0{{store.phone}}</p>
+        <p class="adress-store">Site internet : <br>{{store.website}}</p>
+        <a class="adress-store-email" href="mailto:">{{store.email}}</a>
 
-    <div class="opening">
-      <h2 class="subtitle-store"><strong>Jours d'ouverture :</strong> </h2>
+  <div class="store-show-opening">
+    <h2 class="subtitle-store"><strong>Jours d'ouverture</strong> </h2>
 
-      {% for days in store.OpenDays %}
-      <p class="days-hours">
-        {{ days }}
-      </p>
-      {% endfor %}
-      <h2 class="subtitle-store"><strong>Horaires d'ouverture :</strong> </h2>
-      <p class="days-hours">
-        {{ store.openHours }}
-      </p>
-    </div>
+        {% for days in store.OpenDays %}
+        <p class="days-hours">
+          {{ days }}
+        </p>
+        {% endfor %}
+        <h2 class="subtitle-store"><strong>Horaires d'ouverture</strong> </h2>
+        <p class="days-hours">
+          {{ store.openHours }}
+        </p>
+  </div>
 
-    <div class="information-payment">
-      <h2 class="subtitle-store"><strong>Mode de paiement accepté :</strong> </h2>
+  <div class="store-show-information-payment">
+    <h2 class="subtitle-store"><strong>Mode de paiement accepté</strong> </h2>
 
       {% for payments in store.InformationPayment %}
       <p class="mode-payment">
@@ -42,23 +43,19 @@
       </p>
       {% endfor %}
 
-    </div>
+  </div>
 
-    <div class="commercial-service">
-      <h2 class="subtitle-store"><strong>Service commercial proposé :</strong> </h2>
+  <div class="store-show-commercial-service">
+    <h2 class="subtitle-store"><strong>Service commercial proposé</strong> </h2>
 
       {% for services in store.CommercialService %}
       <p class="service">
         {{services}}
       </p>
       {% endfor %}
-
-    </div>
-    <h2 class="subtitle-store"><strong>Description du commerce :</strong> </h2>
-    <div class="description">{{store.description}}</div>
-
   </div>
-</div class="container-button">
-
-</div>
+    <h2 class="subtitle-store"><strong>Description du commerce</strong> </h2>
+  <div class="store-show-description">{{store.description}}</div>
+  </aside>
+</section>
 {% endblock %}
