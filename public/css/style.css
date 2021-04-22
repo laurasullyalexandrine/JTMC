@@ -140,15 +140,18 @@ a.link-account:hover {
     background-color: rgba(0, 0, 0, .4);
 }
 
+.hamburger-sidebar-body {
+    background-color: #2c3e50;
+}
+
 .hamburger-sidebar {
     top: 0;
     border-radius: 5px;
     display: none;
-    width: 300px;
+    width: 325px;
     z-index: 20;
-    height: 100%;
     padding: 5%;
-    margin-left: -300px;
+    margin-left: -330px;
     transition-duration: 0.5s;
     background-color: #2c3e50;
     box-shadow: 0px 0px 4px #1c1a19;
@@ -162,9 +165,9 @@ a.link-account:hover {
 .menu-search-list,
 .promotion {
     padding: 5%;
-    width: 270px;
+    width: 300px;
     border-radius: 5px;
-    margin-bottom: 5%;
+    margin-bottom: 8%;
     box-shadow: 0px 0px 4px #1c1a19;
 }
 
@@ -212,35 +215,39 @@ a.link-account:hover {
 
 /* --------------- Legals mentions ---------------*/
 
-.main {
-    width: 100%;
+.legals {
+    width: 900px;
     height: auto;
-    margin: 30px;
+    margin:auto;
     font-size: medium;
     line-height: 23px;
+    box-shadow: 0px 0px 4px #1c1a19;
 }
 
 .headml {
-    margin-top: 150px;
-    margin-left: 200px;
-    margin-right: 200px;
-    column-count: 1;
+    text-align: center;
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
     letter-spacing: 2px;
     font-weight: bold;
 }
 
-.legals {
-    margin-top: 20px;
-    margin-left: 200px;
-    margin-right: 200px;
-    column-count: 1;
+.denomination {
+    margin: 5%;
+    text-align: center;
+}
+
+.legals-content {
+    margin: 5%;
+    text-align: justify;
 }
 
 .headml h1 {
     text-align: center;
     color: #20bf6b;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 1.9em;
     margin-bottom: 50px;
 }
 
@@ -261,11 +268,8 @@ a.link-account:hover {
 }
 
 
-/* --------------- Store_Acccount---------------*/
 
-.description {
-    margin: 2% 0;
-}
+/* --------------- Store_Account---------------*/
 
 .title-account {
     width:100%;
@@ -469,6 +473,7 @@ input {
 }
 
 .container-store-show {
+    text-align: center;
     margin: auto;
     width: 980px;
     display: flex;
@@ -476,17 +481,27 @@ input {
     box-shadow: 0px 0px 4px #1c1a19;
 }
 
-.container-picture-show {
+.container-picture-show-desktop {
     height: 485px;
     flex: 2.5;
     position: relative;
     background-color: #20bf6b;
     border-radius: 5px;
-    margin: 10px;
+    margin: 20px 10px 10px 10px;
     padding: 10px;
 }
 
-.green-arrow {
+.container-picture-show-mobile {
+    display: none;
+    flex: 2.5;
+    position: relative;
+    background-color: #20bf6b;
+    border-radius: 5px;
+    margin: 20px 10px 10px 10px;
+    padding: 10px;
+}
+
+.green-arrow-desktop {
     position: absolute;
     top: -0.2%;
     left: 667.5px;
@@ -553,8 +568,6 @@ input {
 
 .add-description,
 .store-show-description {
-    display: flex;
-    align-items: center;
     padding: 0.5em;
 }
 
@@ -609,6 +622,12 @@ a.link-account:hover {
     font-size: 1em;
 }
 
+.card-link {
+    display: flex;
+    display: inline;
+    font-size: 0.9em;
+}
+
 .card-title {
     font-size: 1.1em;
     color: #4cd137;
@@ -617,8 +636,6 @@ a.link-account:hover {
 
 .card-link-account {
     color: #fff;
-    font-size: 0.9em;
-
     text-decoration: none;
 }
 a.card-link-account:hover {
@@ -678,11 +695,6 @@ a.nav-account-here:hover {
 
 .password {
     margin-top: 1%;
-}
-
-.display-account-store-picture {
-    border-radius: 5px;
-    box-shadow: 0px 4px 4px #1c1a19;
 }
 
 .login-picture {
@@ -780,6 +792,10 @@ a.menu-search-link:hover {
 
 .alert-info {
     color: #ff6100;
+}
+
+.alert-danger {
+    color: #ff0000;
 }
 
 .button-back {
@@ -962,7 +978,7 @@ td {
     .menu-search-list,
     .promotion {
         padding: 2%;
-        margin: 2%;
+        margin: 2% 4% 5% 2%; 
         box-shadow: rgba(4, 0, 0, .4);
     }
     .sidebar {
@@ -990,6 +1006,63 @@ td {
     .footer-nav {
         margin-left: 0;
     }
+    .legals,
+    .container-account,
+    .container-account-con,
+    .container-account-store,
+    .container-add-store,
+    .container-store-show,
+    .container-account-reg,
+    .container-account-modif {
+        width: 450px;
+    }
+    .container-account-store {
+        height: 100%;
+    }
+    .paraph-account,
+    .paraph-hook-reg {
+        margin-top: 2%;
+        font-size: 0.9em;
+    }
+    .title-account {
+        margin-top: 3%;
+        font-size: 1.5em;
+    }
+    .nav-account-link {
+        margin: auto;
+        line-height: normal;
+        font-size: 1.2em;
+    }
+    .card-title {
+        font-size: 0.9em;
+    }
+    .card-text,
+    .card-link {
+        font-size: 0.8em;
+    }
+    .container-store-show {
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-picture-show-desktop {
+        display: none;
+    }
+    .container-picture-show-mobile {
+        display: block;
+        justify-content: center;
+    }
+    .store-show-information {
+        margin-top: 5%;
+        width: 300px;
+        justify-content: center;
+    }
+    .green-arrow-mobile {
+        position: relative;
+        top: 40px;
+        right: 250px;
+    }
+
+
 
 
 }
