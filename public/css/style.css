@@ -849,72 +849,118 @@ td {
 }
 
 
+
 /* --------------- team jtmc ---------------*/
 
-.main-picture {
-    width: 100%;
-    height: 80%;
+.icon-picture-admin {
+    position: relative;
+    left: 580px;
+    top: 100px;
+}
+.title-team {
+    font-size: 2em;
+    text-align: center;
+    color: #20bf6b;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    left: 50px;
+    top: 60px;
+    margin-bottom: 5%;
+}
+
+.team {
+    margin: auto;
+    width: 900px;
+    height: 450px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 75px;
-    margin-bottom: 80px;
+    justify-content: center;
 }
 
-.laura {
-    border: 5px double;
-    border-radius: 20px;
-    padding: 10px 15px;
-    color: #20bf6b;
-}
-
-.laura h1 {
-    font-size: 40px;
+.role,
+.name,
+.picture-ben,
+.picture-guy,
+.picture-laura,
+.picture-tayeb {
     text-align: center;
-    margin-bottom: 20px;
-    color: rgb(223, 246, 223);
+    margin: 2%;
+    padding: 3%;
 }
 
+.role {
+    width: 100%;
+    font-size: 0.9em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.name {
+    font-size: 0.9em;
+    text-transform: capitalize;
+}
+
+.picture-ben,
+.picture-guy,
+.picture-laura,
+.picture-tayeb {
+    border: 1px solid transparent;
+    border-radius: 15px;
+    box-shadow: 0px 0px 4px #1c1a19;
+}
+
+.actors-team {
+    margin-top: 7%;
+    padding-right: 50px;
+}
+
+/* Transition */
 .ben {
-    border: 5px double;
-    border-radius: 20px;
-    padding: 10px 15px;
+    position: relative;
+    color: transparent;
+}
+.actors-team:hover .scrum {
     color: #20bf6b;
-}
-
-.ben h1 {
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: rgb(223, 246, 223);
-}
-
-.tayeb {
-    border: 5px double;
-    border-radius: 20px;
-    padding: 10px 15px;
-    color: #20bf6b;
-}
-
-.tayeb h1 {
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: rgb(223, 246, 223);
+    transition-duration: 0.5s;
 }
 
 .guy {
-    border: 5px double;
-    border-radius: 20px;
-    padding: 10px 15px;
+    position: relative;
+    color: transparent;
+}
+.actors-team:hover .git {
     color: #20bf6b;
+    transition-duration: 0.5s;
 }
 
-.guy h1 {
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: rgb(223, 246, 223);
+.laura {
+    position: relative;
+    color: transparent;
+}
+.actors-team:hover .owner {
+    color: #20bf6b;
+    transition-duration: 0.5s;
+}
+
+.tayeb {
+    position: relative;
+    color: transparent;
+}
+.actors-team:hover .lead {
+    color: #20bf6b;
+    transition-duration: 0.5s;
+}
+
+/* Blur */
+.hover01 figure img {
+	-webkit-filter: blur(2px);
+	filter: blur(2px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover01 figure:hover img {
+	-webkit-filter: blur(0);
+	filter: blur(0);
 }
 
 
@@ -934,9 +980,18 @@ td {
 /* --------------- @media queries 480px ---------------*/
 
 @media only screen and (max-width: 480px) {
+
     body,
     .wrapper,
-    .footer-nav {
+    .footer-nav,
+    .legals,
+    .container-account,
+    .container-account-con,
+    .container-account-store,
+    .container-add-store,
+    .container-store-show,
+    .container-account-reg,
+    .container-account-modif  {
         width: 480px;
     }
     .header-nav-top-link,
@@ -1006,16 +1061,6 @@ td {
     .footer-nav {
         margin-left: 0;
     }
-    .legals,
-    .container-account,
-    .container-account-con,
-    .container-account-store,
-    .container-add-store,
-    .container-store-show,
-    .container-account-reg,
-    .container-account-modif {
-        width: 450px;
-    }
     .container-account-store {
         height: 100%;
     }
@@ -1061,7 +1106,22 @@ td {
         top: 40px;
         right: 250px;
     }
-
+    .team {
+        width: 480px;
+        flex-wrap: wrap;
+    }
+    .title-team {
+        font-size: 1.7em;
+        top: 50px;
+        left: 40px;
+    }
+    .icon-picture-admin {
+        top: 80px;
+        left: 70px;
+    }
+    .actors-team {
+        padding-right: 30px; 
+    }
 
 
 
