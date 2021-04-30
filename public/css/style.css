@@ -853,6 +853,10 @@ td {
 
 /* --------------- team jtmc ---------------*/
 
+h1 strong {
+    color: #fff;
+}
+
 .icon-picture-admin {
     position: relative;
     left: 580px;
