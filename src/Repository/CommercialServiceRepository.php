@@ -19,7 +19,7 @@ class CommercialServiceRepository extends ServiceEntityRepository
         parent::__construct($registry, CommercialService::class);
     }
 
-    public function findByService($session, $service = null)
+    public function findStoreByCommercialService($session, $service = null)
     {
         $service = $session->get('service');
         $qb = $this->createQueryBuilder('c');
@@ -31,10 +31,8 @@ class CommercialServiceRepository extends ServiceEntityRepository
                 ->setParameter("id", $service);
         }
         return  $qb->getQuery()->getResult();
-        dump($qb);
+        //dump($qb);
     }
-
-
 
     // /**
     //  * @return CommercialService[] Returns an array of CommercialService objects
@@ -79,3 +77,4 @@ class CommercialServiceRepository extends ServiceEntityRepository
     }
     */
 }
+

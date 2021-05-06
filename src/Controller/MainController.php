@@ -21,13 +21,15 @@ class MainController extends AbstractController
     {
         /**
         * @Route("/", name="home")
-        * This function manage the filters activity of responsive menu
+        * This function manage the city form and filters activities of responsive menu
         */
         public function homepage (Request $request,SessionInterface $session): Response
         {
            // dump($request);
            $activity = $request->query->get('activity');
            // dump($activity);
+           $filter = $request->query->get('filter');
+           
            $reset = $request->query->get('reset');
            // dump($reset);
            if($request->getMethod() === Request::METHOD_POST){
@@ -36,6 +38,9 @@ class MainController extends AbstractController
            // dump($session);
            if($activity){
                $session->set('activity',$activity);
+           }
+           if($filter){
+               $session->set('filter',$filter);
            }
            if($reset){
             $session->remove('activity');
@@ -67,13 +72,14 @@ class MainController extends AbstractController
 
         /**
          * This function display map markers from database and use custom function for active activity filters
-         * @Route("/get", name="apiService")
-         */
+         * @Route("/get", name="apiActivity")
+        */
         public function mapService(CommercialServiceRepository $commercialServiceRepository, SessionInterface $session): Response
         {
-            $commercial = $commercialServiceRepository->findByService($session);
+            $storeCommercial = $commercialServiceRepository->findStoreByCommercialService($session);
+            //dump($storeCommercial);
 
-            return $this->json($commercial, 200, [], [
+            return $this->json($storeCommercial, 200, [], [
                 AbstractNormalizer::IGNORED_ATTRIBUTES => [
                         'user',
                         'openDays',
@@ -101,7 +107,6 @@ class MainController extends AbstractController
         {
 
             return $this->render('main/store_read.html.twig',
-            
              [
                  'store' => $store,
             ]);
