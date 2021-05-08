@@ -19,20 +19,39 @@ class CommercialServiceRepository extends ServiceEntityRepository
         parent::__construct($registry, CommercialService::class);
     }
 
-    public function findStoreByCommercialService($session, $service = null)
+    public function findStoreByInformation($session)
     {
+        
         $service = $session->get('service');
+        $activity = $session->get('activity');
+        $citySearch = $session->get('search-city');
         $qb = $this->createQueryBuilder('c');
+        $qb->addSelect('s');
+        $qb->leftJoin('c.stores', 's');
+
 
         if($service !== null)
         {
-            $qb->leftJoin("c.stores", "s");
-            $qb->andWhere("s.id = :id")
-                ->setParameter("id", $service);
+            $qb->andWhere("c.serviceTypes = :service")
+                ->setParameter('service', $service);
         }
+
+        if($activity !== null)
+        {
+            $qb->andWhere("s.storeActivity = :activity")
+                ->setParameter('activity', $activity);
+        }
+
+        if($citySearch !== null)
+        {
+            $qb->andWhere("s.city = :citySearch")
+                ->orWhere("s.postalCode = :citySearch")
+                ->setParameter('citySearch', $citySearch);
+        }
+
         return  $qb->getQuery()->getResult();
-        //dump($qb);
     }
+
 
     // /**
     //  * @return CommercialService[] Returns an array of CommercialService objects
@@ -77,4 +96,3 @@ class CommercialServiceRepository extends ServiceEntityRepository
     }
     */
 }
-
