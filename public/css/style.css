@@ -789,6 +789,12 @@ a.menu-search-link:hover {
     text-decoration: none;
 }
 
+.loading {
+    color: #1c1a19;
+    font-size: 2em;
+    text-align: center;
+}
+
 
 /* --------------- Nav common ---------------*/
 

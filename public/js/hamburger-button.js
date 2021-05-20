@@ -32,6 +32,6 @@ overlay.onclick = function() {
         sidebar.classList.remove('sidebar-open');
         overlay.classList.remove('overlay-open');
     }
-    console.log(overlay);
+    // console.log(overlay);
 }
  
