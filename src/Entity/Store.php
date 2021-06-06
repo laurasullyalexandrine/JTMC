@@ -76,7 +76,7 @@ class Store
     private $website;
 
     /**
-     * @ORM\ManyToMany(targetEntity=OpenDays::class, inversedBy="store")
+     * @ORM\ManyToMany(targetEntity=OpenDays::class, inversedBy="stores")
      */
     private $openDays;
 
@@ -93,12 +93,12 @@ class Store
     /**
      * @ORM\ManyToMany(targetEntity=InformationPayment::class, inversedBy="stores")
      */
-    private $InformationPayment;
+    private $informationPayment;
 
     /**
      * @ORM\ManyToMany(targetEntity=CommercialService::class, inversedBy="stores")
      */
-    private $CommercialService;
+    private $commercialService;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="stores")
@@ -119,8 +119,8 @@ class Store
 
     public function __construct()
     {
-        $this->InformationPayment = new ArrayCollection();
-        $this->CommercialService = new ArrayCollection();
+        $this->informationPayment = new ArrayCollection();
+        $this->commercialService = new ArrayCollection();
         $this->openDays = new ArrayCollection();
     }
 
@@ -332,13 +332,13 @@ class Store
      */
     public function getInformationPayment(): Collection
     {
-        return $this->InformationPayment;
+        return $this->informationPayment;
     }
 
     public function addInformationPayment(InformationPayment $informationPayment): self
     {
-        if (!$this->InformationPayment->contains($informationPayment)) {
-            $this->InformationPayment[] = $informationPayment;
+        if (!$this->informationPayment->contains($informationPayment)) {
+            $this->informationPayment[] = $informationPayment;
         }
 
         return $this;
@@ -346,7 +346,7 @@ class Store
 
     public function removeInformationPayment(InformationPayment $informationPayment): self
     {
-        $this->InformationPayment->removeElement($informationPayment);
+        $this->informationPayment->removeElement($informationPayment);
 
         return $this;
     }
@@ -356,13 +356,13 @@ class Store
      */
     public function getCommercialService(): Collection
     {
-        return $this->CommercialService;
+        return $this->commercialService;
     }
 
     public function addCommercialService(CommercialService $commercialService): self
     {
-        if (!$this->CommercialService->contains($commercialService)) {
-            $this->CommercialService[] = $commercialService;
+        if (!$this->commercialService->contains($commercialService)) {
+            $this->commercialService[] = $commercialService;
         }
 
         return $this;
@@ -370,7 +370,7 @@ class Store
 
     public function removeCommercialService(CommercialService $commercialService): self
     {
-        $this->CommercialService->removeElement($commercialService);
+        $this->commercialService->removeElement($commercialService);
 
         return $this;
     }

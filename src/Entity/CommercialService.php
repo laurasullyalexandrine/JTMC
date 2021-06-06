@@ -27,7 +27,7 @@ class CommercialService
     private $serviceTypes;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Store::class, mappedBy="CommercialService")
+     * @ORM\ManyToMany(targetEntity=Store::class, mappedBy="commercialService")
      */
     private $stores;
 

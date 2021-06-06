@@ -27,7 +27,7 @@ class InformationPayment
     private $paymentTypes;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Store::class, mappedBy="InformationPayment")
+     * @ORM\ManyToMany(targetEntity=Store::class, mappedBy="informationPayment")
      */
     private $stores;
 

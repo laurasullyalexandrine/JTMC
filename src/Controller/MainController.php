@@ -59,6 +59,25 @@ class MainController extends AbstractController
          * This function display map markers from database and use custom function for active commercial filters
          * @Route("/get", name="apiStore")
         */
+        // public function map(StoreRepository $storeRepository, SessionInterface $session): Response
+        // {
+        //     $store = $storeRepository->findByInformation($session);
+
+        //     return $this->json($store, 200, [], [
+        //         AbstractNormalizer::IGNORED_ATTRIBUTES => [
+        //                 'user',
+        //                 'openDays',
+        //                 'InformationPayment',
+        //                 'CommercialService',
+        //         ]
+        //     ]);
+
+        // }
+
+        /**
+         * This function display map markers from database and use custom function for active commercial filters
+         * @Route("/get", name="apiStore")
+        */
         public function map(CommercialServiceRepository $commercialServiceRepository, SessionInterface $session): Response
         {
             $store = $commercialServiceRepository->findStoreByInformation($session);
@@ -67,8 +86,8 @@ class MainController extends AbstractController
                 AbstractNormalizer::IGNORED_ATTRIBUTES => [
                         'user',
                         'openDays',
-                        'InformationPayment',
-                        'CommercialService',
+                        'informationPayment',
+                        'commercialService',
                 ]
             ]);
 

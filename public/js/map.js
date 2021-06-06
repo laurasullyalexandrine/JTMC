@@ -29,11 +29,14 @@
               // On traite les données reçues https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
               const donnees = JSON.parse(xmlhttp.responseText)
               console.log(donnees);
+              // On utilise une boucle for pour parcourir l'objet JS.
               for(let i = 0; i < donnees.length; i++) 
                 {
+                  // On récupère les serviceTypes 
                    let commercialService = donnees[i].serviceTypes;
                    //console.log(commercialService);
 
+                   // On récupère les stores dans un sous tableau que l'on va devoir parcourir également   
                         let store = donnees[i].stores;
                         //console.log(store);
                         for(let s = 0; s < store.length; s++)

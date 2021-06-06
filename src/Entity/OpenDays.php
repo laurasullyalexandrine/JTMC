@@ -29,11 +29,11 @@ class OpenDays
     /**
      * @ORM\ManyToMany(targetEntity=Store::class, mappedBy="openDays")
      */
-    private $Store;
+    private $stores;
 
     public function __construct()
     {
-        $this->Store = new ArrayCollection();
+        $this->Stores = new ArrayCollection();
     }
 
     public function __toString()
@@ -61,15 +61,15 @@ class OpenDays
     /**
      * @return Collection|Store[]
      */
-    public function getStore(): Collection
+    public function getStores(): Collection
     {
-        return $this->Store;
+        return $this->stores;
     }
 
     public function addStore(Store $store): self
     {
-        if (!$this->Store->contains($store)) {
-            $this->Store[] = $store;
+        if (!$this->stores->contains($store)) {
+            $this->stores[] = $store;
         }
 
         return $this;
@@ -77,7 +77,7 @@ class OpenDays
 
     public function removeStore(Store $store): self
     {
-        $this->Store->removeElement($store);
+        $this->stores->removeElement($store);
 
         return $this;
     }
