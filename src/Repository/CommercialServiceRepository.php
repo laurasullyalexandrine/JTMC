@@ -62,7 +62,7 @@ class CommercialServiceRepository extends ServiceEntityRepository
     }
     */
 
-
+// create a custom function for active activity filters
     public function findStoreByInformation($session)
     {
         $service = $session->get('service');

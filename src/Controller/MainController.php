@@ -99,7 +99,6 @@ class MainController extends AbstractController
         */
         public function index(StoreRepository $storeRepository): Response
         {   
-            
             return $this->render('main/store_list.html.twig', [
                 'stores' => $storeRepository->findAll(),
             ]);

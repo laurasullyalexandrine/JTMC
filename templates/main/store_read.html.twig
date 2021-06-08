@@ -9,11 +9,11 @@
   <img class="green-arrow-desktop" src="/images/green-arrow.png"  alt="bubble-arrow"  /></div>
 
     <div class="container-picture-show-mobile"> <img class="store-picture" src="{{ asset('uploads/' ~ store.picture ) }}" width="350px" />
-  <img class="green-arrow-mobile" src="/images/green-arrow-mobile.png"  alt="bubble-arrow"  /></div>
+  <img class="green-arrow-mobile" src="/images/green-arrow-mobile.png"  alt="bubble-arrow"/></div>
   
   <aside class="store-show-information">
-    <h1 class="title-store"><strong>{{store.name}}</strong><a class="nav-account-back"
-        href="{{ path('home') }}">Retour</a></h1>
+    <h1 class="title-store"><a class="nav-account-back"
+        href="{{ path('home') }}">Retour</a><br><br><strong>{{store.name}}</strong></h1>
 
       <h2 class="subtitle-store"><strong>{{store.storeActivity}}</strong><br></h2>
 

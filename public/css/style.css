@@ -440,6 +440,7 @@ input {
     text-align: center;
 }
 .title-store {
+    text-align: center;
     width: 100%;
 }
 
@@ -482,7 +483,8 @@ input {
     box-shadow: 0px 0px 4px #1c1a19;
 }
 
-.container-picture-show-desktop {
+.container-picture-show-desktop,
+ .container-picture-show-mobile {
     height: 485px;
     flex: 2.5;
     position: relative;
@@ -492,14 +494,11 @@ input {
     padding: 10px;
 }
 
+.container-picture-show-desktop {
+    top: 45px;
+}
 .container-picture-show-mobile {
     display: none;
-    flex: 2.5;
-    position: relative;
-    background-color: #20bf6b;
-    border-radius: 5px;
-    margin: 20px 10px 10px 10px;
-    padding: 10px;
 }
 
 .green-arrow-desktop {
@@ -720,9 +719,8 @@ a.nav-account-here:hover {
 .footer-nav {
     width: 100%;
     height: 50px;
-    padding-top: 1%;
+    padding-top: 5%;
     text-align: center;
-    background-color: #2c3e50;
     margin-left: 20px;
 }
 
@@ -759,7 +757,7 @@ a.menu-search-link:hover {
 
 .popup {
     max-width: 100px;
-    max-height: 140px;
+    max-height: 160px;
     display: flex;
     flex-direction: column;
 }
@@ -870,9 +868,6 @@ td {
 
 /* --------------- team jtmc ---------------*/
 
-h1 strong {
-    color: #fff;
-}
 
 .icon-picture-admin {
     position: relative;
@@ -1129,7 +1124,7 @@ h1 strong {
     .green-arrow-mobile {
         position: relative;
         top: 40px;
-        right: 250px;
+        right: 270px;
     }
     .team {
         width: 460px;
