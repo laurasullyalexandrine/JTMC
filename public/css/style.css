@@ -320,12 +320,13 @@ input {
     border: 1px solid black;
 }
 
+
+
 .container-account,
 .container-account-con,
 .container-account-store {
     width: 900px;
     margin: auto;
-    height: 450px;
     display: flex;
     border-radius: 5px;
     align-items: center;
@@ -868,12 +869,12 @@ td {
 
 /* --------------- team jtmc ---------------*/
 
-
 .icon-picture-admin {
     position: relative;
     left: 580px;
     top: 100px;
 }
+
 .title-team {
     font-size: 2em;
     text-align: center;
@@ -884,6 +885,10 @@ td {
     left: 50px;
     top: 60px;
     margin-bottom: 5%;
+}
+
+span {
+    color: #fff;
 }
 
 .team {
@@ -929,6 +934,7 @@ td {
 .actors-team {
     margin-top: 7%;
     display: inline;
+    justify-content: space-between;
 }
 
 /* Transition */
