@@ -25,12 +25,11 @@ class MainController extends AbstractController
         */
         public function homepage (Request $request, SessionInterface $session): Response
         {
-           //dump($request);
            $activity = $request->query->get('activity');
            // dump($activity);
 
            $service = $request->query->get('service');
-           dump($service);
+           // dump($service);
 
            $reset = $request->query->get('reset');
            // dump($reset);

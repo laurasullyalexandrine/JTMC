@@ -28,6 +28,7 @@ body {
 
 .title,
 .header-nav-top-link,
+.header-nav-top-link-admin,
 .menu-search-link {
     text-transform: capitalize;
 }
@@ -78,17 +79,24 @@ body {
     margin: 15px;
 }
 
+.header-nav-top-link-admin ,
 .header-nav-top-link,
 .link-account {
     color: #fff;
     padding: 5px 15px;
     border-radius: 3px;
 }
-
-a.active,
+.active,
 .header-nav-top-link:hover {
     transition: .3s;
     background: #20bf6b;
+}
+
+.header-nav-top-link-admin:hover {
+    color: #1c1a19;
+    font-weight: 800;
+    transition: .3s;
+    background: #fcb414;
 }
 
 a.link-account:hover {
@@ -96,7 +104,8 @@ a.link-account:hover {
 }
 
 .slogan,
-.header-nav-top-link {
+.header-nav-top-link,
+.header-nav-top-link-admin {
     font-size: 0.9em;
     padding-bottom: 3px;
     text-decoration: none;
@@ -301,7 +310,7 @@ a.link-account:hover {
 .icon-picture-welcome,
 .icon-picture-reg,
 .icon-picture-con {
-    margin-top: 5%;
+    margin-top: 2.5%;
 }
 
 .required,
@@ -385,6 +394,7 @@ input {
     margin-top: 1%;
     text-align: center;
     font-style: italic;
+    margin-bottom: 2.5%;
 }
 
 .remember-con {
@@ -1021,6 +1031,7 @@ span {
         width: 460px;
     }
     .header-nav-top-link,
+    .header-nav-top-link-admin,
     .logo-web,
     .title,
     .search-engine,

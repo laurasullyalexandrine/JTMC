@@ -45,14 +45,14 @@
 
           <a href="{{ path('home') }}"><img src="/images/home.png" width="30px " alt="icon-home"></a>
           <li class="header-nav-top-item">
-            <a class="header-nav-top-link" href="{{ path('home') }}">accueil</a>
+            <a class="header-nav-top-link {% block menu_home %} {% endblock %}" href="{{ path('home') }}">accueil</a>
           </li>
 
           {% if app.user %}
           <!--If user connected else display button my account and button logount-->
           <a href="{{ path('app_login')}}"><img src="/images/account.png" width="30px " alt="icon-account"></a>
           <li class="header-nav-top-item">
-            <a class="header-nav-top-link" href="{{ path('app_login')}}">Mon compte</a>
+            <a class="header-nav-top-link {% block menu_account %} {% endblock %}" href="{{ path('app_login')}}">Mon compte</a>
           </li>
 
           <a href="{{ path('app_logout')}}"><img src="/images/logout.png" width="30px " alt="icon-logout"></a>
@@ -64,12 +64,12 @@
            <!--else display button login and register-->
           <a href="{{ path('app_login')}}"><img src="/images/logout.png" width="30px " alt="icon-login"></a>
           <li class="header-nav-top-item">
-            <a class="header-nav-top-link" href="{{ path('app_login')}}">Connexion</a>
+            <a class="header-nav-top-link {% block menu_login %} {% endblock %}" href="{{ path('app_login')}}">Connexion</a>
           </li>
 
           <a href="{{ path('register')}}"><img src="/images/register.png" width="25px " alt="icon-inscription"></a>
           <li class="header-nav-top-item">
-            <a class="header-nav-top-link" href="{{ path('register')}}">Inscription</a>
+            <a class="header-nav-top-link {% block menu_register %} {% endblock %}" href="{{ path('register')}}">Inscription</a>
           </li>
 
           {% endif %}
@@ -82,7 +82,7 @@
           <!--if user has a role admin else display button administration this control access is determined in file security.yaml-->
           <a href="/admin" target="_blank"><img src="/images/admin.png" width="30px " alt="icon-administration"></a>
           <li class="header-nav-top-item">
-            <a class="header-nav-top-link" href="/admin" target="_blank">Administration</a>
+            <a class="header-nav-top-link-admin" href="/admin" target="_blank">Administration</a>
           </li>
           {% endif %}
         </ul>
@@ -113,6 +113,7 @@
       <!--Search Engine-->
         <div class="search-engine">
               <form class="form-search-engine" action="{{path('home')}}" method="post">
+              {# <input type="hidden" name="token" value="{{ csrf_token('delete-item') }}"/> #}
                 <div class="form-search-engine-city">
                   <label for="city" class="search-city">Quelle ville ?</label><br>
                   <input type="text" name="city" ="city" placeholder="Code Postal / Ville" />

@@ -29,6 +29,7 @@
 | latitude       | DECIMAL(10.8)| NOT NULL                                        | latitude du commerce                   |
 | user           | entity       | NOT NULL                                        | Le commerçant                          |
 
+
 ## Information_payment (`information_payment`)
 
 | Champ         | Type         | Spécificités                                    | Description                                  |
@@ -43,6 +44,14 @@
 | ---------------- | ------------ | ----------------------------------------------- | ----------------------------------- |
 | id               | INT          | PRIMARY KEY, NOT NULL, UNSIGNED, AUTO_INCREMENT | L'identifiant du service commercial |
 | service_types    | VARCHAR(255) | NULL                                            | Les différents services commerciaux |
+
+
+## Open_days (`open_days`)
+
+| Champ            | Type         | Spécificités                                    | Description                                   |
+| ---------------- | ------------ | ----------------------------------------------- | --------------------------------------------- |
+| id               | INT          | PRIMARY KEY, NOT NULL, UNSIGNED, AUTO_INCREMENT | L'identifiant du jour d'ouverture du commerce |
+| days             | VARCHAR(255) | NOT NULL                                        | Jours d'ouverture du commerce                 |
 
 
 ## Role (`role`)
