@@ -19,7 +19,7 @@
 
   xmlhttp.onreadystatechange = () => 
     {
-      // La transaction est terminée donc elle est passée par tous les status de 0 à 3 on arrive au 4 qui qignifie
+      // La transaction est terminée donc elle est passée par tous les status de 0 à 3 on arrive au 4 qui signifie
       // que la réponse est présente sur le Client et qu'elle peut-être traitée en JS.
       if (xmlhttp.readyState == 4) 
         {

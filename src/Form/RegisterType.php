@@ -37,7 +37,7 @@ class RegisterType extends AbstractType
             ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
-                'invalid_message' => 'Le mot de passe doit être identique',
+                'invalid_message' => 'Les mots de passe doivent être identiques',
                 'label' => 'Mon mot de passe',
                 'required' => true,
                 'first_options' => ['label' => 'Mot de passe : ',

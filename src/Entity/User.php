@@ -7,10 +7,14 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity(
+ *  fields= {"email"},
+ *  message= "L'email indiqué est déjà utilisé !")
  */
 class User implements UserInterface
 {
@@ -40,6 +44,12 @@ class User implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     *       @Assert\Length(
+     *      min = 4,
+     *      max = 30,
+     *      minMessage = "Votre mot de passe doit contenir au moins {{ limit }} caractères",
+     *      maxMessage = "Votre email doit contenir au maximum {{ limit }} caractères"
+     * )
      */
     private $password;
 

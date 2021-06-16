@@ -294,7 +294,6 @@ a.link-account:hover {
 .container-account-reg,
 .container-account-modif {
     width: 900px;
-    height: 650px;
     margin: auto;
     display: flex;
     border-radius: 5px;
@@ -364,10 +363,8 @@ input {
 
 .btn-reg {
     border: 0;
-    margin: 0;
     cursor: pointer;
-    margin-left: 3%;
-    margin-top: 2.8%;
+    margin: 3%;
     color: #fff;
     font-size: 1em;
     padding: 5px 15px;
