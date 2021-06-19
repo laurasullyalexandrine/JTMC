@@ -113,10 +113,10 @@
       <!--Search Engine-->
         <div class="search-engine">
               <form class="form-search-engine" action="{{path('home')}}" method="post">
-              {# <input type="hidden" name="token" value="{{ csrf_token('delete-item') }}"/> #}
+              
                 <div class="form-search-engine-city">
                   <label for="city" class="search-city">Quelle ville ?</label><br>
-                  <input type="text" name="city" ="city" placeholder="Code Postal / Ville" />
+                  <input type="text" name="city" placeholder="Code Postal / Ville" />
                   <button class="submit"> Par ici ! </button><br>
                   <a href="{{ path('home',{reset: "1"})}}" class="menu-search-link">
                   <img src="https://img.icons8.com/windows/32/000000/cancel.png" width="25px" alt="shop-icon" />&ensp; Supprimer le filtre</a>

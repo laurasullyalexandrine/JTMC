@@ -26,12 +26,13 @@ class Geoloc {
         ]);
         $content = $response->getContent();
         $coordinate = json_decode($content);
+        
         $result = $coordinate->features[0];
         $data['lat'] = $result->geometry->coordinates[1];
         $data['long']= $result->geometry->coordinates[0];
         $data['city']= $result->properties->city;
         $data['street']= $result->properties->street;
-        // dump($data);
+        
         return ($data);
     }
 }

@@ -20,49 +20,39 @@ class StoreRepository extends ServiceEntityRepository
     }
 
    // create a custom function for active activity filters
-    // public function findByInformation($session)
-    // {
-    //     $citySearch = $session->get('search-city');
-    //     $activity = $session->get('activity');
-    //     $service = $session->get('service');
-    //     $day = $session->get('day');
+    public function findByInformation($session)
+    {
+        $citySearch = $session->get('search-city');
+        $activity = $session->get('activity');
+        $service = $session->get('service');
 
-    //     $qb = $this->createQueryBuilder('s');
+        $qb = $this->createQueryBuilder('s');
 
-    //     $qb->join('s.commercialService', 'cs');
-    //     $qb->join('s.openDays', 'o');
+        $qb->join('s.commercialService', 'cs');
 
-    //     $qb->addSelect('cs');
-    //     $qb->addSelect('o');
+        $qb->addSelect('cs');
 
+        if($activity !== null)
+        {
+            $qb->andWhere("s.storeActivity = :activity")
+                ->setParameter('activity', $activity);
+        }
 
-    //     if($activity !== null)
-    //     {
-    //         $qb->andWhere("s.storeActivity = :activity")
-    //             ->setParameter('activity', $activity);
-    //     }
+        if($citySearch !== null)
+        {
+            $qb->andWhere("s.city = :citySearch")
+                ->orWhere("s.postalCode = :citySearch")
+                ->setParameter('citySearch', $citySearch);
+        }
 
-    //     if($citySearch !== null)
-    //     {
-    //         $qb->andWhere("s.city = :citySearch")
-    //             ->orWhere("s.postalCode = :citySearch")
-    //             ->setParameter('citySearch', $citySearch);
-    //     }
+        if($service !== null)
+        {
+            $qb->andWhere("cs.serviceTypes = :service")
+                ->setParameter('service', $service);
+        }
 
-    //     if($day !== null)
-    //     {
-    //         $qb->where("o.days = :day")
-    //         ->setParameter('day', $day);
-    //     }
-
-    //     if($service !== null)
-    //     {
-    //         $qb->andWhere("cs.serviceTypes = :service")
-    //             ->setParameter('service', $service);
-    //     }
-
-    //     return  $qb->getQuery()->getResult();
-    // }
+        return  $qb->getQuery()->getResult();
+    }
    
     /*
     public function findOneBySomeField($value): ?Store

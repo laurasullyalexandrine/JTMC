@@ -6,7 +6,7 @@ possess, 0N INFORMATION_PAYMENT, 1N STORE
 INFORMATION_PAYMENT: payment_types
 
 associate, 1N ROLE, 11 USER
-STORE: store activity, picture, name, siret, address, postal_code, email, phone, website, open_days, open_hours, description, latitude, longitude
+STORE: store activity, picture, name, siret, address, postal_code, email, phone, website, open_days, open_hours, description
 have, 1N STORE, 0N COMMERCIAL_SERVICE
 
 USER: email, password

@@ -197,7 +197,7 @@ class StoreType extends AbstractType {
     {
         // dump($event);
         $form = $event->getForm(); // the var. $form get the form
-        $data = $event->getData(); // the var. $form get the user data
+        $data = $event->getData(); // the var. $data get the user data
         $coordinates = $this->geoloc->getCoordinates($data);
         dump($coordinates);
 

@@ -2,12 +2,14 @@
 // console.log('Hello !')
 // here we create many variables to then build our function js
 
+// firt time
 let searchEngine = document.querySelector('.search-engine');
 let sidebarHeader = document.querySelector('.hamburger-sidebar-header');
 
 let content = document.querySelector('.hamburger-content');
 let sidebarBody = document.querySelector('.hamburger-sidebar-body');
 
+// second time
 let btn = document.querySelector('.hamburger-button');
 let sidebar = document.querySelector('.hamburger-sidebar');
 let overlay = document.querySelector('.hamburger-overlay');

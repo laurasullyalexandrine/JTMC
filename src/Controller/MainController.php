@@ -21,7 +21,7 @@ class MainController extends AbstractController
     {
         /**
         * @Route("/", name="home")
-        * This function manage the city form and filters activities of responsive menu
+        * This function manage the city form and filters activities of menu
         */
         public function homepage (Request $request, SessionInterface $session): Response
         {
@@ -56,41 +56,42 @@ class MainController extends AbstractController
 
         /**
          * This function display map markers from database and use custom function for active commercial filters
-         * @Route("/get", name="apiStore")
+         * @Route("/get", name="api_geo")
         */
-        // public function map(StoreRepository $storeRepository, SessionInterface $session): Response
-        // {
-        //     $store = $storeRepository->findByInformation($session);
-
-        //     return $this->json($store, 200, [], [
-        //         AbstractNormalizer::IGNORED_ATTRIBUTES => [
-        //                 'user',
-        //                 'openDays',
-        //                 'InformationPayment',
-        //                 'CommercialService',
-        //         ]
-        //     ]);
-
-        // }
-
-        /**
-         * This function display map markers from database and use custom function for active commercial filters
-         * @Route("/get", name="apiStore")
-        */
-        public function map(CommercialServiceRepository $commercialServiceRepository, SessionInterface $session): Response
+        public function map(StoreRepository $storeRepository, SessionInterface $session): Response
         {
-            $store = $commercialServiceRepository->findStoreByInformation($session);
+            $store = $storeRepository->findByInformation($session);
 
             return $this->json($store, 200, [], [
                 AbstractNormalizer::IGNORED_ATTRIBUTES => [
                         'user',
                         'openDays',
-                        'informationPayment',
-                        'commercialService',
+                        'InformationPayment',
+                        'CommercialService',
+                        'stores'
                 ]
             ]);
 
         }
+
+        // /**
+        //  * This function display map markers from database and use custom function for active commercial filters
+        //  * @Route("/get", name="api_geo")
+        // */
+        // public function map(CommercialServiceRepository $commercialServiceRepository, SessionInterface $session): Response
+        // {
+        //     $store = $commercialServiceRepository->findStoreByInformation($session);
+            
+        //     return $this->json($store, 200, [], [
+        //         AbstractNormalizer::IGNORED_ATTRIBUTES => [
+        //                 'user',
+        //                 'openDays',
+        //                 'informationPayment',
+        //                 'commercialService',
+        //         ]
+        //     ]);
+
+        // }
         
 
         /**

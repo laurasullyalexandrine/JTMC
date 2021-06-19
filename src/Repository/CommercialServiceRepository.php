@@ -62,35 +62,34 @@ class CommercialServiceRepository extends ServiceEntityRepository
     }
     */
 
-// create a custom function for active activity filters
-    public function findStoreByInformation($session)
-    {
-        $service = $session->get('service');
-        $activity = $session->get('activity');
-        $citySearch = $session->get('search-city');
-        $qb = $this->createQueryBuilder('c');
-        $qb->addSelect('s');
-        $qb->leftJoin('c.stores', 's');
+// create a custom function for active the filters
+//     public function findStoreByInformation($session)
+//     {
+//         $service = $session->get('service');
+//         $activity = $session->get('activity');
+//         $citySearch = $session->get('search-city');
+        
+//         $qb = $this->createQueryBuilder('c');
+//         $qb->addSelect('s');
+//         $qb->leftJoin('c.stores', 's');
 
-        if($service !== null)
-        {
-            $qb->andWhere("c.serviceTypes = :service")
-                ->setParameter('service', $service);
-        }
+//         if($service !== null)
+//         {
+//             $qb->andWhere("c.serviceTypes = :service")
+//                 ->setParameter('service', $service);
+//         }
+//         if($activity !== null)
+//         {
+//             $qb->andWhere("s.storeActivity = :activity")
+//                 ->setParameter('activity', $activity);
+//         }
+//         if($citySearch !== null)
+//         {
+//             $qb->andWhere("s.city = :citySearch")
+//                 ->orWhere("s.postalCode = :citySearch")
+//                 ->setParameter('citySearch', $citySearch);
+//         }
 
-        if($activity !== null)
-        {
-            $qb->andWhere("s.storeActivity = :activity")
-                ->setParameter('activity', $activity);
-        }
-
-        if($citySearch !== null)
-        {
-            $qb->andWhere("s.city = :citySearch")
-                ->orWhere("s.postalCode = :citySearch")
-                ->setParameter('citySearch', $citySearch);
-        }
-
-        return  $qb->getQuery()->getResult();
-    }
+//         return  $qb->getQuery()->getResult();
+//     }
 }

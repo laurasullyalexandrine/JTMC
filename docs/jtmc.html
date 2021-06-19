@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<style>
+  #mld .relation { font-variant: small-caps; font-weight: bold }
+  #mld .primary { text-decoration: underline }
+  #mld .foreign { font-style: oblique }
+  #mld .normal { }
+</style>
+</head>
+<body>
+<div id='mld'>
+<div>
+  <span class='relation'>open</span> (
+    <span class='foreign primary'>store activity</span>,
+    <span class='foreign primary'>days</span>
+  )
+</div>
+<!--
+<div>
+  <span class='relation'>OPEN_DAYS</span> (
+    <span class='primary'>days</span>
+  )
+</div>
+-->
+<div>
+  <span class='relation'>ROLE</span> (
+    <span class='primary'>name</span>,
+    <span class='normal'>role</span>
+  )
+</div>
+<div>
+  <span class='relation'>possess</span> (
+    <span class='foreign primary'>payment_types</span>,
+    <span class='foreign primary'>store activity</span>
+  )
+</div>
+<!--
+<div>
+  <span class='relation'>INFORMATION_PAYMENT</span> (
+    <span class='primary'>payment_types</span>
+  )
+</div>
+-->
+<div>
+  <span class='relation'>STORE</span> (
+    <span class='primary'>store activity</span>,
+    <span class='normal'>picture</span>,
+    <span class='normal'>name</span>,
+    <span class='normal'>siret</span>,
+    <span class='normal'>address</span>,
+    <span class='normal'>postal_code</span>,
+    <span class='normal'>email</span>,
+    <span class='normal'>phone</span>,
+    <span class='normal'>website</span>,
+    <span class='normal'>open_days</span>,
+    <span class='normal'>open_hours</span>,
+    <span class='normal'>description</span>,
+    <span class='foreign'>email.1</span>
+  )
+</div>
+<div>
+  <span class='relation'>have</span> (
+    <span class='foreign primary'>store activity</span>,
+    <span class='foreign primary'>commercial_types</span>
+  )
+</div>
+<div>
+  <span class='relation'>USER</span> (
+    <span class='primary'>email</span>,
+    <span class='normal'>password</span>,
+    <span class='foreign'>name</span>
+  )
+</div>
+<!--
+<div>
+  <span class='relation'>COMMERCIAL_SERVICE</span> (
+    <span class='primary'>commercial_types</span>
+  )
+</div>
+-->
+</div>
+</body>
+</html>
