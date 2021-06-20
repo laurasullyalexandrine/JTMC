@@ -13,12 +13,13 @@
 
         <img class="icon-picture-con" src="/images/account.png" width="50px " alt="icon-account">
         <h1 class="title-account"> &ensp;Merci de vous connecter</h1>
+        <p class="obligatoire">*  champs obligatoires<br></p>
     <div class="form-control-con">
-        <label class="label-con" for="inputEmail">E-mail </label>
+        <label class="label-con" for="inputEmail">E-mail *</label>
         <input class="login-input-con" type="email" value="{{ last_username }}" name="email" id="inputEmail"
             class="form-control" placeholder="Votre email" required autofocus>
 
-        <label class="label-con" for="inputPassword">Mot de passe </label>
+        <label class="label-con" for="inputPassword">Mot de passe *</label>
         <input class="login-input-con" type="password" name="password" id="inputPassword" class="form-control"
             placeholder="Votre mot de passe" required>
     </div>

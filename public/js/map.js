@@ -29,26 +29,24 @@
               // We process the data received https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
               const donnees = JSON.parse(xmlhttp.responseText)
               console.log(donnees);
-              // On fait une boucle pour parcourir l'objet JS.
+              // We make a loop to browse the JS object.
               for(let s = 0; s < donnees.length; s++) 
                 {
-                  // On récupère les serviceTypes 
+                  // We collect the stores
                   let id = donnees[s].id;
                   let name = donnees[s].name;
-                  console.log(name);
+                  // console.log(name);
                   let picture = donnees[s].picture;
                   let latitude = donnees[s].latitude;
-                  console.log(latitude);
+                  // console.log(latitude);
                   let longitude = donnees[s].longitude;
-                  
-                   
-                  // On récupère les services commerciales dans un sous tableau que l'on va devoir parcourir également   
+                  // We collect too the commercial services in a sub table that we will have to browse
                   let servicePartenaire = donnees[s].commercialService;
-                  console.log(servicePartenaire);
+                  // console.log(servicePartenaire);
                     for(let c = 0; c < servicePartenaire.length; c++)
                       {
                         let serviceTypes = servicePartenaire[c].serviceTypes;
-                        console.log(serviceTypes);
+                        // console.log(serviceTypes);
                         let marker = L.marker([donnees[s].latitude, donnees[s].longitude], {icon: icone}).addTo(map)
                         marker.bindPopup('<div class="popup"><h1 class="popup-title">' + name + '</h1> <img class="popup-picture"src="uploads/' + picture + '"width="100px"/><p class="popup-service">' + 
                         serviceTypes + '</p><a class="popup-link" href="http://localhost:8080/' + id + '/">Voir le commerce</a></div>')

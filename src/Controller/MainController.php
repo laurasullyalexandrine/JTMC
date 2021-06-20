@@ -26,13 +26,10 @@ class MainController extends AbstractController
         public function homepage (Request $request, SessionInterface $session): Response
         {
            $activity = $request->query->get('activity');
-           // dump($activity);
 
            $service = $request->query->get('service');
-           // dump($service);
 
            $reset = $request->query->get('reset');
-           // dump($reset);
 
            if($request->getMethod() === Request::METHOD_POST){
                 $session->set('search-city',$request->request->get('city'));
@@ -64,8 +61,8 @@ class MainController extends AbstractController
 
             return $this->json($store, 200, [], [
                 AbstractNormalizer::IGNORED_ATTRIBUTES => [
-                        'user',
-                        'openDays',
+                        'User',
+                        'OpenDays',
                         'InformationPayment',
                         'CommercialService',
                         'stores'

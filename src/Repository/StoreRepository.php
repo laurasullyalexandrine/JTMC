@@ -28,9 +28,9 @@ class StoreRepository extends ServiceEntityRepository
 
         $qb = $this->createQueryBuilder('s');
 
-        $qb->join('s.commercialService', 'cs');
+        $qb->addSelect('c');
+        $qb->leftjoin('s.commercialService', 'c');
 
-        $qb->addSelect('cs');
 
         if($activity !== null)
         {
@@ -47,7 +47,7 @@ class StoreRepository extends ServiceEntityRepository
 
         if($service !== null)
         {
-            $qb->andWhere("cs.serviceTypes = :service")
+            $qb->andWhere("c.serviceTypes = :service")
                 ->setParameter('service', $service);
         }
 

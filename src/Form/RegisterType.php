@@ -45,7 +45,7 @@ class RegisterType extends AbstractType
                     'placeholder' => 'Saisir le mot de passe : '
                 ]
             ],
-                'second_options' => ['label' => 'Confirmez le mot de passe  ',
+                'second_options' => ['label' => 'Confirmez le mot de passe * ',
                 'attr' => [
                     'placeholder' => 'Confirmer le mot de passe'
                 ]

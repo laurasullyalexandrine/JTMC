@@ -12,6 +12,7 @@
    <p class="paraph-hook-reg">Commençez par créez votre compte !</p>
    <img class="icon-picture-reg" src="/images/register.png" width="50px" alt="icon-inscription">
    <h1 class="title-account">Inscription</h1>
+   <p class="obligatoire">* champs obligatoires<br><br></p>
 
 
 
@@ -19,11 +20,11 @@
       {{ form_start(form) }}
       <div class="form-error">{{ form_errors(form) }}</div>
 
-      {{ form_row(form.firstname, {'label': 'Prénom '}, {'attr': {'class': 'firstname'}}) }}
-      {{ form_row(form.lastname, {'label': 'Nom '}, {'attr': {'class': 'lastname'}}) }}
-      {{ form_row(form.email, {'label': 'E-mail '}, {'attr': {'class': 'email'}}) }}
+      {{ form_row(form.firstname, {'label': 'Prénom * '}, {'attr': {'class': 'firstname'}}) }}
+      {{ form_row(form.lastname, {'label': 'Nom *'}, {'attr': {'class': 'lastname'}}) }}
+      {{ form_row(form.email, {'label': 'E-mail *'}, {'attr': {'class': 'email'}}) }}
 
-      {{ form_row(form.password.first, {'label': 'Mot de passe '}, {'attr': {'class': 'password1'}}) }}
+      {{ form_row(form.password.first, {'label': 'Mot de passe *'}, {'attr': {'class': 'password1'}}) }}
 
       {{ form_row(form.password.second) }}
    

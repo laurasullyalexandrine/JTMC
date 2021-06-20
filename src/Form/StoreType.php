@@ -46,7 +46,7 @@ class StoreType extends AbstractType {
                     'Restaurant'=>'restaurant',
                     'Autre'=>'autre',
                 ],
-                'label' => 'Activité du commerce',
+                'label' => 'Activité du commerce *',
                 'constraints' => [
                     new NotBlank,
                 ],

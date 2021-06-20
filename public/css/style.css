@@ -317,13 +317,13 @@ a.link-account:hover {
     font-size: 0.9em;
     display: flex;
     margin: 3% 0 1% 0;
-    margin-left: 50px;
+    margin-left: 20px;
 }
 
 input {
     margin: 1% 1% 3% 1%;
     padding: 3%;
-    margin-left: 50px;
+    margin-left: 20px;
     border-radius: 3px;
     border: 1px solid black;
 }
@@ -334,6 +334,7 @@ input {
 .container-account-con,
 .container-account-store {
     width: 900px;
+    height: 100vh;
     margin: auto;
     display: flex;
     border-radius: 5px;
@@ -357,7 +358,7 @@ input {
     border: 0;
     margin: 0;
     cursor: pointer;
-    margin-left: 5%;
+    margin-left: 2%;
     margin-top: 2.8%;
     color: #fff;
     font-size: 1em;
@@ -552,11 +553,19 @@ input {
     flex-direction: column;
 }
 
-.add-form-second {
+.block {
+    margin: 2% 0;
+    padding-left: 3%;
+    width: 100%;
     display: flex;
-    align-items: center;
-    flex-direction: column;
 }
+
+.add-form-second,
+.add-form-three,
+.add-form-four {
+    width: 80%;
+}
+
 .submit-add {
     text-align: center;
     height: 35px;
@@ -571,8 +580,7 @@ input {
 }
 
 .form-check {
-    width: 100vh;
-    text-align: center;
+
 }
 
 .form-check-label {
@@ -718,6 +726,7 @@ a.nav-account-here:hover {
     padding: 0.8%;
 }
 
+
 /* --------------- More ---------------*/
 
 .promotion {
@@ -809,18 +818,23 @@ a.menu-search-link:hover {
 
 /* --------------- Nav common ---------------*/
 
+.obligatoire {
+    font-size: 0.9em;
+}
+
 .alert {
     color: #38ada9;
     margin: 1% 0;
     text-align: center;
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 .alert-success {
-    color: #38ada9;
+    color: #70d3d0;
 }
 
-.alert-info {
+.alert-info,
+.form-error-message {
     color: #ff6100;
 }
 
@@ -1102,7 +1116,7 @@ span {
         margin-left: 0;
     }
     .container-account-store {
-        height: 100%;
+        height: 100vh;
     }
     .paraph-account,
     .paraph-hook-reg {
@@ -1178,6 +1192,20 @@ span {
         font-size: 1.2em;
     }
 
+    .obligatoire {
+        font-size: 0.7em;
+    }
+
+    .block {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .add-form-second,
+    .add-form-three,
+    .add-form-four {
+        margin-left: 28%;
+    }
 
 
 }
