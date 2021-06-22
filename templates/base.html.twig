@@ -111,6 +111,10 @@
       <!--Respnsive Button-->
       <button class="hamburger-button">&#9776;</button>
       <!--Search Engine-->
+
+      
+      {# {{dump(app.request)}} #}
+
         <div class="search-engine">
               <form class="form-search-engine" action="{{path('home')}}" method="post">
               
@@ -185,7 +189,7 @@
                   Autre</a>
               </li>
             </ul>
-            <ul class="menu-search-list">Quel service commercial ?
+            <ul class="menu-search-list">Quel service partenaire ?
               <li class="menu-search-item">
                 <a href="{{ path('home',{service: "click-and-collect"})}}" class="menu-search-link"><img 
                 src="/images/click-and-collect.png" alt="commercial-icon"width='25px'/>&ensp; click and collect</a>

@@ -9,13 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @UniqueEntity(
- *  fields= {"email"},
- *  message= "L'email indiqué est déjà utilisé !")
- */
+  */
 class User implements UserInterface
 {
     /**
@@ -89,8 +87,6 @@ class User implements UserInterface
     {
         return $this->lastname;
     }
-    
-
 
     public function getId(): ?int
     {

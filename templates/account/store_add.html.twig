@@ -22,6 +22,7 @@
 
         <!--Form-->
         <div class ="add-form-first">
+
             {{ form_row(form.name, {'label': 'Nom de votre commerce *'}, {'attr': {'class': 'name'}}) }}
             {{ form_row(form.road_number, {'label': 'Numéro de rue *'}, {'attr': {'class': 'road_number'}}) }}
             {{ form_row(form.address, {'label': 'Nom de rue *'}, {'attr': {'class': 'address'}}) }}
@@ -35,7 +36,7 @@
             {{ form_widget(form.open_hours) }}
         </div>
 
-    <div class="block">
+    <div class="add-block">
         <div class="add-form-second">
             {{ form_label(form.getOpenDays, 'Jours d\'ouverture *', {'label_attr': {'class': 'required'}})}} 
             {{ form_widget(form.getOpenDays) }}
@@ -51,9 +52,9 @@
             {{ form_widget(form.CommercialService) }}
         </div>
     </div>
-    
+
         <div class="add-description">
-            {{ form_row(form.description, {'label': 'Description de votre activité'}, {'attr': {'class': 'description'}}) }}
+            {{ form_row(form.description, {'label': 'Description de votre activité *'}, {'attr': {'class': 'description'}}) }}
         </div>
         
         <div class="btn-add">
