@@ -88,6 +88,16 @@ class User implements UserInterface
         return $this->lastname;
     }
 
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addConstraint(new UniqueEntity([
+            'fields' => 'email',
+            'message' => "L'email indiqué est déjà utilisé !",
+        ]));
+
+        $metadata->addPropertyConstraint('email', new Assert\Email());
+    }
+
     public function getId(): ?int
     {
         return $this->id;
