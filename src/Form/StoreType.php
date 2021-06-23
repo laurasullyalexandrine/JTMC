@@ -134,7 +134,7 @@ class StoreType extends AbstractType {
                     new NotBlank,
                 ],
             ])
-            ->add('website', UrlType::class, [
+            ->add('website', null, [
                 'label' => 'Site web :',
                 'attr' => [
                     'placeholder' => 'Ex: www.ofleur.com'
