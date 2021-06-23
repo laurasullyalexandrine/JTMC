@@ -20,6 +20,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\ChoiseType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\FormEvent;
 
@@ -132,7 +134,7 @@ class StoreType extends AbstractType {
                     new NotBlank,
                 ],
             ])
-            ->add('website', null, [
+            ->add('website', UrlType::class, [
                 'label' => 'Site web :',
                 'attr' => [
                     'placeholder' => 'Ex: www.ofleur.com'
@@ -176,7 +178,7 @@ class StoreType extends AbstractType {
                 'class' => CommercialService::class
             ])
 
-            ->add('description', null, [
+            ->add('description', TextareaType::class , [
                 'label' => 'Description de votre activité :',
                 'attr' => [
                     'placeholder' => 'Décrivez les spécialités de votre commerce',

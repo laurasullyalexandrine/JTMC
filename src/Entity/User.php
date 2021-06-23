@@ -94,8 +94,6 @@ class User implements UserInterface
             'fields' => 'email',
             'message' => "L'email indiqué est déjà utilisé !",
         ]));
-
-        $metadata->addPropertyConstraint('email', new Assert\Email());
     }
 
     public function getId(): ?int
