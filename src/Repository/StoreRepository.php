@@ -25,32 +25,26 @@ class StoreRepository extends ServiceEntityRepository
         $citySearch = $session->get('search-city');
         $activity = $session->get('activity');
         $service = $session->get('service');
-
         $qb = $this->createQueryBuilder('s');
-
         $qb->addSelect('c');
         $qb->leftjoin('s.commercialService', 'c');
-
 
         if($activity !== null)
         {
             $qb->andWhere("s.storeActivity = :activity")
                 ->setParameter('activity', $activity);
         }
-
         if($citySearch !== null)
         {
             $qb->andWhere("s.city = :citySearch")
                 ->orWhere("s.postalCode = :citySearch")
                 ->setParameter('citySearch', $citySearch);
         }
-
         if($service !== null)
         {
             $qb->andWhere("c.serviceTypes = :service")
                 ->setParameter('service', $service);
         }
-
         return  $qb->getQuery()->getResult();
     }
    

@@ -36,7 +36,7 @@ body {
 .title {
     margin: 2%;
     font-weight: 700;
-    color: #20bf6b;
+    color: #4cd137;
 }
 
 .title-link {
@@ -192,14 +192,14 @@ a.link-account:hover {
     left: 50px;
     font-size: 1em;
     cursor: pointer;
-    color: #20bf6b;
+    color: #4cd137;
     background: none;
     padding-right: 1%;
 }
 
 .search-city,
 .menu-search-list {
-    color: #20bf6b;
+    color: #4cd137;
     font-size: 1em;
 }
 
