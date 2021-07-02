@@ -1,7 +1,7 @@
 <?php
 namespace App\Service;
 
-// curl "https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port"
+// curl "https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port&limit=15"
 
 use App\Entity\Store;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
