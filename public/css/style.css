@@ -457,7 +457,15 @@ input {
 
 .title-store,
 .list-title {
-    margin-bottom: 25px;
+    margin: 25px 0;
+    color: #4cd137;
+    font-size: 1.8em;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+}
+.title-store-mobile {
+    display: none;
+    margin: 25px 0;
     color: #4cd137;
     font-size: 1.8em;
     font-weight: 700;
@@ -677,8 +685,10 @@ a.nav-account-link:hover {
 }
 
 .nav-account-back {
+    font-size: 1.5em;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
     color: #fff;
-    font-size: 0.8em;
     padding: 8%;
     text-decoration: none;
 }
@@ -686,6 +696,18 @@ a.nav-account-back:hover {
     color: #20bf6b;
 }
 
+.nav-account-back-mobile {
+    display: none;
+    font-size: 1.5em;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    padding: 8%;
+    text-decoration: none;
+}
+a.nav-account-back-mobile:hover {
+    color: #20bf6b;
+}
 .nav-account-back-2 {
     color: #fff;
     font-size: 1.5em;
@@ -1213,6 +1235,27 @@ span {
     .btn-modif {
         margin-left: 30%;
     }
+
+    .nav-account-back,
+    .title-store {
+        display: none;
+    }
+    .nav-account-back-mobile {
+        display: block;
+        font-size: 0.8em;
+        font-weight: 700;
+        font-family: 'Oswald', sans-serif;
+        color: #fff;
+        padding: 8%;
+        text-decoration: none;
+    }
+    a.nav-account-back-mobile:hover {
+        color: #20bf6b;
+    }
+    .title-store-mobile {
+        width: 100%;
+        display: block;
+    } 
 
 
 }

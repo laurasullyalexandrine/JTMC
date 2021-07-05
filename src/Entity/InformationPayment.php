@@ -31,7 +31,6 @@ class InformationPayment
      */
     private $stores;
 
-
     public function __construct()
     {
         $this->stores = new ArrayCollection();
