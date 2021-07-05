@@ -1241,7 +1241,7 @@ span {
         display: none;
     }
     .nav-account-back-mobile {
-        display: block;
+        display: inline-flex;
         font-size: 0.8em;
         font-weight: 700;
         font-family: 'Oswald', sans-serif;
@@ -1255,6 +1255,7 @@ span {
     .title-store-mobile {
         width: 100%;
         display: block;
+        margin: 0;
     } 
 
 
