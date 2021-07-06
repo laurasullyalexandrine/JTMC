@@ -1179,7 +1179,7 @@ span {
     .green-arrow-mobile {
         position: relative;
         top: 40px;
-        right: 270px;
+        right: 210px;
     }
     .team {
         width: 460px;
@@ -1241,9 +1241,11 @@ span {
         display: none;
     }
     .nav-account-back-mobile {
-        display: inline-flex;
-        font-size: 0.8em;
-        font-weight: 700;
+        display: block;
+        position: absolute;
+        margin: -60px 0 0 270px;
+        font-size: 1.2em;
+        font-weight: 400;
         font-family: 'Oswald', sans-serif;
         color: #fff;
         padding: 8%;
@@ -1255,7 +1257,7 @@ span {
     .title-store-mobile {
         width: 100%;
         display: block;
-        margin: 0;
+        margin: 0 0 20px 0;
     } 
 
 
