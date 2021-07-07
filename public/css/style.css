@@ -718,6 +718,17 @@ a.nav-account-back-2:hover {
     color: #20bf6b;
 }
 
+.nav-account-back-3 {
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    padding: 8%;
+    text-decoration: none;
+}
+a.nav-account-back-3:hover {
+    color: #20bf6b;
+}
+
 .nav-account-here {
     font-weight: bold;
     color: #20bf6b;
