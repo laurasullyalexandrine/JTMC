@@ -69,11 +69,9 @@ class AccountStoreController extends AbstractController
     /**
      * @Route("/compte/editer-votre-commerce/{id}", name="account_store_edit")
     */
-    public function edit(Request $request, $id, FileUploader $fileUploader): Response
+    public function edit(Request $request, Store $store, FileUploader $fileUploader): Response
     {
-        $store = $this->entityManager->getRepository(Store::class)->findOneBy($id);
-     
-
+    
         if (!$store || $store->getUser() != $this->getUser()) {
             return $this->redirectToRoute('account_store');
         }
@@ -100,7 +98,7 @@ class AccountStoreController extends AbstractController
     /**
      * @Route("/compte/supprimer-votre-commerce/{id}", name="account_store_delete")
     */
-    public function delete($id): Response
+    public function delete($id, Store $store): Response
     {
         $store = $this->entityManager->getRepository(Store::class)->findOneBy($id);
 
@@ -112,13 +110,11 @@ class AccountStoreController extends AbstractController
             return $this->redirectToRoute('account_store');
     }
 
-    /**
-     * @Route("/compte/votre-commerce/{id}", name="account_store_show")
-    */
-    public function read($id): Response
+
+    #[Route('/compte/votre-commerce/{id}', name:'account_store_show', methods:['GET'])]
+    public function read(Store $store): Response
     {
-        $store = $this->entityManager->getRepository(Store::class)->findOneBy($id);
- 
+        // dd($store);
         if (!$store || $store->getUser() != $this->getUser()) {
             return $this->redirectToRoute('account_store');
         }
