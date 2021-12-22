@@ -16,8 +16,6 @@ class FileUploader
     }
 
     /**
-     * Et la j'ai la meme fonctionnalité dédiée à un cas particulier
-     *
      * @param UploadedFile|null $image on autorise le null si jamais aucune image n'a été fournie
      * @return string|null
      */

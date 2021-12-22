@@ -46,6 +46,8 @@ class AccountStoreController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            // confirmer que l'utilisateur est connecté et qu'il correspond bien au compte
+            // du magasin
             $store->setUser($this->getUser());
             $this->entityManager->persist($store);
 
@@ -69,7 +71,7 @@ class AccountStoreController extends AbstractController
     */
     public function edit(Request $request, $id, FileUploader $fileUploader): Response
     {
-        $store = $this->entityManager->getRepository(Store::class)->findOneById($id);
+        $store = $this->entityManager->getRepository(Store::class)->findOneBy($id);
      
 
         if (!$store || $store->getUser() != $this->getUser()) {
@@ -100,7 +102,7 @@ class AccountStoreController extends AbstractController
     */
     public function delete($id): Response
     {
-        $store = $this->entityManager->getRepository(Store::class)->findOneById($id);
+        $store = $this->entityManager->getRepository(Store::class)->findOneBy($id);
 
         if ($store && $store->getUser() == $this->getUser()) {
             $this->entityManager->remove($store);
@@ -115,7 +117,7 @@ class AccountStoreController extends AbstractController
     */
     public function read($id): Response
     {
-        $store = $this->entityManager->getRepository(Store::class)->findOneById($id);
+        $store = $this->entityManager->getRepository(Store::class)->findOneBy($id);
  
         if (!$store || $store->getUser() != $this->getUser()) {
             return $this->redirectToRoute('account_store');
