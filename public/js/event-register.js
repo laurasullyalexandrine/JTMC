@@ -4,5 +4,5 @@ let iconRegister = document.getElementById('alert-register');
 
 iconRegister.onmouseover = function()
 {
-    window.alert('Vous êtes commerçant !');
+    window.alert('Vous êtes commerçant ?!');
 }
